@@ -1,0 +1,21 @@
+[gd_scene load_steps=3 format=3 uid="uid://biuba22ol7yd5"]
+
+[ext_resource type="Script" path="res://scripts/kart.gd" id="1_pvsgw"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_p12rf"]
+
+[node name="Kart" type="Node3D"]
+script = ExtResource("1_pvsgw")
+
+[node name="Body" type="CSGBox3D" parent="."]
+size = Vector3(1, 1, 2)
+
+[node name="Camera3D" type="Camera3D" parent="Body"]
+transform = Transform3D(0.999936, -0.00819103, 0.00780077, 0, 0.689645, 0.724147, -0.0113113, -0.724101, 0.689601, 0.0109515, 3.94774, 4.91821)
+current = true
+fov = 75.3172
+
+[node name="Vehicle" type="RigidBody3D" parent="."]
+
+[node name="Collision" type="CollisionShape3D" parent="Vehicle"]
+shape = SubResource("SphereShape3D_p12rf")

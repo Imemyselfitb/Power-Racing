@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://bxjrbo2iiimae"]
+
+[ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="1_rnmua"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
+
+[sub_resource type="Sky" id="Sky_jnnrb"]
+sky_material = SubResource("ProceduralSkyMaterial_xy3eh")
+
+[sub_resource type="Environment" id="Environment_hhrjw"]
+background_mode = 2
+sky = SubResource("Sky_jnnrb")
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vyo1u"]
+
+[node name="Game" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00680852, -2.38419e-07, -0.00371957)
+
+[node name="Kart" parent="." instance=ExtResource("1_rnmua")]
+
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36608, 0, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hhrjw")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.992033, 0)
+shape = SubResource("WorldBoundaryShape3D_vyo1u")
