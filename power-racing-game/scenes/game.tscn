@@ -1,6 +1,7 @@
-[gd_scene load_steps=6 format=3 uid="uid://bxjrbo2iiimae"]
+[gd_scene load_steps=7 format=3 uid="uid://bxjrbo2iiimae"]
 
 [ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="1_rnmua"]
+[ext_resource type="PackedScene" uid="uid://dk1hh2gdvpe7u" path="res://assets/models/testtrack.blend" id="2_8jj51"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
 
@@ -27,3 +28,6 @@ environment = SubResource("Environment_hhrjw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_vyo1u")
+
+[node name="testtrack" parent="." instance=ExtResource("2_8jj51")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.04942, 0)
