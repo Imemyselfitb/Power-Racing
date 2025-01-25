@@ -42,6 +42,10 @@ MoveBackward={
 ]
 }
 
+[layer_names]
+
+3d_physics/layer_2="AIStickyTrack"
+
 [rendering]
 
 renderer/rendering_method="gl_compatibility"

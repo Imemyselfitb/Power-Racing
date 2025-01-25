@@ -33,6 +33,9 @@ fog_density = 0.0
 
 [node name="Kart" parent="." instance=ExtResource("1_rnmua")]
 
+[node name="Kart2" parent="." instance=ExtResource("1_rnmua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.14984, 0, 0)
+
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36608, 0, 0)
 
@@ -45,8 +48,12 @@ environment = SubResource("Environment_hhrjw")
 shape = SubResource("WorldBoundaryShape3D_vyo1u")
 
 [node name="testtrack" parent="." instance=ExtResource("2_8jj51")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.04942, 0)
+
+[node name="StaticBody3D" parent="testtrack/BezierCircle" index="0"]
+collision_layer = 3
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.787086, 0.616844, -2.3457e-08, -0.494911, 0.631501, 0.596883, 0.368184, -0.469798, 0.802328, 0, 72.3031, 0)
 shadow_enabled = true
+
+[editable path="testtrack"]
