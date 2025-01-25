@@ -69,6 +69,7 @@ shadow_mesh = SubResource("ArrayMesh_tc4xf")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_46kq7"]
 albedo_color = Color(0.28, 0.316, 1, 1)
+roughness = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_k5xaa"]
 
@@ -104,6 +105,7 @@ shadow_mesh = SubResource("ArrayMesh_ly2fp")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_44xaf"]
 albedo_color = Color(1, 0, 0, 1)
+roughness = 0.0
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_mtxd8"]
 
@@ -139,6 +141,9 @@ shadow_mesh = SubResource("ArrayMesh_w523p")
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e8xf1"]
 albedo_color = Color(0.5487, 0.563155, 0.59, 1)
+metallic = 1.0
+metallic_specular = 1.0
+roughness = 0.2
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w6pcj"]
 

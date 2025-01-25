@@ -19,7 +19,7 @@ func _physics_process(delta: float) -> void:
 	turn_dir -= Input.get_action_strength("TurnRight")
 	turn_dir *= steer
 	
-	$Body/FrontWheels.rotation.y = lerp($Body/FrontWheels.rotation.y, turn_dir / 6.0, 0.5)
+	$Body/FrontWheels.rotation.y = lerp($Body/FrontWheels.rotation.y, turn_dir / 2.0, 0.5)
 	turn_dir *= sign(-move_dir)
 	
 	turnvel = lerp(turnvel, turn_dir, 0.1)
