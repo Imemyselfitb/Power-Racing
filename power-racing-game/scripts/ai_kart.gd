@@ -9,7 +9,7 @@ extends Node3D
 ##Will Avoid if nothing is detected
 @export var RightRayVoid:Node3D
 
-@export var flinch:float = 0.1
+@export var flinch:float = 1
 
 @export var path:Path3D = null
 @export var pathfollow:PathFollow3D = null
@@ -27,7 +27,7 @@ func _ready():
 		ray.add_exception(vehicle)
 	speed += randf_range(-2, 45)
 	turnspeed = speed * (1/3.0)
-	$Body/Label3D.text = str(floor(speed)) + ", " + str(floor(turnspeed))
+	flinch = randf_range(0.7, 1.4)
 
 func align_with_y(xform, new_y):
 	xform.basis.y = new_y
@@ -38,6 +38,8 @@ func align_with_y(xform, new_y):
 var grip:float = 0.9
 
 func _physics_process(delta):
+	$Body/AudioStreamPlayer3D2.pitch_scale = vehicle.velocity.length() / 20.0
+	
 	vehicle.velocity.x *= grip
 	vehicle.velocity.z *= grip
 	pathfollow.progress = path.curve.get_closest_offset(vehicle.global_position)
@@ -47,11 +49,13 @@ func _physics_process(delta):
 	var goaway:Vector3 = Vector3.ZERO
 	for ray in $Body/Rays.get_children():
 		if ray.is_colliding():
-			goaway -= (ray.get_collision_point() - vehicle.global_position).normalized()
+			goaway -= (ray.get_collision_point() - vehicle.global_position).normalized() * flinch
 	goaway.y = 0
 	if vehicle.velocity.length() < 600:
 		vehicle.velocity += pathfollow.global_transform.basis.z * speed * delta
-	vehicle.velocity -= $GroundRay/Look.global_transform.basis.z * turnspeed * delta
+	var turn = $GroundRay/Look.global_transform.basis.z * turnspeed * delta
+	vehicle.velocity -= turn
+	$Body/FrontWheels.rotation.y = (vehicle.velocity.x * vehicle.velocity.z) / speed / 6.3
 	vehicle.velocity += goaway
 	$GroundRay/Look.look_at(vehicle.global_position)
 	body.rotation.y = lerp_angle(body.rotation.y, $GroundRay/Look.rotation.y, 12 * delta)

@@ -1,6 +1,5 @@
-[gd_scene load_steps=9 format=3 uid="uid://bxjrbo2iiimae"]
+[gd_scene load_steps=8 format=3 uid="uid://bxjrbo2iiimae"]
 
-[ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="1_rnmua"]
 [ext_resource type="PackedScene" uid="uid://dk1hh2gdvpe7u" path="res://assets/models/testtrack.blend" id="2_8jj51"]
 [ext_resource type="PackedScene" uid="uid://bwsgksn5sba8h" path="res://scenes/aiKart.tscn" id="2_xqqmu"]
 
@@ -66,42 +65,102 @@ shadow_normal_bias = 10.0
 shadow_blur = 0.0
 
 [node name="Kart" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.9018, 1.94338, 107.139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.3115, 1.94338, 56.3164)
 path = NodePath("../Path3D")
 pathfollow = NodePath("../Path3D/PathFollow3D")
 
 [node name="Kart3" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.7382, 1.94338, 126.419)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.7197, 1.94338, 69.7726)
 path = NodePath("../Path3D")
 pathfollow = NodePath("../Path3D/PathFollow3D")
 
 [node name="Kart4" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 66.3978, 1.94338, 124.771)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.9202, 1.94338, 56.3164)
 path = NodePath("../Path3D")
 pathfollow = NodePath("../Path3D/PathFollow3D")
 
 [node name="Kart5" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 65.9969, 1.94338, 128.246)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.3284, 1.94338, 69.7726)
 path = NodePath("../Path3D")
 pathfollow = NodePath("../Path3D/PathFollow3D")
 
 [node name="Kart6" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 73.02, 1.94338, 90.7139)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.1208, 1.94338, 56.3164)
 path = NodePath("../Path3D")
 pathfollow = NodePath("../Path3D/PathFollow3D")
 
 [node name="Kart7" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 69.0471, 1.94338, 90.6606)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.529, 1.94338, 69.7726)
 path = NodePath("../Path3D")
 pathfollow = NodePath("../Path3D/PathFollow3D")
 
 [node name="Kart8" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 70.951, 1.94338, 86.9462)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.1956, 1.94338, 48.918)
 path = NodePath("../Path3D")
 pathfollow = NodePath("../Path3D/PathFollow3D")
 
 [node name="Kart9" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 67.9018, 1.94338, 113.591)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.6037, 1.94338, 62.3742)
+path = NodePath("../Path3D")
+pathfollow = NodePath("../Path3D/PathFollow3D")
+
+[node name="Kart10" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.7004, 1.94338, 48.918)
+path = NodePath("../Path3D")
+pathfollow = NodePath("../Path3D/PathFollow3D")
+
+[node name="Kart11" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.1086, 1.94338, 62.3742)
+path = NodePath("../Path3D")
+pathfollow = NodePath("../Path3D/PathFollow3D")
+
+[node name="Kart12" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.3115, 4.35681, 56.3164)
+path = NodePath("../Path3D")
+pathfollow = NodePath("../Path3D/PathFollow3D")
+
+[node name="Kart13" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.7197, 4.35681, 69.7726)
+path = NodePath("../Path3D")
+pathfollow = NodePath("../Path3D/PathFollow3D")
+
+[node name="Kart14" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 92.9202, 4.35681, 56.3164)
+path = NodePath("../Path3D")
+pathfollow = NodePath("../Path3D/PathFollow3D")
+
+[node name="Kart15" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.3284, 4.35681, 69.7726)
+path = NodePath("../Path3D")
+pathfollow = NodePath("../Path3D/PathFollow3D")
+
+[node name="Kart16" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.1208, 4.35681, 56.3164)
+path = NodePath("../Path3D")
+pathfollow = NodePath("../Path3D/PathFollow3D")
+
+[node name="Kart17" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 79.529, 4.35681, 69.7726)
+path = NodePath("../Path3D")
+pathfollow = NodePath("../Path3D/PathFollow3D")
+
+[node name="Kart18" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 93.1956, 4.35681, 48.918)
+path = NodePath("../Path3D")
+pathfollow = NodePath("../Path3D/PathFollow3D")
+
+[node name="Kart19" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 86.6037, 4.35681, 62.3742)
+path = NodePath("../Path3D")
+pathfollow = NodePath("../Path3D/PathFollow3D")
+
+[node name="Kart20" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 96.7004, 4.35681, 48.918)
+path = NodePath("../Path3D")
+pathfollow = NodePath("../Path3D/PathFollow3D")
+
+[node name="Kart21" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 90.1086, 4.35681, 62.3742)
 path = NodePath("../Path3D")
 pathfollow = NodePath("../Path3D/PathFollow3D")
 
@@ -111,8 +170,5 @@ curve = SubResource("Curve3D_p6gfj")
 [node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
 transform = Transform3D(-0.297066, 0, 0.954856, 0, 1, 0, -0.954856, 0, -0.297066, -7.52908, 0, -160.369)
 use_model_front = true
-
-[node name="Kart2" parent="." instance=ExtResource("1_rnmua")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.23854, 184.421)
 
 [editable path="testtrack"]

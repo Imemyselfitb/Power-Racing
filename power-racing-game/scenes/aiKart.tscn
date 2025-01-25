@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwsgksn5sba8h"]
+[gd_scene load_steps=5 format=3 uid="uid://bwsgksn5sba8h"]
 
 [ext_resource type="Script" path="res://scripts/ai_kart.gd" id="1_r64y7"]
 [ext_resource type="PackedScene" uid="uid://jgst4ctmbads" path="res://assets/models/gokart.tscn" id="2_w7xti"]
+[ext_resource type="AudioStream" uid="uid://bpth12g2qy4kp" path="res://assets/sound/engine.wav" id="3_6cx5t"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p12rf"]
 
@@ -56,7 +57,7 @@ target_position = Vector3(5, 0, 0)
 
 [node name="RayCast3D11" type="RayCast3D" parent="Body/Rays"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0.0655943, 0)
-target_position = Vector3(5, 0, 0)
+target_position = Vector3(10, 0, 0)
 
 [node name="RayCast3D12" type="RayCast3D" parent="Body/Rays"]
 transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 0, 0.0655943, 0)
@@ -72,17 +73,25 @@ target_position = Vector3(5, 0, 0)
 
 [node name="RayCast3D15" type="RayCast3D" parent="Body/Rays"]
 transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, 0, 0.0655943, 0)
-target_position = Vector3(5, 0, 0)
+target_position = Vector3(10, 0, 0)
 
 [node name="RayCast3D16" type="RayCast3D" parent="Body/Rays"]
 transform = Transform3D(-0.422618, 0, 0.906308, 0, 1, 0, -0.906308, 0, -0.422618, 0, 0.0655943, 0)
-target_position = Vector3(5, 0, 0)
+target_position = Vector3(10, 0, 0)
 
-[node name="Label3D" type="Label3D" parent="Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07804, 0)
-pixel_size = 0.02
-billboard = 1
-text = "sigma"
+[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.670486, 0)
+stream = ExtResource("3_6cx5t")
+attenuation_model = 2
+volume_db = 4.0
+unit_size = 1.0
+pitch_scale = 1.21
+autoplay = true
+max_distance = 20.0
+doppler_tracking = 2
+
+[node name="Camera3D" type="Camera3D" parent="Body"]
+transform = Transform3D(0.201951, 0.52196, -0.828718, 0, 0.846152, 0.532941, 0.979396, -0.107628, 0.170881, -5.43298, 3.4939, 1.12028)
 
 [node name="Vehicle" type="CharacterBody3D" parent="."]
 

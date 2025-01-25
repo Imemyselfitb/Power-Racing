@@ -7,7 +7,7 @@ class_name Kart
 var accel: float = 1.2
 var steer: float = 70.0 * PI / 180
 var turn_stop_limit: float = 0.3
-var grip = 0.7
+var grip = 0.5
 
 var move_dir:float = 0
 var turn_dir:float = 0
