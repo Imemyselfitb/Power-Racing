@@ -13,4 +13,4 @@ func _process(delta):
 	$TerrainRay.position = $GroundRay.position
 	
 	if $TerrainRay.is_colliding():
-		vehicle.velocity *= 0.3
+		vehicle.velocity *= 0.9

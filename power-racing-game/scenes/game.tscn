@@ -129,5 +129,6 @@ transform = Transform3D(-0.297066, 0, 0.954856, 0, 1, 0, -0.954856, 0, -0.297066
 use_model_front = true
 
 [node name="Kart2" parent="." instance=ExtResource("1_rnmua")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.6112, 7.75664, 51.0916)
 
 [editable path="testtrack"]

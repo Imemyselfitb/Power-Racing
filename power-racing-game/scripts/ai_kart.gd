@@ -70,7 +70,7 @@ func _physics_process(delta):
 	$TerrainRay.position = $GroundRay.position
 	
 	if $TerrainRay.is_colliding():
-		vehicle.velocity *= 0.3
+		vehicle.velocity *= 0.9
 	
 	if $GroundRay.get_collider() or (vehicle.is_on_floor() or vehicle.is_on_wall()):
 		$Body.global_position = $GroundRay.get_collision_point()
