@@ -57,12 +57,3 @@ environment = SubResource("Environment_hhrjw")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_vyo1u")
-
-<<<<<<< HEAD
-[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-=======
-[node name="CSGBox3D" type="CSGBox3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1, 0)
-size = Vector3(500, 1, 500)
-material = SubResource("StandardMaterial3D_gy7ns")
->>>>>>> a640a8f77be4b967646cca5561f6d1b889643b88

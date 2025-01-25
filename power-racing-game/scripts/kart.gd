@@ -30,15 +30,3 @@ func _physics_process(delta: float) -> void:
 		vehicle.linear_velocity.x *= 0.8
 		# (Keep vertical velocity the same)
 		vehicle.linear_velocity.z *= 0.8
-	
-<<<<<<< HEAD
-	turnvel += turn_dir
-	$Body/FrontWheels.rotation.y = turn_dir
-	
-	if $GroundRay.is_colliding():
-		turnvel *= 0.5
-		var new_basis: Basis = body.global_transform.basis.rotated(body.global_transform.basis.y, turnvel)
-		body.global_transform.basis = body.global_transform.basis.slerp(new_basis, delta)
-		body.global_transform = body.global_transform.orthonormalized()
-=======
->>>>>>> a640a8f77be4b967646cca5561f6d1b889643b88
