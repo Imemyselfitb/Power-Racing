@@ -3,7 +3,7 @@ extends Node3D
 @onready var body = $Body
 @onready var vehicle = $Vehicle
 
-var accel: float = 50
+var accel: float = 500
 var steer: float = 50.0 * PI / 180
 var turn_stop_limit: float = 0.3
 
@@ -27,6 +27,6 @@ func _physics_process(delta: float) -> void:
 	body.transform.origin = vehicle.transform.origin
 	vehicle.apply_central_force(body.global_transform.basis.z * move_dir)
 	if move_dir == 0:
-		vehicle.linear_velocity.x *= 0.8
+		vehicle.linear_velocity.x *= 0.99
 		# (Keep vertical velocity the same)
-		vehicle.linear_velocity.z *= 0.8
+		vehicle.linear_velocity.z *= 0.99

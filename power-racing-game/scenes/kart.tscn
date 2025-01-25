@@ -4,7 +4,9 @@
 [ext_resource type="PackedScene" uid="uid://jgst4ctmbads" path="res://assets/models/gokart.tscn" id="2_p0d37"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0v01v"]
-friction = 0.96
+friction = 26.0
+rough = true
+bounce = 0.8
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p12rf"]
 
@@ -20,6 +22,7 @@ current = true
 fov = 75.3172
 
 [node name="Vehicle" type="RigidBody3D" parent="."]
+mass = 45.409
 physics_material_override = SubResource("PhysicsMaterial_0v01v")
 
 [node name="Collision" type="CollisionShape3D" parent="Vehicle"]
