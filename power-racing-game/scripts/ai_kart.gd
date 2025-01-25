@@ -17,7 +17,7 @@ extends Node3D
 @onready var vehicle:Node3D = $Vehicle
 @onready var body:Node3D = $Body
 
-@export var speed:float = 170
+@export var speed:float = 200
 @export var turnspeed:float = 30
 
 var gravity = 9
@@ -25,9 +25,9 @@ var gravity = 9
 func _ready():
 	for ray in $Body/Rays.get_children():
 		ray.add_exception(vehicle)
-	speed += randf_range(-2, 45)
+	speed += randf_range(-5, 25)
 	turnspeed = speed * (1/3.0)
-	flinch = randf_range(0.7, 1.4)
+	flinch = randf_range(0.8, 1.7)
 
 func align_with_y(xform, new_y):
 	xform.basis.y = new_y
@@ -67,6 +67,10 @@ func _physics_process(delta):
 	$Body/BackL/WheelControl.rotation.x += wheelspeed
 	$Body/BackR/WheelControl.rotation.x += wheelspeed
 	$GroundRay.position = $Vehicle.position
+	$TerrainRay.position = $GroundRay.position
+	
+	if $TerrainRay.is_colliding():
+		vehicle.velocity *= 0.3
 	
 	if $GroundRay.get_collider() or (vehicle.is_on_floor() or vehicle.is_on_wall()):
 		$Body.global_position = $GroundRay.get_collision_point()

@@ -1,8 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bwsgksn5sba8h"]
+[gd_scene load_steps=7 format=3 uid="uid://bwsgksn5sba8h"]
 
 [ext_resource type="Script" path="res://scripts/ai_kart.gd" id="1_r64y7"]
 [ext_resource type="PackedScene" uid="uid://jgst4ctmbads" path="res://assets/models/gokart.tscn" id="2_w7xti"]
 [ext_resource type="AudioStream" uid="uid://bpth12g2qy4kp" path="res://assets/sound/engine.wav" id="3_6cx5t"]
+[ext_resource type="Texture2D" uid="uid://cv62c21c8cf7r" path="res://assets/sprite/backThin.png" id="4_caqky"]
+[ext_resource type="Texture2D" uid="uid://c6oj3i2e01ouk" path="res://assets/sprite/frontThin.png" id="5_ffcg5"]
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p12rf"]
 
@@ -57,27 +59,15 @@ target_position = Vector3(5, 0, 0)
 
 [node name="RayCast3D11" type="RayCast3D" parent="Body/Rays"]
 transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D12" type="RayCast3D" parent="Body/Rays"]
-transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 0, 0.0655943, 0)
-target_position = Vector3(5, 0, 0)
-
-[node name="RayCast3D13" type="RayCast3D" parent="Body/Rays"]
-transform = Transform3D(-0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, -0.34202, 0, 0.0655943, 0)
-target_position = Vector3(5, 0, 0)
-
-[node name="RayCast3D14" type="RayCast3D" parent="Body/Rays"]
-transform = Transform3D(0.422618, 0, -0.906308, 0, 1, 0, 0.906308, 0, 0.422618, 0, 0.0655943, 0)
 target_position = Vector3(5, 0, 0)
 
 [node name="RayCast3D15" type="RayCast3D" parent="Body/Rays"]
 transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
+target_position = Vector3(5, 0, 0)
 
 [node name="RayCast3D16" type="RayCast3D" parent="Body/Rays"]
 transform = Transform3D(-0.422618, 0, 0.906308, 0, 1, 0, -0.906308, 0, -0.422618, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
+target_position = Vector3(5, 0, 0)
 
 [node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Body"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.670486, 0)
@@ -90,8 +80,17 @@ autoplay = true
 max_distance = 20.0
 doppler_tracking = 2
 
-[node name="Camera3D" type="Camera3D" parent="Body"]
-transform = Transform3D(0.201951, 0.52196, -0.828718, 0, 0.846152, 0.532941, 0.979396, -0.107628, 0.170881, -5.43298, 3.4939, 1.12028)
+[node name="Sprite3D" type="Sprite3D" parent="Body"]
+transform = Transform3D(0.303356, 0, 0, 0, 0.303356, 0, 0, 0, 0.303356, 0, 0.571953, 0.256647)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("4_caqky")
+
+[node name="Sprite3D2" type="Sprite3D" parent="Body"]
+transform = Transform3D(0.303356, 0, 0, 0, 0.303356, 0, 0, 0, 0.303356, 0, 0.571953, 0.254758)
+billboard = 2
+texture_filter = 0
+texture = ExtResource("5_ffcg5")
 
 [node name="Vehicle" type="CharacterBody3D" parent="."]
 
@@ -104,3 +103,7 @@ target_position = Vector3(0, -1.3, 0)
 
 [node name="Look" type="Node3D" parent="GroundRay"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383039, 0)
+
+[node name="TerrainRay" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.383039, 0)
+target_position = Vector3(0, -1.3, 0)
