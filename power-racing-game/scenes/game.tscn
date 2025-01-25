@@ -29,3 +29,5 @@ environment = SubResource("Environment_hhrjw")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.992033, 0)
 shape = SubResource("WorldBoundaryShape3D_vyo1u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]

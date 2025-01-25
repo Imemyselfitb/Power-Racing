@@ -7,6 +7,8 @@ var accel: float = 50
 var steer: float = 50.0 * PI / 180
 var turn_stop_limit: float = 0.5
 
+var turnvel:float = 0
+
 func _physics_process(delta: float) -> void:
 	var turn_dir: float = Input.get_action_strength("TurnLeft")
 	turn_dir -= Input.get_action_strength("TurnRight")
@@ -20,7 +22,11 @@ func _physics_process(delta: float) -> void:
 	body.transform.origin = vehicle.transform.origin
 	vehicle.apply_central_force(body.global_transform.basis.z * move_dir)
 	
-	if vehicle.linear_velocity.length() > turn_stop_limit:
-		var new_basis: Basis = body.global_transform.basis.rotated(body.global_transform.basis.y, turn_dir)
+	turnvel += turn_dir
+	$Body/FrontWheels.rotation.y = turn_dir
+	
+	if $GroundRay.is_colliding():
+		turnvel *= 0.5
+		var new_basis: Basis = body.global_transform.basis.rotated(body.global_transform.basis.y, turnvel)
 		body.global_transform.basis = body.global_transform.basis.slerp(new_basis, delta)
 		body.global_transform = body.global_transform.orthonormalized()

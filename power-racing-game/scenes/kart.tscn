@@ -1,21 +1,28 @@
-[gd_scene load_steps=3 format=3 uid="uid://biuba22ol7yd5"]
+[gd_scene load_steps=5 format=3 uid="uid://biuba22ol7yd5"]
 
 [ext_resource type="Script" path="res://scripts/kart.gd" id="1_pvsgw"]
+[ext_resource type="PackedScene" uid="uid://jgst4ctmbads" path="res://assets/models/gokart.tscn" id="2_p0d37"]
+
+[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_0v01v"]
+friction = 0.96
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p12rf"]
 
 [node name="Kart" type="Node3D"]
 script = ExtResource("1_pvsgw")
 
-[node name="Body" type="CSGBox3D" parent="."]
-size = Vector3(1, 1, 2)
+[node name="Body" parent="." instance=ExtResource("2_p0d37")]
+transform = Transform3D(-0.577737, 0, 5.05073e-08, 0, 0.577737, 0, -5.05073e-08, 0, -0.577737, 0, 0, 0)
 
 [node name="Camera3D" type="Camera3D" parent="Body"]
-transform = Transform3D(0.999936, -0.00819103, 0.00780077, 0, 0.689645, 0.724147, -0.0113113, -0.724101, 0.689601, 0.0109515, 3.94774, 4.91821)
+transform = Transform3D(1.73078, -0.0048667, 0.0189575, 0, 1.67653, 0.430394, -0.0195722, -0.430366, 1.67642, 0.222727, 5.0566, 19.6959)
 current = true
 fov = 75.3172
 
 [node name="Vehicle" type="RigidBody3D" parent="."]
+physics_material_override = SubResource("PhysicsMaterial_0v01v")
 
 [node name="Collision" type="CollisionShape3D" parent="Vehicle"]
 shape = SubResource("SphereShape3D_p12rf")
+
+[node name="GroundRay" type="RayCast3D" parent="."]
