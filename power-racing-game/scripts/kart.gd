@@ -5,22 +5,27 @@ extends Node3D
 
 var accel: float = 50
 var steer: float = 50.0 * PI / 180
-var turn_stop_limit: float = 0.5
+var turn_stop_limit: float = 0.3
 
 func _physics_process(delta: float) -> void:
-	var turn_dir: float = Input.get_action_strength("TurnLeft")
-	turn_dir -= Input.get_action_strength("TurnRight")
 	var move_dir: float = Input.get_action_strength("MoveBackward")
 	move_dir -= Input.get_action_strength("MoveForward")
-	turn_dir *= steer
 	move_dir *= accel
-	if move_dir == 0:
-		vehicle.linear_velocity *= 0.8
+	
+	var turn_dir: float = Input.get_action_strength("TurnLeft")
+	turn_dir -= Input.get_action_strength("TurnRight")
+	turn_dir *= steer
+	turn_dir *= sign(-move_dir)
+	if vehicle.linear_velocity.length() > turn_stop_limit:
+		var force: float = clamp(vehicle.linear_velocity.length(), 0, 1) * delta
+		var new_basis: Basis = body.global_transform.basis.rotated(body.global_transform.basis.y, turn_dir)
+		body.global_transform.basis = body.global_transform.basis.slerp(new_basis, 0.8 * delta)
+		body.global_transform = body.global_transform.orthonormalized()
 	
 	body.transform.origin = vehicle.transform.origin
 	vehicle.apply_central_force(body.global_transform.basis.z * move_dir)
+	if move_dir == 0:
+		vehicle.linear_velocity.x *= 0.8
+		# (Keep vertical velocity the same)
+		vehicle.linear_velocity.z *= 0.8
 	
-	if vehicle.linear_velocity.length() > turn_stop_limit:
-		var new_basis: Basis = body.global_transform.basis.rotated(body.global_transform.basis.y, turn_dir)
-		body.global_transform.basis = body.global_transform.basis.slerp(new_basis, delta)
-		body.global_transform = body.global_transform.orthonormalized()
