@@ -5,17 +5,84 @@
 
 [sub_resource type="SphereShape3D" id="SphereShape3D_p12rf"]
 
-[node name="Kart" type="Node3D" node_paths=PackedStringArray("LeftRayAvoid", "RightRayAvoid", "LeftRayVoid", "RightRayVoid")]
+[node name="Kart" type="Node3D"]
 script = ExtResource("1_r64y7")
-LeftRayAvoid = NodePath("LeftRaysAvoid")
-RightRayAvoid = NodePath("")
-LeftRayVoid = NodePath("LeftRaysVoid")
-RightRayVoid = NodePath("")
 
 [node name="Body" parent="." instance=ExtResource("2_w7xti")]
 
-[node name="CamGoal" type="Node3D" parent="Body"]
-transform = Transform3D(1, -6.90192e-08, 1.60647e-07, 0, 0.918791, 0.394744, -1.74846e-07, -0.394744, 0.918791, 7.51193e-07, 1.84585, 4.29633)
+[node name="Rays" type="Node3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66538, 0)
+
+[node name="RayCast3D" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+hit_back_faces = false
+
+[node name="RayCast3D2" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast3D3" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast3D4" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast3D5" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast3D6" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast3D7" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast3D8" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast3D9" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast3D10" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast3D11" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast3D12" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(-8.74228e-08, 0, -1, 0, 1, 0, 1, 0, -8.74228e-08, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast3D13" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(-0.34202, 0, -0.939693, 0, 1, 0, 0.939693, 0, -0.34202, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast3D14" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(0.422618, 0, -0.906308, 0, 1, 0, 0.906308, 0, 0.422618, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast3D15" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+
+[node name="RayCast3D16" type="RayCast3D" parent="Body/Rays"]
+transform = Transform3D(-0.422618, 0, 0.906308, 0, 1, 0, -0.906308, 0, -0.422618, 0, 0.0655943, 0)
+target_position = Vector3(5, 0, 0)
+
+[node name="Label3D" type="Label3D" parent="Body"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.07804, 0)
+pixel_size = 0.02
+billboard = 1
+text = "sigma"
 
 [node name="Vehicle" type="CharacterBody3D" parent="."]
 
@@ -26,53 +93,5 @@ shape = SubResource("SphereShape3D_p12rf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.383039, 0)
 target_position = Vector3(0, -1.3, 0)
 
-[node name="LeftRaysAvoid" type="Node3D" parent="."]
-
-[node name="RayCast3D" type="RayCast3D" parent="LeftRaysAvoid"]
-target_position = Vector3(-10, 0, 0)
-
-[node name="RayCast3D2" type="RayCast3D" parent="LeftRaysAvoid"]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0, 0, 0)
-target_position = Vector3(-10, 0, 0)
-
-[node name="RayCast3D3" type="RayCast3D" parent="LeftRaysAvoid"]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, 0, 0)
-target_position = Vector3(-10, 0, 0)
-
-[node name="RayCast3D4" type="RayCast3D" parent="LeftRaysAvoid"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
-target_position = Vector3(-10, 0, 0)
-
-[node name="RayCast3D5" type="RayCast3D" parent="LeftRaysAvoid"]
-transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 0, 0, 0)
-target_position = Vector3(-10, 0, 0)
-
-[node name="RayCast3D6" type="RayCast3D" parent="LeftRaysAvoid"]
-transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0, 0, 0)
-target_position = Vector3(-10, 0, 0)
-
-[node name="LeftRaysVoid" type="Node3D" parent="."]
-
-[node name="RayCast3D4" type="RayCast3D" parent="LeftRaysVoid"]
-transform = Transform3D(0.994629, -0.103504, 0, 0.103504, 0.994629, 0, 0, 0, 1, 0, 0.596413, 0)
-target_position = Vector3(-10, 0, 0)
-
-[node name="RayCast3D5" type="RayCast3D" parent="LeftRaysVoid"]
-transform = Transform3D(0.960738, -0.103504, -0.257429, 0.0999775, 0.994629, -0.0267889, 0.258819, 0, 0.965926, 0, 0.596413, 0)
-target_position = Vector3(-10, 0, 0)
-
-[node name="RayCast3D6" type="RayCast3D" parent="LeftRaysVoid"]
-transform = Transform3D(0.960738, -0.103504, 0.257429, 0.0999775, 0.994629, 0.0267889, -0.258819, 0, 0.965926, 0, 0.596413, 0)
-target_position = Vector3(-10, 0, 0)
-
-[node name="RayCast3D7" type="RayCast3D" parent="LeftRaysVoid"]
-transform = Transform3D(-0.994629, 0.103504, 8.74228e-08, 0.103504, 0.994629, 0, -8.69532e-08, 9.04863e-09, -1, 0, 0.596413, 0)
-target_position = Vector3(-10, 0, 0)
-
-[node name="RayCast3D8" type="RayCast3D" parent="LeftRaysVoid"]
-transform = Transform3D(-0.960738, 0.103504, 0.257429, 0.0999775, 0.994629, -0.0267889, -0.258819, 9.04863e-09, -0.965926, 0, 0.596413, 0)
-target_position = Vector3(-10, 0, 0)
-
-[node name="RayCast3D9" type="RayCast3D" parent="LeftRaysVoid"]
-transform = Transform3D(-0.960738, 0.103504, -0.257429, 0.0999775, 0.994629, 0.0267889, 0.258819, 9.04863e-09, -0.965926, 0, 0.596413, 0)
-target_position = Vector3(-10, 0, 0)
+[node name="Look" type="Node3D" parent="GroundRay"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383039, 0)

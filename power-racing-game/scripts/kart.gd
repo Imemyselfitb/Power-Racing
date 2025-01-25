@@ -5,7 +5,7 @@ class_name Kart
 @onready var vehicle = $Vehicle
 
 var accel: float = 1.2
-var steer: float = 40.0 * PI / 180
+var steer: float = 70.0 * PI / 180
 var turn_stop_limit: float = 0.3
 var grip = 0.7
 
@@ -28,7 +28,7 @@ func _physics_process(delta: float) -> void:
 	turn_dir *= steer
 	
 	$Body/FrontWheels.rotation.y = lerp($Body/FrontWheels.rotation.y, turn_dir / 2.0, 0.5)
-	turn_dir *= sign(-move_dir)
+	turn_dir *= sign(-move_dir + 0.00000001)
 	
 	turnvel = lerp(turnvel, turn_dir, 0.1)
 	
