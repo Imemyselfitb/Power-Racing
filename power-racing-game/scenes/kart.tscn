@@ -29,6 +29,10 @@ shape = SubResource("SphereShape3D_p12rf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.383039, 0)
 target_position = Vector3(0, -1.3, 0)
 
+[node name="TerrainRay" type="RayCast3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.383039, 0)
+target_position = Vector3(0, -1.3, 0)
+
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(1, 3.83647e-07, -2.17578e-06, 0, 0.984808, 0.173648, 2.20934e-06, -0.173648, 0.984808, -8.72261e-06, 1.48474, 3.94806)
 current = true

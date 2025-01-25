@@ -17,7 +17,7 @@ extends Node3D
 @onready var vehicle:Node3D = $Vehicle
 @onready var body:Node3D = $Body
 
-@export var speed:float = 200
+@export var speed:float = 190
 @export var turnspeed:float = 30
 
 var gravity = 9
