@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://c2dx5ytsalxq1"]
+[gd_scene load_steps=20 format=3 uid="uid://c2dx5ytsalxq1"]
 
 [ext_resource type="Script" path="res://scripts/main_menu.gd" id="1_4ahg1"]
 [ext_resource type="PackedScene" uid="uid://jgst4ctmbads" path="res://assets/models/gokart.tscn" id="1_grjfu"]
@@ -8,7 +8,7 @@
 [ext_resource type="Script" path="res://scripts/pureYBillboard.gd" id="4_pexwk"]
 [ext_resource type="Texture2D" uid="uid://c6oj3i2e01ouk" path="res://assets/sprite/frontThin.png" id="5_8tqu4"]
 [ext_resource type="PackedScene" uid="uid://bwsgksn5sba8h" path="res://scenes/aiKart.tscn" id="8_ufp2a"]
-[ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="9_840al"]
+[ext_resource type="PackedScene" uid="uid://vfjdfr2kx0d" path="res://scenes/level_select.tscn" id="9_lmuey"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_bnegs"]
 sky_top_color = Color(0.19, 0.811, 1, 1)
@@ -47,6 +47,69 @@ _data = {
 }
 point_count = 17
 
+[sub_resource type="StyleBoxEmpty" id="StyleBoxEmpty_303d3"]
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_q7pyg"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_kyfwg"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 5
+border_width_right = 5
+border_width_bottom = 23
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+anti_aliasing = false
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_15cij"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 5
+border_width_top = 24
+border_width_right = 5
+border_width_bottom = 5
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 12
+corner_radius_top_right = 12
+corner_radius_bottom_right = 12
+corner_radius_bottom_left = 12
+expand_margin_left = 5.0
+expand_margin_top = 5.0
+expand_margin_right = 5.0
+expand_margin_bottom = 5.0
+anti_aliasing = false
+
+[sub_resource type="Theme" id="Theme_ypvro"]
+Button/colors/font_color = Color(0, 0, 0, 1)
+Button/colors/font_focus_color = Color(0, 0, 0, 1)
+Button/colors/font_hover_color = Color(0, 0, 0, 1)
+Button/colors/font_pressed_color = Color(0, 0, 0, 1)
+Button/styles/focus = SubResource("StyleBoxEmpty_303d3")
+Button/styles/hover = SubResource("StyleBoxFlat_q7pyg")
+Button/styles/normal = SubResource("StyleBoxFlat_kyfwg")
+Button/styles/pressed = SubResource("StyleBoxFlat_15cij")
+
 [node name="MainMenu" type="Node"]
 script = ExtResource("1_4ahg1")
 
@@ -62,20 +125,20 @@ shadow_normal_bias = 10.0
 shadow_blur = 0.0
 
 [node name="gokart" parent="Spinny" instance=ExtResource("1_grjfu")]
-transform = Transform3D(-0.811974, 2.13618, -0.0193052, -1.23659, -0.486838, -1.85924, -1.74197, -0.650124, 1.32883, 0, 0, 0)
+transform = Transform3D(-0.275614, -2.11715, 0.815252, 1.78039, 0.307158, 1.39957, -1.40612, 0.803897, 1.6123, 0, 0, 0)
 script = ExtResource("2_wsbk0")
 x = 2.0
 y = -3.0
 z = 0.3
 
 [node name="Sprite3D2" type="Sprite3D" parent="Spinny/gokart"]
-transform = Transform3D(0.270736, 0, -0.149941, 0, 0.309484, 0, 0.149941, 0, 0.270736, 9.95304e-06, 0.581908, 0.251819)
+transform = Transform3D(0.245482, 0, -0.188464, 0, 0.309484, 0, 0.188464, 0, 0.245482, 1.72555e-05, 0.58078, 0.251314)
 texture_filter = 0
 texture = ExtResource("5_8tqu4")
 script = ExtResource("4_pexwk")
 
 [node name="modeltrack" parent="Spinny" instance=ExtResource("2_jvj5w")]
-transform = Transform3D(1.1355, -0.38673, -1.06254, 0, 1.50582, -0.548078, 1.13073, 0.388362, 1.06702, 0, 0, 0)
+transform = Transform3D(0.729065, -0.488066, -1.34096, 0, 1.50582, -0.548078, 1.42702, 0.249353, 0.685096, 0, 0, 0)
 script = ExtResource("3_5lpxo")
 amount = 4.0
 
@@ -93,22 +156,19 @@ shape = SubResource("WorldBoundaryShape3D_4icqm")
 curve = SubResource("Curve3D_v4sw3")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Spinny/Path3D"]
-transform = Transform3D(-0.0712461, 0, -0.997449, 0, 1, 0, 0.997449, 0, -0.0712461, 0.981407, 0, -7.89393)
+transform = Transform3D(-0.0712461, 0, -0.997448, 0, 1, 0, 0.997448, 0, -0.0712461, 0.981407, 0, -7.89393)
 
 [node name="Kart" parent="Spinny" node_paths=PackedStringArray("path") instance=ExtResource("8_ufp2a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.13283)
 path = NodePath("../Path3D")
-speed = 20.0
 
 [node name="Kart2" parent="Spinny" node_paths=PackedStringArray("path") instance=ExtResource("8_ufp2a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.71777, 0, 4.7294)
 path = NodePath("../Path3D")
-speed = 20.0
 
 [node name="Kart3" parent="Spinny" node_paths=PackedStringArray("path") instance=ExtResource("8_ufp2a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28558, 0, 4.7294)
 path = NodePath("../Path3D")
-speed = 20.0
 turnspeed = 120.0
 
 [node name="UI" type="Control" parent="."]
@@ -118,7 +178,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("9_840al")
+theme = SubResource("Theme_ypvro")
 
 [node name="SlideInButtons" type="Control" parent="UI"]
 layout_mode = 1
@@ -128,7 +188,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Button" type="Button" parent="UI/SlideInButtons"]
+[node name="StoryButton" type="Button" parent="UI/SlideInButtons"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -139,7 +199,7 @@ offset_bottom = -116.0
 grow_vertical = 0
 text = "story"
 
-[node name="Button2" type="Button" parent="UI/SlideInButtons"]
+[node name="LevelSelectButton" type="Button" parent="UI/SlideInButtons"]
 layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
@@ -150,3 +210,9 @@ offset_right = 184.0
 offset_bottom = -16.0
 grow_vertical = 0
 text = "select track"
+
+[node name="LevelSelect" parent="UI" instance=ExtResource("9_lmuey")]
+visible = false
+layout_mode = 1
+
+[connection signal="button_down" from="UI/SlideInButtons/LevelSelectButton" to="." method="_on_level_select_button_button_down"]
