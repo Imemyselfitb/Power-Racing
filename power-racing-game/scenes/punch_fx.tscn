@@ -1,0 +1,31 @@
+[gd_scene load_steps=6 format=3 uid="uid://oytp5vgmhp2q"]
+
+[ext_resource type="Texture2D" uid="uid://7g2w5p6t47sq" path="res://assets/sprite/punchbg1.png" id="1_jmvql"]
+[ext_resource type="Script" path="res://scripts/punch_fx.gd" id="2_a1al6"]
+[ext_resource type="Texture2D" uid="uid://dmqpr7vg0g6gk" path="res://assets/sprite/punchprimary.png" id="3_4o8ck"]
+[ext_resource type="Texture2D" uid="uid://ct2j3p6o2tusr" path="res://assets/sprite/punchsecondary.png" id="4_mn8vd"]
+[ext_resource type="Texture2D" uid="uid://c6dlpslp6ce5t" path="res://assets/sprite/punchblack.png" id="5_qhtc6"]
+
+[node name="PunchFX" type="Sprite3D"]
+cast_shadow = 0
+billboard = 1
+texture_filter = 0
+texture = ExtResource("1_jmvql")
+script = ExtResource("2_a1al6")
+
+[node name="punch" type="Sprite3D" parent="."]
+billboard = 1
+texture_filter = 0
+render_priority = 1
+texture = ExtResource("3_4o8ck")
+
+[node name="secondary" type="Sprite3D" parent="."]
+billboard = 1
+texture_filter = 0
+texture = ExtResource("4_mn8vd")
+
+[node name="frame" type="Sprite3D" parent="."]
+billboard = 1
+texture_filter = 0
+render_priority = 2
+texture = ExtResource("5_qhtc6")

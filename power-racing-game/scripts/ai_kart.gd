@@ -12,22 +12,27 @@ extends Node3D
 @export var flinch:float = 1
 
 @export var path:Path3D = null
-@export var pathfollow:PathFollow3D = null
+var pathfollow:PathFollow3D = PathFollow3D.new()
 
 @onready var vehicle:Node3D = $Vehicle
 @onready var body:Node3D = $Body
 
-@export var speed:float = 190
+@export var speed:float = 172
 @export var turnspeed:float = 30
 
 var gravity = 9
 
+var health:int = 3
+
 func _ready():
 	for ray in $Body/Rays.get_children():
 		ray.add_exception(vehicle)
-	speed += randf_range(-5, 25)
-	turnspeed = speed * (1/3.0)
+	speed += randf_range(-2, 2)
+	turnspeed = 8000 / speed
 	flinch = randf_range(0.8, 1.7)
+	
+	path.add_child(pathfollow)
+	pathfollow.use_model_front = true
 
 func align_with_y(xform, new_y):
 	xform.basis.y = new_y
@@ -51,11 +56,11 @@ func _physics_process(delta):
 		if ray.is_colliding():
 			goaway -= (ray.get_collision_point() - vehicle.global_position).normalized() * flinch
 	goaway.y = 0
+	var turn = $GroundRay/Look.global_transform.basis.z * turnspeed * delta
 	if vehicle.velocity.length() < 600:
 		vehicle.velocity += pathfollow.global_transform.basis.z * speed * delta
-	var turn = $GroundRay/Look.global_transform.basis.z * turnspeed * delta
 	vehicle.velocity -= turn
-	$Body/FrontWheels.rotation.y = (vehicle.velocity.x * vehicle.velocity.z) / speed / 6.3
+	$Body/FrontWheels.rotation.y = (vehicle.velocity.x * vehicle.velocity.z) / speed / 2.3
 	vehicle.velocity += goaway
 	$GroundRay/Look.look_at(vehicle.global_position)
 	body.rotation.y = lerp_angle(body.rotation.y, $GroundRay/Look.rotation.y, 12 * delta)

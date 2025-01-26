@@ -1,5 +1,6 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxjrbo2iiimae"]
+[gd_scene load_steps=11 format=3 uid="uid://bxjrbo2iiimae"]
 
+[ext_resource type="Script" path="res://scripts/track.gd" id="1_aptu2"]
 [ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="1_rnmua"]
 [ext_resource type="PackedScene" uid="uid://dk1hh2gdvpe7u" path="res://assets/models/testtrack.blend" id="2_8jj51"]
 [ext_resource type="PackedScene" uid="uid://bwsgksn5sba8h" path="res://scenes/aiKart.tscn" id="2_xqqmu"]
@@ -32,11 +33,10 @@ adjustment_brightness = 1.17
 adjustment_contrast = 1.17
 adjustment_saturation = 1.17
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qylam"]
-friction = 500.0
-rough = true
-
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vyo1u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_a1eik"]
+albedo_color = Color(0, 0.00833333, 0.1, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_p6gfj"]
 _data = {
@@ -46,6 +46,7 @@ _data = {
 point_count = 43
 
 [node name="Game" type="Node3D"]
+script = ExtResource("1_aptu2")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36608, 0, 0)
@@ -53,14 +54,17 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36608, 0, 0)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hhrjw")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-collision_layer = 3
-physics_material_override = SubResource("PhysicsMaterial_qylam")
+[node name="StaticBody3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -21.084, 0)
+collision_layer = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_vyo1u")
 
 [node name="testtrack" parent="." instance=ExtResource("2_8jj51")]
+
+[node name="BezierCircle" parent="testtrack" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_a1eik")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.787086, 0.616844, -2.3457e-08, -0.494911, 0.631501, 0.596883, 0.368184, -0.469798, 0.802328, 0, 72.3031, 0)
@@ -68,64 +72,56 @@ shadow_enabled = true
 shadow_normal_bias = 10.0
 shadow_blur = 0.0
 
-[node name="Kart" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+[node name="Kart" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_xqqmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.3115, 1.94338, 56.3164)
 path = NodePath("../Path3D")
-pathfollow = NodePath("../Path3D/PathFollow3D")
 
-[node name="Kart3" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+[node name="Kart3" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_xqqmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.7197, 1.94338, 69.7726)
 path = NodePath("../Path3D")
-pathfollow = NodePath("../Path3D/PathFollow3D")
 
-[node name="Kart4" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+[node name="Kart4" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_xqqmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.3115, 5.70691, 56.3164)
 path = NodePath("../Path3D")
-pathfollow = NodePath("../Path3D/PathFollow3D")
 
-[node name="Kart5" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+[node name="Kart5" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_xqqmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.7197, 5.70691, 69.7726)
 path = NodePath("../Path3D")
-pathfollow = NodePath("../Path3D/PathFollow3D")
 
-[node name="Kart6" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+[node name="Kart6" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_xqqmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.3115, 9.85477, 56.3164)
 path = NodePath("../Path3D")
-pathfollow = NodePath("../Path3D/PathFollow3D")
 
-[node name="Kart7" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+[node name="Kart7" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_xqqmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.7197, 9.85477, 69.7726)
 path = NodePath("../Path3D")
-pathfollow = NodePath("../Path3D/PathFollow3D")
 
-[node name="Kart8" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+[node name="Kart8" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_xqqmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.3115, 13.1774, 56.3164)
 path = NodePath("../Path3D")
-pathfollow = NodePath("../Path3D/PathFollow3D")
 
-[node name="Kart9" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+[node name="Kart9" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_xqqmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.7197, 13.1774, 69.7726)
 path = NodePath("../Path3D")
-pathfollow = NodePath("../Path3D/PathFollow3D")
 
-[node name="Kart10" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+[node name="Kart10" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_xqqmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.3115, 16.403, 56.3164)
 path = NodePath("../Path3D")
-pathfollow = NodePath("../Path3D/PathFollow3D")
 
-[node name="Kart11" parent="." node_paths=PackedStringArray("path", "pathfollow") instance=ExtResource("2_xqqmu")]
+[node name="Kart11" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_xqqmu")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.7197, 16.403, 69.7726)
 path = NodePath("../Path3D")
-pathfollow = NodePath("../Path3D/PathFollow3D")
 
 [node name="Path3D" type="Path3D" parent="."]
 curve = SubResource("Curve3D_p6gfj")
 
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.297066, 0, 0.954856, 0, 1, 0, -0.954856, 0, -0.297066, -7.52908, 0, -160.369)
-use_model_front = true
+[node name="StagePathFollow" type="PathFollow3D" parent="Path3D"]
+transform = Transform3D(0.913699, 0, -0.40639, 0, 1, 0, 0.40639, 0, 0.913699, -127.643, 0, 83.0837)
+progress = 848.652
 
 [node name="Kart2" parent="." instance=ExtResource("1_rnmua")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.6112, 7.75664, 51.0916)
+
+[connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]
 
 [editable path="testtrack"]
