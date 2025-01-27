@@ -1,11 +1,17 @@
 extends Node3D
 
+func _ready() -> void:
+	$"Level Transition/ColorRect/AnimationPlayer".get_animation("transition out").loop_mode = Animation.LoopMode.LOOP_NONE
+	$"Level Transition/ColorRect/AnimationPlayer".play("transition out")
+	await $"Level Transition/ColorRect/AnimationPlayer".animation_finished
+	#$"Level Transition".visible = false
+
 func _process(delta):
 	pass
 
 func _on_static_body_3d_body_entered(body):
-	if body is Kart:
-		pass #play respawn visual idk
+	#if body is Kart:
+		#pass #play respawn visual idk
 	
 	var tween = get_tree().create_tween()
 	body.global_position.y += 2

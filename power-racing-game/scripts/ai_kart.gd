@@ -43,7 +43,7 @@ func align_with_y(xform, new_y):
 var grip:float = 0.9
 
 func _physics_process(delta):
-	$Body/AudioStreamPlayer3D2.pitch_scale = vehicle.velocity.length() / 20.0
+	$Body/AudioStreamPlayer3D2.pitch_scale = max(vehicle.velocity.length() / 20.0, 0.1)
 	
 	vehicle.velocity.x *= grip
 	vehicle.velocity.z *= grip
@@ -62,7 +62,9 @@ func _physics_process(delta):
 	vehicle.velocity -= turn
 	$Body/FrontWheels.rotation.y = (vehicle.velocity.x * vehicle.velocity.z) / speed / 2.3
 	vehicle.velocity += goaway
-	$GroundRay/Look.look_at(vehicle.global_position)
+	Vector3()
+	if $GroundRay/Look.global_position.distance_squared_to( vehicle.global_position ) > 0.1:
+		$GroundRay/Look.look_at(vehicle.global_position)
 	body.rotation.y = lerp_angle(body.rotation.y, $GroundRay/Look.rotation.y, 12 * delta)
 	
 	var wheelspeed:float = vehicle.velocity.length() / 170.0

@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://ddbfgiwhcay1v"]
+[gd_scene load_steps=4 format=3 uid="uid://ddbfgiwhcay1v"]
 
 [ext_resource type="Script" path="res://scripts/levelSelect.gd" id="1_aswdw"]
 [ext_resource type="Texture2D" uid="uid://cpp08ukg1hptk" path="res://icon.svg" id="1_sfuho"]
+[ext_resource type="PackedScene" uid="uid://rg6bqigkpxyo" path="res://scenes/levelTransition.tscn" id="3_dspth"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -96,3 +97,7 @@ offset_right = 1104.0
 offset_bottom = 569.0
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
+
+[node name="Level Transition" parent="." instance=ExtResource("3_dspth")]
+visible = false
+layout_mode = 1

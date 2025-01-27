@@ -1,9 +1,10 @@
-[gd_scene load_steps=11 format=3 uid="uid://dah780b2oxa5u"]
+[gd_scene load_steps=12 format=3 uid="uid://dah780b2oxa5u"]
 
 [ext_resource type="PackedScene" uid="uid://dk1hh2gdvpe7u" path="res://assets/models/testtrack.blend" id="1_bie2y"]
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_tkx47"]
 [ext_resource type="PackedScene" uid="uid://bwsgksn5sba8h" path="res://scenes/aiKart.tscn" id="2_ncjig"]
 [ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="3_v3qel"]
+[ext_resource type="PackedScene" uid="uid://rg6bqigkpxyo" path="res://scenes/levelTransition.tscn" id="5_0j2n4"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
 sky_top_color = Color(0.19, 0.811, 1, 1)
@@ -116,5 +117,9 @@ curve = SubResource("Curve3D_p6gfj")
 
 [node name="PlayerKart" parent="." instance=ExtResource("3_v3qel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.6112, 7.75664, 51.0916)
+
+[node name="Level Transition" parent="." instance=ExtResource("5_0j2n4")]
+
+[connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]
 
 [editable path="testtrack"]
