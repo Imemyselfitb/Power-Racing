@@ -1,6 +1,5 @@
 extends Sprite3D
 
-
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	var tween:Tween = get_tree().create_tween()

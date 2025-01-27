@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=3 uid="uid://vfjdfr2kx0d"]
+[gd_scene load_steps=4 format=3 uid="uid://vfjdfr2kx0d"]
 
 [ext_resource type="Script" path="res://scripts/levelSelect.gd" id="1_aswdw"]
 [ext_resource type="Texture2D" uid="uid://cpp08ukg1hptk" path="res://icon.svg" id="1_sfuho"]
+[ext_resource type="PackedScene" uid="uid://d2m4362kx6ka7" path="res://scenes/levelTransition.tscn" id="3_nnsvc"]
 
 [node name="LevelSelect" type="Control"]
 layout_mode = 3
@@ -35,60 +36,103 @@ texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
 [node name="Level2" type="TextureButton" parent="Levels"]
-layout_mode = 0
-offset_left = 347.0
-offset_top = 150.0
-offset_right = 507.0
-offset_bottom = 310.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.371
+anchor_top = 0.355
+anchor_right = 0.371
+anchor_bottom = 0.355
+offset_left = -80.392
+offset_top = -80.04
+offset_right = 79.608
+offset_bottom = 79.96
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
 [node name="Level3" type="TextureButton" parent="Levels"]
-layout_mode = 0
-offset_left = 647.0
-offset_top = 150.0
-offset_right = 807.0
-offset_bottom = 310.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.631
+anchor_top = 0.355
+anchor_right = 0.631
+anchor_bottom = 0.355
+offset_left = -79.912
+offset_top = -80.04
+offset_right = 80.088
+offset_bottom = 79.96
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
 [node name="Level4" type="TextureButton" parent="Levels"]
-layout_mode = 0
-offset_left = 947.0
-offset_top = 150.0
-offset_right = 1107.0
-offset_bottom = 310.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.891
+anchor_top = 0.355
+anchor_right = 0.891
+anchor_bottom = 0.355
+offset_left = -79.432
+offset_top = -80.04
+offset_right = 80.568
+offset_bottom = 79.96
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
 [node name="Level5" type="TextureButton" parent="Levels"]
-offset_left = 44.0
-offset_top = 409.0
-offset_right = 204.0
-offset_bottom = 569.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.108
+anchor_top = 0.755
+anchor_right = 0.108
+anchor_bottom = 0.755
+offset_left = -80.416
+offset_top = -80.24
+offset_right = 79.584
+offset_bottom = 79.76
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
 [node name="Level6" type="TextureButton" parent="Levels"]
-offset_left = 344.0
-offset_top = 409.0
-offset_right = 504.0
-offset_bottom = 569.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.368
+anchor_top = 0.755
+anchor_right = 0.368
+anchor_bottom = 0.755
+offset_left = -79.936
+offset_top = -80.24
+offset_right = 80.064
+offset_bottom = 79.76
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
 [node name="Level7" type="TextureButton" parent="Levels"]
-offset_left = 644.0
-offset_top = 409.0
-offset_right = 804.0
-offset_bottom = 569.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.628
+anchor_top = 0.755
+anchor_right = 0.628
+anchor_bottom = 0.755
+offset_left = -79.4561
+offset_top = -80.24
+offset_right = 80.5439
+offset_bottom = 79.76
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
 [node name="Level8" type="TextureButton" parent="Levels"]
-offset_left = 944.0
-offset_top = 409.0
-offset_right = 1104.0
-offset_bottom = 569.0
+layout_mode = 1
+anchors_preset = -1
+anchor_left = 0.889
+anchor_top = 0.755
+anchor_right = 0.889
+anchor_bottom = 0.755
+offset_left = -80.1281
+offset_top = -80.24
+offset_right = 79.8719
+offset_bottom = 79.76
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
+
+[node name="Level Transition" parent="." instance=ExtResource("3_nnsvc")]
+visible = false
+layout_mode = 1

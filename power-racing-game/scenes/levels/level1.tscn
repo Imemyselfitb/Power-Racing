@@ -1,8 +1,10 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxjrbo2iiimae"]
+[gd_scene load_steps=12 format=3 uid="uid://bxjrbo2iiimae"]
 
 [ext_resource type="PackedScene" uid="uid://dk1hh2gdvpe7u" path="res://assets/models/testtrack.blend" id="1_bie2y"]
+[ext_resource type="Script" path="res://scripts/levels.gd" id="1_sumnc"]
 [ext_resource type="PackedScene" uid="uid://bwsgksn5sba8h" path="res://scenes/aiKart.tscn" id="2_ncjig"]
 [ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="3_v3qel"]
+[ext_resource type="PackedScene" uid="uid://d2m4362kx6ka7" path="res://scenes/levelTransition.tscn" id="5_1s7ku"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
 sky_top_color = Color(0.19, 0.811, 1, 1)
@@ -46,6 +48,7 @@ _data = {
 point_count = 43
 
 [node name="Game" type="Node3D"]
+script = ExtResource("1_sumnc")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36608, 0, 0)
@@ -117,5 +120,7 @@ use_model_front = true
 
 [node name="PlayerKart" parent="." instance=ExtResource("3_v3qel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.6112, 7.75664, 51.0916)
+
+[node name="Level Transition" parent="." instance=ExtResource("5_1s7ku")]
 
 [editable path="testtrack"]

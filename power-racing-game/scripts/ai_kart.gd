@@ -1,14 +1,5 @@
 extends Node3D
 
-##Will Avoid if something is detected
-@export var LeftRayAvoid:Node3D
-##Will Avoid if something is detected
-@export var RightRayAvoid:Node3D
-##Will Avoid if nothing is detected
-@export var LeftRayVoid:Node3D
-##Will Avoid if nothing is detected
-@export var RightRayVoid:Node3D
-
 @export var flinch:float = 1
 
 @export var path:Path3D = null
@@ -43,7 +34,7 @@ func align_with_y(xform, new_y):
 var grip:float = 0.9
 
 func _physics_process(delta):
-	$Body/AudioStreamPlayer3D2.pitch_scale = vehicle.velocity.length() / 20.0
+	$Body/AudioStreamPlayer3D2.pitch_scale = max(vehicle.velocity.length() / 20.0, 0.1)
 	
 	vehicle.velocity.x *= grip
 	vehicle.velocity.z *= grip
@@ -62,7 +53,8 @@ func _physics_process(delta):
 	vehicle.velocity -= turn
 	$Body/FrontWheels.rotation.y = (vehicle.velocity.x * vehicle.velocity.z) / speed / 2.3
 	vehicle.velocity += goaway
-	$GroundRay/Look.look_at(vehicle.global_position)
+	if $GroundRay/Look.global_position != vehicle.global_position:
+		$GroundRay/Look.look_at(vehicle.global_position)
 	body.rotation.y = lerp_angle(body.rotation.y, $GroundRay/Look.rotation.y, 12 * delta)
 	
 	var wheelspeed:float = vehicle.velocity.length() / 170.0
