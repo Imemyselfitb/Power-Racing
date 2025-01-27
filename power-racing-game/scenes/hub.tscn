@@ -1,0 +1,105 @@
+[gd_scene load_steps=13 format=3 uid="uid://baywfneyikyya"]
+
+[ext_resource type="PackedScene" uid="uid://u87oq7x0n1qn" path="res://assets/models/hub.blend" id="1_cwn3d"]
+[ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="2_3n78b"]
+[ext_resource type="PackedScene" uid="uid://bwsgksn5sba8h" path="res://scenes/aiKart.tscn" id="3_wbwx0"]
+[ext_resource type="Shader" path="res://scripts/water.gdshader" id="4_f2tl5"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_iq23o"]
+sky_top_color = Color(0.19, 0.811, 1, 1)
+sky_horizon_color = Color(0.8, 0.876667, 1, 1)
+sky_curve = 0.0955921
+ground_bottom_color = Color(0.06, 0.06, 0.06, 1)
+ground_horizon_color = Color(0.2542, 0.394423, 0.62, 1)
+ground_energy_multiplier = 1.79
+sun_angle_max = 7.78
+sun_curve = 48410.7
+
+[sub_resource type="Sky" id="Sky_k88c1"]
+sky_material = SubResource("ProceduralSkyMaterial_iq23o")
+
+[sub_resource type="Environment" id="Environment_fquj5"]
+background_mode = 2
+sky = SubResource("Sky_k88c1")
+glow_enabled = true
+glow_intensity = 0.28
+glow_bloom = 0.08
+glow_hdr_threshold = 0.24
+fog_light_color = Color(0.85, 0.98, 1, 1)
+fog_light_energy = 0.49
+fog_density = 0.0
+adjustment_enabled = true
+adjustment_brightness = 1.17
+adjustment_contrast = 1.17
+adjustment_saturation = 1.17
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_wvyrq"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_xdfak"]
+albedo_color = Color(0.056, 0.16, 0, 1)
+
+[sub_resource type="Curve3D" id="Curve3D_euf5k"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 24.156, 0, 42.5909, 0, 0, 0, 0, 0, 0, 28.6058, 0, 28.6058, 0, 0, 0, 0, 0, 0, 30.5129, 0, 16.21, 0, 0, 0, 0, 0, 0, 20.0241, 0, -11.7602, 0, 0, 0, 0, 0, 0, 10.4888, 0, -20.9776, 0, 0, 0, 0, 0, 0, -12.7137, 0, -45.1336, 0, 0, 0, 0, 0, 0, -31.1486, 0, -56.8938, 0, 0, 0, 0, 0, 0, -43.8623, 0, -61.9793, 0, 0, 0, 0, 0, 0, -53.7154, 0, -62.9328, 0, 0, 0, 0, 0, 0, -63.8863, 0, -59.7544, 0, 0, 0, 0, 0, 0, -73.1038, 0, -52.444, 0, 0, 0, 0, 0, 0, -77.2357, 0, -43.5444, 0, 0, 0, 0, 0, 0, -78.825, 0, -33.3735, 0, 0, 0, 0, 0, 0, -80.4142, 0, -20.3419, 0, 0, 0, 0, 0, 0, -79.4606, 0, 9.85311, 0, 0, 0, 0, 0, 0, -74.693, 0, 26.6988, 0, 0, 0, 0, 0, 0, -66.7469, 0, 45.7693, 0, 0, 0, 0, 0, 0, -59.7544, 0, 55.9403, 0, 0, 0, 0, 0, 0, -53.0797, 0, 62.9328, 0, 0, 0, 0, 0, 0, -48.3121, 0, 66.1112, 0, 0, 0, 0, 0, 0, -41.6374, 0, 69.6075, 0, 0, 0, 0, 0, 0, -36.2341, 0, 73.1038, 0, 0, 0, 0, 0, 0, -29.5594, 0, 74.693, 0, 0, 0, 0, 0, 0, -24.4739, 0, 75.0108, 0, 0, 0, 0, 0, 0, -15.2565, 0, 75.0108, 0, 0, 0, 0, 0, 0, -7.94606, 0, 74.3751, 0, 0, 0, 0, 0, 0, -2.54274, 0, 71.8324, 0, 0, 0, 0, 0, 0, 3.81412, 0, 67.3826, 0, 0, 0, 0, 0, 0, 9.53526, 0, 62.9328, 0, 0, 0, 0, 0, 0, 14.9386, 0, 57.5295, 0, 0, 0, 0, 0, 0, 19.0706, 0, 51.1726, 0, 0, 0, 0, 0, 0, 21.2955, 0, 47.6764, 0, 0, 0, 0, 0, 0, 24.156, 0, 42.5909),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 33
+
+[sub_resource type="CylinderMesh" id="CylinderMesh_cx8o0"]
+top_radius = 200.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3uv5i"]
+render_priority = 0
+shader = ExtResource("4_f2tl5")
+shader_parameter/cell_amount = 20
+shader_parameter/period = Vector2(5, 10)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_fquj5")
+
+[node name="hub" parent="." instance=ExtResource("1_cwn3d")]
+
+[node name="BezierCircle" parent="hub" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_wvyrq")
+
+[node name="ground" parent="hub" index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_xdfak")
+
+[node name="StaticBody3D" parent="hub/ground" index="0"]
+collision_layer = 3
+
+[node name="Kart" parent="." instance=ExtResource("2_3n78b")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 28.8582, 0.741564, 0)
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.802755, -0.327178, 0.498537, -0.229735, 0.601813, 0.764881, -0.550278, -0.728544, 0.407944, 0, 0, 0)
+shadow_enabled = true
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_euf5k")
+
+[node name="Kart2" parent="." node_paths=PackedStringArray("path") instance=ExtResource("3_wbwx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.5848, 1.67749, 0)
+path = NodePath("../Path3D")
+
+[node name="Kart3" parent="." node_paths=PackedStringArray("path") instance=ExtResource("3_wbwx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.5848, 1.67749, 10.925)
+path = NodePath("../Path3D")
+
+[node name="Kart4" parent="." node_paths=PackedStringArray("path") instance=ExtResource("3_wbwx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.5848, 1.67749, 18.8075)
+path = NodePath("../Path3D")
+
+[node name="Kart5" parent="." node_paths=PackedStringArray("path") instance=ExtResource("3_wbwx0")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.5848, 1.67749, 27.949)
+path = NodePath("../Path3D")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.3776, -2.9, 7.00536)
+mesh = SubResource("CylinderMesh_cx8o0")
+surface_material_override/0 = SubResource("ShaderMaterial_3uv5i")
+
+[editable path="hub"]

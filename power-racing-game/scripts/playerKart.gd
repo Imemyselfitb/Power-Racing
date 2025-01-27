@@ -41,7 +41,7 @@ func _process(delta):
 	$TerrainRay.position = $GroundRay.position
 	
 	if $TerrainRay.is_colliding():
-		vehicle.velocity *= 0.9
+		vehicle.velocity *= 0.7
 	
 	$Spedometer/Speedometer/SpeedometerDial.rotation = vehicle.velocity.length() / 70.0
 	$Spedometer/Speedometer/Speed.text = str(floor(vehicle.velocity.length())) + "m/s"

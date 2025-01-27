@@ -6,7 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://bwsgksn5sba8h" path="res://scenes/aiKart.tscn" id="2_ncjig"]
 [ext_resource type="Texture2D" uid="uid://dp4r2eyb75dwb" path="res://assets/sprite/timerenclosure.png" id="3_qmt2k"]
 [ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="3_v3qel"]
-[ext_resource type="PackedScene" path="res://scenes/levelTransition.tscn" id="5_0j2n4"]
+[ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="5_0j2n4"]
 [ext_resource type="PackedScene" uid="uid://olrqjglx2cq" path="res://scenes/race_start.tscn" id="8_yqg6k"]
 [ext_resource type="Script" path="res://scripts/forcetransitionout.gd" id="9_ebf88"]
 
@@ -20,12 +20,12 @@ ground_energy_multiplier = 1.79
 sun_angle_max = 7.78
 sun_curve = 48410.7
 
-[sub_resource type="Sky" id="Sky_k88c1"]
+[sub_resource type="Sky" id="Sky_elpwe"]
 sky_material = SubResource("ProceduralSkyMaterial_xy3eh")
 
 [sub_resource type="Environment" id="Environment_hhrjw"]
 background_mode = 2
-sky = SubResource("Sky_k88c1")
+sky = SubResource("Sky_elpwe")
 glow_enabled = true
 glow_intensity = 0.28
 glow_bloom = 0.08

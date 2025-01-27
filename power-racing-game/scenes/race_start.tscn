@@ -17,7 +17,7 @@ length = 4.0
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Rotate/Label:text")
+tracks/0/path = NodePath("origin/Rotate/Label:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -29,7 +29,7 @@ tracks/0/keys = {
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Rotate:rotation")
+tracks/1/path = NodePath("origin/Rotate:rotation")
 tracks/1/interp = 2
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -41,7 +41,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Rotate:position")
+tracks/2/path = NodePath("origin/Rotate:position")
 tracks/2/interp = 2
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -56,7 +56,7 @@ length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
-tracks/0/path = NodePath("Rotate/Label:text")
+tracks/0/path = NodePath("origin/Rotate/Label:text")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
@@ -69,7 +69,7 @@ to start"]
 tracks/1/type = "value"
 tracks/1/imported = false
 tracks/1/enabled = true
-tracks/1/path = NodePath("Rotate:rotation")
+tracks/1/path = NodePath("origin/Rotate:rotation")
 tracks/1/interp = 1
 tracks/1/loop_wrap = true
 tracks/1/keys = {
@@ -81,7 +81,7 @@ tracks/1/keys = {
 tracks/2/type = "value"
 tracks/2/imported = false
 tracks/2/enabled = true
-tracks/2/path = NodePath("Rotate:position")
+tracks/2/path = NodePath("origin/Rotate:position")
 tracks/2/interp = 1
 tracks/2/loop_wrap = true
 tracks/2/keys = {
@@ -107,21 +107,42 @@ grow_vertical = 2
 theme = ExtResource("1_ne2i4")
 script = ExtResource("2_upr7r")
 
-[node name="Rotate" type="Control" parent="."]
+[node name="InputDelay" type="Timer" parent="."]
+one_shot = true
+autostart = true
+
+[node name="Finish" type="Timer" parent="."]
+wait_time = 3.0
+
+[node name="origin" type="Control" parent="."]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -0.5
-offset_top = -0.5
-offset_right = 0.5
-offset_bottom = 0.5
+offset_left = -576.0
+offset_top = -324.0
+offset_right = -576.0
+offset_bottom = -324.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Label" type="Label" parent="Rotate"]
+[node name="Rotate" type="Control" parent="origin"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 575.5
+offset_top = 323.5
+offset_right = 576.5
+offset_bottom = 324.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="origin/Rotate"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -140,19 +161,12 @@ label_settings = SubResource("LabelSettings_qyabr")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="AnimationPlayer" type="AnimationPlayer" parent="Rotate"]
-root_node = NodePath("../..")
+[node name="AnimationPlayer" type="AnimationPlayer" parent="origin/Rotate"]
+root_node = NodePath("../../..")
 libraries = {
 "": SubResource("AnimationLibrary_c6tu8")
 }
 
-[node name="InputDelay" type="Timer" parent="."]
-one_shot = true
-autostart = true
-
-[node name="Finish" type="Timer" parent="."]
-wait_time = 3.0
-
-[connection signal="animation_finished" from="Rotate/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
 [connection signal="timeout" from="InputDelay" to="." method="_on_input_delay_timeout"]
 [connection signal="timeout" from="Finish" to="." method="_on_finish_timeout"]
+[connection signal="animation_finished" from="origin/Rotate/AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
