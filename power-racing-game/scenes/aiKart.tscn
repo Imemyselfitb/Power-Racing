@@ -77,7 +77,7 @@ volume_db = 20.0
 unit_size = 1.0
 pitch_scale = 1.21
 autoplay = true
-max_distance = 30.0
+max_distance = 100.0
 doppler_tracking = 2
 
 [node name="Sprite3D" type="Sprite3D" parent="Body"]

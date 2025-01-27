@@ -1,4 +1,4 @@
-[gd_scene load_steps=3 format=3 uid="uid://vfjdfr2kx0d"]
+[gd_scene load_steps=3 format=3 uid="uid://ddbfgiwhcay1v"]
 
 [ext_resource type="Script" path="res://scripts/levelSelect.gd" id="1_aswdw"]
 [ext_resource type="Texture2D" uid="uid://cpp08ukg1hptk" path="res://icon.svg" id="1_sfuho"]
@@ -20,7 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Level1" type="TextureButton" parent="Levels"]
+[node name="testlevel" type="TextureButton" parent="Levels"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.108
@@ -62,6 +62,7 @@ texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
 [node name="Level5" type="TextureButton" parent="Levels"]
+layout_mode = 0
 offset_left = 44.0
 offset_top = 409.0
 offset_right = 204.0
@@ -70,6 +71,7 @@ texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
 [node name="Level6" type="TextureButton" parent="Levels"]
+layout_mode = 0
 offset_left = 344.0
 offset_top = 409.0
 offset_right = 504.0
@@ -78,6 +80,7 @@ texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
 [node name="Level7" type="TextureButton" parent="Levels"]
+layout_mode = 0
 offset_left = 644.0
 offset_top = 409.0
 offset_right = 804.0
@@ -86,6 +89,7 @@ texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
 [node name="Level8" type="TextureButton" parent="Levels"]
+layout_mode = 0
 offset_left = 944.0
 offset_top = 409.0
 offset_right = 1104.0
