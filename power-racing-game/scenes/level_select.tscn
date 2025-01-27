@@ -20,7 +20,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="testlevel" type="TextureButton" parent="Levels"]
+[node name="Level1" type="TextureButton" parent="Levels"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.108
