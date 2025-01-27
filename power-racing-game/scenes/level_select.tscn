@@ -1,4 +1,8 @@
+<<<<<<< HEAD
 [gd_scene load_steps=4 format=3 uid="uid://vfjdfr2kx0d"]
+=======
+[gd_scene load_steps=3 format=3 uid="uid://ddbfgiwhcay1v"]
+>>>>>>> f7241ff68bcea4b620eff7cad94aac4b4a42ae51
 
 [ext_resource type="Script" path="res://scripts/levelSelect.gd" id="1_aswdw"]
 [ext_resource type="Texture2D" uid="uid://cpp08ukg1hptk" path="res://icon.svg" id="1_sfuho"]
@@ -78,6 +82,7 @@ texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
 [node name="Level5" type="TextureButton" parent="Levels"]
+<<<<<<< HEAD
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.108
@@ -88,10 +93,18 @@ offset_left = -80.416
 offset_top = -80.24
 offset_right = 79.584
 offset_bottom = 79.76
+=======
+layout_mode = 0
+offset_left = 44.0
+offset_top = 409.0
+offset_right = 204.0
+offset_bottom = 569.0
+>>>>>>> f7241ff68bcea4b620eff7cad94aac4b4a42ae51
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
 [node name="Level6" type="TextureButton" parent="Levels"]
+<<<<<<< HEAD
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.368
@@ -102,10 +115,18 @@ offset_left = -79.936
 offset_top = -80.24
 offset_right = 80.064
 offset_bottom = 79.76
+=======
+layout_mode = 0
+offset_left = 344.0
+offset_top = 409.0
+offset_right = 504.0
+offset_bottom = 569.0
+>>>>>>> f7241ff68bcea4b620eff7cad94aac4b4a42ae51
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
 [node name="Level7" type="TextureButton" parent="Levels"]
+<<<<<<< HEAD
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.628
@@ -116,10 +137,18 @@ offset_left = -79.4561
 offset_top = -80.24
 offset_right = 80.5439
 offset_bottom = 79.76
+=======
+layout_mode = 0
+offset_left = 644.0
+offset_top = 409.0
+offset_right = 804.0
+offset_bottom = 569.0
+>>>>>>> f7241ff68bcea4b620eff7cad94aac4b4a42ae51
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
 [node name="Level8" type="TextureButton" parent="Levels"]
+<<<<<<< HEAD
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.889
@@ -130,6 +159,13 @@ offset_left = -80.1281
 offset_top = -80.24
 offset_right = 79.8719
 offset_bottom = 79.76
+=======
+layout_mode = 0
+offset_left = 944.0
+offset_top = 409.0
+offset_right = 1104.0
+offset_bottom = 569.0
+>>>>>>> f7241ff68bcea4b620eff7cad94aac4b4a42ae51
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
