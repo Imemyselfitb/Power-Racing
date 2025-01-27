@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=3 uid="uid://dah780b2oxa5u"]
+[gd_scene load_steps=17 format=3 uid="uid://dah780b2oxa5u"]
 
 [ext_resource type="PackedScene" uid="uid://dk1hh2gdvpe7u" path="res://assets/models/testtrack.blend" id="1_bie2y"]
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_tkx47"]
@@ -8,6 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="3_v3qel"]
 [ext_resource type="PackedScene" path="res://scenes/levelTransition.tscn" id="5_0j2n4"]
 [ext_resource type="PackedScene" uid="uid://olrqjglx2cq" path="res://scenes/race_start.tscn" id="8_yqg6k"]
+[ext_resource type="Script" path="res://scripts/forcetransitionout.gd" id="9_ebf88"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
 sky_top_color = Color(0.19, 0.811, 1, 1)
@@ -129,8 +130,6 @@ curve = SubResource("Curve3D_p6gfj")
 [node name="PlayerKart" parent="." instance=ExtResource("3_v3qel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.6112, 7.75664, 51.0916)
 
-[node name="Level Transition" parent="." instance=ExtResource("5_0j2n4")]
-
 [node name="TrackUI" type="Control" parent="."]
 layout_mode = 3
 anchors_preset = 15
@@ -168,6 +167,10 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="RaceStart" parent="." instance=ExtResource("8_yqg6k")]
+
+[node name="Level Transition" parent="RaceStart" instance=ExtResource("5_0j2n4")]
+layout_mode = 1
+script = ExtResource("9_ebf88")
 
 [connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]
 

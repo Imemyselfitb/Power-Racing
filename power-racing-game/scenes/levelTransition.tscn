@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://rg6bqigkpxyo"]
+[gd_scene load_steps=7 format=3 uid="uid://rji30exvqmg5"]
 
 [ext_resource type="Shader" path="res://assets/shaders/level_select.gdshader" id="1_dckvg"]
 
