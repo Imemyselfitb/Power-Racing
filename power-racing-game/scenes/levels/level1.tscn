@@ -1,6 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://bxjrbo2iiimae"]
+[gd_scene load_steps=11 format=3 uid="uid://dah780b2oxa5u"]
 
 [ext_resource type="PackedScene" uid="uid://dk1hh2gdvpe7u" path="res://assets/models/testtrack.blend" id="1_bie2y"]
+[ext_resource type="Script" path="res://scripts/track.gd" id="1_tkx47"]
 [ext_resource type="PackedScene" uid="uid://bwsgksn5sba8h" path="res://scenes/aiKart.tscn" id="2_ncjig"]
 [ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="3_v3qel"]
 
@@ -8,7 +9,7 @@
 sky_top_color = Color(0.19, 0.811, 1, 1)
 sky_horizon_color = Color(0.8, 0.876667, 1, 1)
 sky_curve = 0.0955921
-ground_bottom_color = Color(0.27, 0.27, 0.27, 1)
+ground_bottom_color = Color(0.06, 0.06, 0.06, 1)
 ground_horizon_color = Color(0.2542, 0.394423, 0.62, 1)
 ground_energy_multiplier = 1.79
 sun_angle_max = 7.78
@@ -32,11 +33,10 @@ adjustment_brightness = 1.17
 adjustment_contrast = 1.17
 adjustment_saturation = 1.17
 
-[sub_resource type="PhysicsMaterial" id="PhysicsMaterial_qylam"]
-friction = 500.0
-rough = true
-
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vyo1u"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yljbs"]
+albedo_color = Color(0, 0, 0.13, 1)
 
 [sub_resource type="Curve3D" id="Curve3D_p6gfj"]
 _data = {
@@ -46,6 +46,7 @@ _data = {
 point_count = 43
 
 [node name="Game" type="Node3D"]
+script = ExtResource("1_tkx47")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36608, 0, 0)
@@ -53,14 +54,16 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36608, 0, 0)
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hhrjw")
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="Area3D" parent="."]
 collision_layer = 3
-physics_material_override = SubResource("PhysicsMaterial_qylam")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_vyo1u")
 
 [node name="testtrack" parent="." instance=ExtResource("1_bie2y")]
+
+[node name="BezierCircle" parent="testtrack" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_yljbs")
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.787086, 0.616844, -2.3457e-08, -0.494911, 0.631501, 0.596883, 0.368184, -0.469798, 0.802328, 0, 72.3031, 0)
@@ -110,10 +113,6 @@ path = NodePath("../Path3D")
 
 [node name="Path3D" type="Path3D" parent="."]
 curve = SubResource("Curve3D_p6gfj")
-
-[node name="PathFollow3D" type="PathFollow3D" parent="Path3D"]
-transform = Transform3D(-0.297074, 0, 0.954853, 0, 1, 0, -0.954853, 0, -0.297074, -7.52908, 0, -160.369)
-use_model_front = true
 
 [node name="PlayerKart" parent="." instance=ExtResource("3_v3qel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.6112, 7.75664, 51.0916)
