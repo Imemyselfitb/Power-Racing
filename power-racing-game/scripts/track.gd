@@ -1,7 +1,13 @@
 extends Node3D
 
+var time:float = 180 # 3 mins
+
 func _process(delta):
-	pass
+	time -= delta
+	if floori(time * 2) % 2 == 0:
+		$TrackUI/TimerContainer/Timer.text = "%2d:%02d" % [floor(time / 60), floori(time) % 60]
+	else:
+		$TrackUI/TimerContainer/Timer.text = "%2d %02d" % [floor(time / 60), floori(time) % 60]
 
 func _on_static_body_3d_body_entered(body):
 	if body is Kart:

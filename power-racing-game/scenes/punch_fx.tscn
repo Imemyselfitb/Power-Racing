@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://cqfangff3htqa"]
+[gd_scene load_steps=6 format=3 uid="uid://oytp5vgmhp2q"]
 
 [ext_resource type="Texture2D" uid="uid://7g2w5p6t47sq" path="res://assets/sprite/punchbg1.png" id="1_jmvql"]
 [ext_resource type="Script" path="res://scripts/punch_fx.gd" id="2_a1al6"]

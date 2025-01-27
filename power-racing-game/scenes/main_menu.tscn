@@ -63,11 +63,7 @@ shadow_normal_bias = 10.0
 shadow_blur = 0.0
 
 [node name="gokart" parent="Spinny" instance=ExtResource("1_grjfu")]
-<<<<<<< HEAD
-transform = Transform3D(1.88013, 0.420576, -1.22928, 0.493703, 1.76885, 1.36028, 1.20178, -1.38463, 1.36435, 0, 0, 0)
-=======
-transform = Transform3D(0.855616, 2.00899, 0.67438, -0.965016, 1.01686, -1.8049, -1.88669, 0.390971, 1.22902, 0, 0, 0)
->>>>>>> f7241ff68bcea4b620eff7cad94aac4b4a42ae51
+transform = Transform3D(0.999749, 1.17167, -1.68838, -0.686866, -1.57908, -1.50255, -1.93692, 1.16473, -0.338632, 0, 0, 0)
 script = ExtResource("2_wsbk0")
 x = 2.0
 y = -3.0
@@ -80,11 +76,7 @@ texture = ExtResource("5_8tqu4")
 script = ExtResource("4_pexwk")
 
 [node name="modeltrack" parent="Spinny" instance=ExtResource("2_jvj5w")]
-<<<<<<< HEAD
-transform = Transform3D(0.127739, -0.54633, -1.50104, 0, 1.50582, -0.548078, 1.59737, 0.0436889, 0.120035, 0, 0, 0)
-=======
-transform = Transform3D(-1.26865, 0.334837, 0.919962, 0, 1.50582, -0.548077, -0.979007, -0.4339, -1.19214, 0, 0, 0)
->>>>>>> f7241ff68bcea4b620eff7cad94aac4b4a42ae51
+transform = Transform3D(1.1489, -0.382074, -1.04975, 0, 1.50582, -0.548078, 1.11712, 0.392943, 1.07961, 0, 0, 0)
 script = ExtResource("3_5lpxo")
 amount = 4.0
 
@@ -102,39 +94,23 @@ shape = SubResource("WorldBoundaryShape3D_4icqm")
 curve = SubResource("Curve3D_v4sw3")
 
 [node name="PathFollow3D" type="PathFollow3D" parent="Spinny/Path3D"]
-<<<<<<< HEAD
-transform = Transform3D(-0.071246, 0, -0.997447, 0, 1, 0, 0.997447, 0, -0.071246, 0.981407, 0, -7.89393)
-=======
 transform = Transform3D(-0.071246, 0, -0.997448, 0, 1, 0, 0.997448, 0, -0.071246, 0.981407, 0, -7.89393)
->>>>>>> f7241ff68bcea4b620eff7cad94aac4b4a42ae51
 
 [node name="Kart" parent="Spinny" node_paths=PackedStringArray("path") instance=ExtResource("8_ufp2a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -7.13283)
 path = NodePath("../Path3D")
-<<<<<<< HEAD
-speed = 1.0
-=======
 speed = 20.0
->>>>>>> f7241ff68bcea4b620eff7cad94aac4b4a42ae51
 
 [node name="Kart2" parent="Spinny" node_paths=PackedStringArray("path") instance=ExtResource("8_ufp2a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 5.71777, 0, 4.7294)
 path = NodePath("../Path3D")
-<<<<<<< HEAD
-speed = 1.0
-=======
 speed = 20.0
->>>>>>> f7241ff68bcea4b620eff7cad94aac4b4a42ae51
 
 [node name="Kart3" parent="Spinny" node_paths=PackedStringArray("path") instance=ExtResource("8_ufp2a")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -3.28558, 0, 4.7294)
 path = NodePath("../Path3D")
-<<<<<<< HEAD
-speed = 1.0
-=======
 speed = 20.0
 turnspeed = 120.0
->>>>>>> f7241ff68bcea4b620eff7cad94aac4b4a42ae51
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

@@ -125,7 +125,7 @@ shadow_normal_bias = 10.0
 shadow_blur = 0.0
 
 [node name="gokart" parent="Spinny" instance=ExtResource("2_x6vle")]
-transform = Transform3D(-1.7535, 1.03866, 1.0341, 1.19654, 1.94567, 0.0746991, -0.846439, 0.598733, -2.03666, 0, 0, 0)
+transform = Transform3D(-0.0553332, 2.24313, -0.433874, -0.325389, 0.42184, 2.22241, 2.26141, 0.115583, 0.30916, 0, 0, 0)
 script = ExtResource("3_hu7mv")
 x = 2.0
 y = -3.0
@@ -138,7 +138,7 @@ texture = ExtResource("4_ryc5x")
 script = ExtResource("5_6dkmf")
 
 [node name="modeltrack" parent="Spinny" instance=ExtResource("6_tw2oq")]
-transform = Transform3D(1.58342, 0.0842728, 0.231539, 0, 1.50582, -0.548078, -0.246399, 0.541556, 1.48792, 0, 0, 0)
+transform = Transform3D(-1.55234, 0.136022, 0.373718, 0, 1.50582, -0.548077, -0.397704, -0.530927, -1.45872, 0, 0, 0)
 script = ExtResource("7_ifsku")
 amount = 4.0
 

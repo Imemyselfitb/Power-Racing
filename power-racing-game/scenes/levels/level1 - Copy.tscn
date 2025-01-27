@@ -1,20 +1,29 @@
-[gd_scene load_steps=12 format=3 uid="uid://dah780b2oxa5u"]
+[gd_scene load_steps=15 format=3 uid="uid://c7h4dtautyggx"]
 
 [ext_resource type="PackedScene" uid="uid://dk1hh2gdvpe7u" path="res://assets/models/testtrack.blend" id="1_bie2y"]
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_tkx47"]
+[ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="2_htakq"]
 [ext_resource type="PackedScene" uid="uid://bwsgksn5sba8h" path="res://scenes/aiKart.tscn" id="2_ncjig"]
+[ext_resource type="Texture2D" uid="uid://dp4r2eyb75dwb" path="res://assets/sprite/timerenclosure.png" id="3_qmt2k"]
 [ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="3_v3qel"]
-[ext_resource type="PackedScene" uid="uid://rg6bqigkpxyo" path="res://scenes/levelTransition.tscn" id="5_0j2n4"]
+[ext_resource type="PackedScene" uid="uid://olrqjglx2cq" path="res://scenes/race_start.tscn" id="7_t06f7"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_0ijc5"]
+font_size = 128
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
 sky_top_color = Color(0.19, 0.811, 1, 1)
 sky_horizon_color = Color(0.8, 0.876667, 1, 1)
 sky_curve = 0.0955921
-ground_bottom_color = Color(0.06, 0.06, 0.06, 1)
+ground_bottom_color = Color(0.0133333, 0, 0.08, 1)
 ground_horizon_color = Color(0.2542, 0.394423, 0.62, 1)
-ground_energy_multiplier = 1.79
-sun_angle_max = 7.78
-sun_curve = 48410.7
+ground_energy_multiplier = 2.0
+sun_curve = 26278.0
 
 [sub_resource type="Sky" id="Sky_k88c1"]
 sky_material = SubResource("ProceduralSkyMaterial_xy3eh")
@@ -22,6 +31,8 @@ sky_material = SubResource("ProceduralSkyMaterial_xy3eh")
 [sub_resource type="Environment" id="Environment_hhrjw"]
 background_mode = 2
 sky = SubResource("Sky_k88c1")
+ambient_light_source = 2
+ambient_light_color = Color(1, 1, 1, 1)
 glow_enabled = true
 glow_intensity = 0.28
 glow_bloom = 0.08
@@ -48,6 +59,42 @@ point_count = 43
 
 [node name="Game" type="Node3D"]
 script = ExtResource("1_tkx47")
+
+[node name="TrackUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_htakq")
+
+[node name="TimerContainer" type="TextureRect" parent="TrackUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -128.0
+offset_right = 256.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("3_qmt2k")
+
+[node name="Timer" type="Label" parent="TrackUI/TimerContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1:28"
+label_settings = SubResource("LabelSettings_0ijc5")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36608, 0, 0)
@@ -118,7 +165,7 @@ curve = SubResource("Curve3D_p6gfj")
 [node name="PlayerKart" parent="." instance=ExtResource("3_v3qel")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 97.6112, 7.75664, 51.0916)
 
-[node name="Level Transition" parent="." instance=ExtResource("5_0j2n4")]
+[node name="RaceStart" parent="." instance=ExtResource("7_t06f7")]
 
 [connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]
 
