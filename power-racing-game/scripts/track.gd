@@ -4,6 +4,10 @@ var time:float = 180 # 3 mins
 
 func _process(delta):
 	time -= delta
+	if time < 0:
+		if get_tree().get_nodes_in_group("ai_kart").size() > 0:
+			print("lose")
+	
 	if floori(time * 2) % 2 == 0:
 		$TrackUI/TimerContainer/Timer.text = "%2d:%02d" % [floor(time / 60), floori(time) % 60]
 	else:

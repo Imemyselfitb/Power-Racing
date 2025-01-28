@@ -47,13 +47,15 @@ _data = {
 point_count = 33
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_cx8o0"]
-top_radius = 200.0
+top_radius = 300.0
+bottom_radius = 100.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3uv5i"]
 render_priority = 0
 shader = ExtResource("4_f2tl5")
-shader_parameter/cell_amount = 20
+shader_parameter/cell_amount = 40
 shader_parameter/period = Vector2(5, 10)
+shader_parameter/albedo = Color(0, 0.116667, 1, 1)
 
 [node name="Node3D" type="Node3D"]
 
@@ -97,7 +99,7 @@ path = NodePath("../Path3D")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -77.5848, 1.67749, 27.949)
 path = NodePath("../Path3D")
 
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+[node name="ocean" type="MeshInstance3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -28.3776, -2.9, 7.00536)
 mesh = SubResource("CylinderMesh_cx8o0")
 surface_material_override/0 = SubResource("ShaderMaterial_3uv5i")

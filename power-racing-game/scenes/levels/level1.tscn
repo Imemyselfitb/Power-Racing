@@ -1,4 +1,4 @@
-[gd_scene load_steps=17 format=3 uid="uid://dah780b2oxa5u"]
+[gd_scene load_steps=21 format=3 uid="uid://dah780b2oxa5u"]
 
 [ext_resource type="PackedScene" uid="uid://dk1hh2gdvpe7u" path="res://assets/models/testtrack.blend" id="1_bie2y"]
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_tkx47"]
@@ -9,6 +9,8 @@
 [ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="5_0j2n4"]
 [ext_resource type="PackedScene" uid="uid://olrqjglx2cq" path="res://scenes/race_start.tscn" id="8_yqg6k"]
 [ext_resource type="Script" path="res://scripts/forcetransitionout.gd" id="9_ebf88"]
+[ext_resource type="Shader" path="res://scripts/water.gdshader" id="10_7v7fx"]
+[ext_resource type="PackedScene" uid="uid://8jvs4jcdc25i" path="res://scenes/level_preview_spin.tscn" id="11_8irkd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
 sky_top_color = Color(0.19, 0.811, 1, 1)
@@ -17,7 +19,6 @@ sky_curve = 0.0955921
 ground_bottom_color = Color(0.06, 0.06, 0.06, 1)
 ground_horizon_color = Color(0.2542, 0.394423, 0.62, 1)
 ground_energy_multiplier = 1.79
-sun_angle_max = 7.78
 sun_curve = 48410.7
 
 [sub_resource type="Sky" id="Sky_elpwe"]
@@ -58,6 +59,17 @@ shadow_size = 12
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(5, 5)
 
+[sub_resource type="CylinderMesh" id="CylinderMesh_y3rjy"]
+top_radius = 300.0
+bottom_radius = 100.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3mlf5"]
+render_priority = 0
+shader = ExtResource("10_7v7fx")
+shader_parameter/cell_amount = 40
+shader_parameter/period = Vector2(5, 10)
+shader_parameter/albedo = Color(0, 0.116667, 1, 1)
+
 [node name="Game" type="Node3D"]
 script = ExtResource("1_tkx47")
 
@@ -68,6 +80,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36608, 0, 0)
 environment = SubResource("Environment_hhrjw")
 
 [node name="StaticBody3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.17173, 0)
 collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
@@ -161,7 +174,7 @@ anchor_bottom = 1.0
 offset_top = 17.0
 grow_horizontal = 2
 grow_vertical = 2
-text = "1:28"
+text = "3:00"
 label_settings = SubResource("LabelSettings_buy3n")
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -171,6 +184,15 @@ vertical_alignment = 1
 [node name="Level Transition" parent="RaceStart" instance=ExtResource("5_0j2n4")]
 layout_mode = 1
 script = ExtResource("9_ebf88")
+
+[node name="ocean" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.39284, 0)
+mesh = SubResource("CylinderMesh_y3rjy")
+surface_material_override/0 = SubResource("ShaderMaterial_3mlf5")
+
+[node name="Camera3D" type="Camera3D" parent="."]
+
+[node name="LevelPreviewSpin" parent="." instance=ExtResource("11_8irkd")]
 
 [connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]
 

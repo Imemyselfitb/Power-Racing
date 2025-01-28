@@ -1,0 +1,96 @@
+[gd_scene load_steps=14 format=3 uid="uid://dqca7i8yf354s"]
+
+[ext_resource type="Texture2D" uid="uid://d4msilqdcxqyq" path="res://assets/sprite/explosion.png" id="1_od38c"]
+[ext_resource type="Script" path="res://scripts/explosion.gd" id="2_61vsc"]
+[ext_resource type="Texture2D" uid="uid://2rutpkeb0vq4" path="res://assets/sprite/shock.png" id="3_j6elp"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_12ucg"]
+atlas = ExtResource("1_od38c")
+region = Rect2(0, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_gsird"]
+atlas = ExtResource("1_od38c")
+region = Rect2(256, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_2g3ua"]
+atlas = ExtResource("1_od38c")
+region = Rect2(512, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_6y4kk"]
+atlas = ExtResource("1_od38c")
+region = Rect2(768, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32stx"]
+atlas = ExtResource("1_od38c")
+region = Rect2(1024, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_ujceq"]
+atlas = ExtResource("1_od38c")
+region = Rect2(1280, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_32txp"]
+atlas = ExtResource("1_od38c")
+region = Rect2(1536, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_k37gu"]
+atlas = ExtResource("1_od38c")
+region = Rect2(1792, 0, 256, 256)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_tdr78"]
+atlas = ExtResource("1_od38c")
+region = Rect2(2048, 0, 256, 256)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_x2vh7"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_12ucg")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_gsird")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_2g3ua")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_6y4kk")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32stx")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_ujceq")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_32txp")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_k37gu")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_tdr78")
+}],
+"loop": false,
+"name": &"default",
+"speed": 15.0
+}]
+
+[node name="explosion" type="AnimatedSprite3D"]
+pixel_size = 0.03
+billboard = 1
+texture_filter = 0
+sprite_frames = SubResource("SpriteFrames_x2vh7")
+autoplay = "default"
+script = ExtResource("2_61vsc")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.22102, 0)
+billboard = 2
+render_priority = 1
+texture = ExtResource("3_j6elp")
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.0
+autostart = true
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
