@@ -1,0 +1,32 @@
+[gd_scene load_steps=3 format=3 uid="uid://dxaa2k2d5ieqw"]
+
+[ext_resource type="Script" path="res://scripts/minimap.gd" id="1_iyewm"]
+
+[sub_resource type="Curve2D" id="Curve2D_440qy"]
+
+[node name="Minimap" type="Control"]
+layout_mode = 3
+anchor_left = 1.001
+anchor_top = 1.005
+anchor_right = 1.001
+anchor_bottom = 1.005
+offset_left = -240.152
+offset_top = -240.24
+offset_right = -0.1521
+offset_bottom = -0.23999
+grow_horizontal = 0
+grow_vertical = 0
+script = ExtResource("1_iyewm")
+
+[node name="Node2D" type="Node2D" parent="."]
+
+[node name="Path2D" type="Path2D" parent="Node2D"]
+curve = SubResource("Curve2D_440qy")
+
+[node name="Line2D" type="Line2D" parent="Node2D"]
+closed = true
+width = 20.0
+default_color = Color(0, 0, 0, 0.529412)
+
+[node name="Line2D2" type="Line2D" parent="Node2D"]
+closed = true

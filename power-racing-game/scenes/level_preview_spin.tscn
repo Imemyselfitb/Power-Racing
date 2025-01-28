@@ -1,10 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://8jvs4jcdc25i"]
+[gd_scene load_steps=2 format=3 uid="uid://dldplw2o048gd"]
 
-[ext_resource type="Script" path="res://scenes/level_preview_spin.gd" id="1_lcm1e"]
+[ext_resource type="Script" path="res://scripts/level_preview_spin.gd" id="1_ydln6"]
 
 [node name="LevelPreviewSpin" type="Node3D"]
 process_mode = 3
-script = ExtResource("1_lcm1e")
+script = ExtResource("1_ydln6")
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.82804, 0.134668, -0.544256, 0, 0.970725, 0.240192, 0.560669, -0.198889, 0.803799, -116.504, 51.4159, 172.062)
