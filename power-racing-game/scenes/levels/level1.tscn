@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://olrqjglx2cq" path="res://scenes/race_start.tscn" id="8_yqg6k"]
 [ext_resource type="Script" path="res://scripts/forcetransitionout.gd" id="9_ebf88"]
 [ext_resource type="Shader" path="res://scripts/water.gdshader" id="10_7v7fx"]
-[ext_resource type="PackedScene" path="res://scenes/level_preview_spin.tscn" id="11_8irkd"]
+[ext_resource type="PackedScene" uid="uid://dldplw2o048gd" path="res://scenes/level_preview_spin.tscn" id="11_8irkd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
 sky_top_color = Color(0.19, 0.811, 1, 1)

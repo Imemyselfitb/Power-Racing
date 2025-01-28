@@ -1,6 +1,6 @@
 shader_type spatial;
 uniform int cell_amount = 20;
-uniform vec2 period = vec2(5., 10.);
+uniform vec2 period = vec2(5.0, 10.0);
 uniform vec4 albedo : source_color;
 
 vec2 modulo(vec2 divident, vec2 divisor){
@@ -45,6 +45,8 @@ void vertex(){
 
 void fragment(){
 	float noise = seamless_noise(UV + vec2(TIME * 0.001), period);
+	noise += seamless_noise(UV + vec2(1.0 + TIME * 0.004), period) - 0.5;
+	
 	float noise2 = seamless_noise(UV + vec2(TIME * 0.0012), period);
 	ALBEDO = albedo.rgb;
 	if (sin(noise) > 0.5 && sin(noise) < 0.6) {
