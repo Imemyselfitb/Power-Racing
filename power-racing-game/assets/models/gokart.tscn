@@ -320,18 +320,21 @@ shadow_mesh = SubResource("ArrayMesh_4fgb5")
 
 [node name="Seat" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.232429, 0, 2.03196e-08, 0, 0.232429, 0, -2.03196e-08, 0, -0.232429, 0, 0.253895, 0)
+layers = 3
 mesh = SubResource("ArrayMesh_qpyy0")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_64de1")
 
 [node name="Front" type="MeshInstance3D" parent="."]
 transform = Transform3D(-0.232429, 0, 2.03196e-08, 0, 0.232429, 0, -2.03196e-08, 0, -0.232429, 0, 0.253895, 0)
+layers = 3
 mesh = SubResource("ArrayMesh_bgw7r")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_46kq7")
 
 [node name="Back" type="MeshInstance3D" parent="."]
 transform = Transform3D(0.232429, 0, 1.47762e-08, 0, 0.232429, 0, -1.47762e-08, 0, 0.232429, 0, 0.253895, 0)
+layers = 3
 mesh = SubResource("ArrayMesh_4hjut")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_44xaf")
@@ -340,6 +343,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_44xaf")
 transform = Transform3D(-0.232429, 0, 2.03196e-08, 0, 0.232429, 0, -2.03196e-08, 0, -0.232429, 0, 0.253895, 0)
 
 [node name="Rig" type="MeshInstance3D" parent="BackL"]
+layers = 3
 mesh = SubResource("ArrayMesh_83cw3")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_e8xf1")
@@ -349,6 +353,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, -0.3, -1.655)
 
 [node name="Wheel" type="MeshInstance3D" parent="BackL/WheelControl"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9593, 0.3172, 1.69029)
+layers = 3
 mesh = SubResource("ArrayMesh_2m604")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_hf66t")
@@ -357,6 +362,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hf66t")
 transform = Transform3D(-0.232429, 0, 2.03196e-08, 0, 0.232429, 0, -2.03196e-08, 0, -0.232429, 0, 0.253895, 0)
 
 [node name="Rig" type="MeshInstance3D" parent="BackR"]
+layers = 3
 mesh = SubResource("ArrayMesh_66r5r")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_e8xf1")
@@ -366,6 +372,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, -0.3, -1.65496)
 
 [node name="Wheel" type="MeshInstance3D" parent="BackR/WheelControl"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9593, 0.3172, 1.69029)
+layers = 3
 mesh = SubResource("ArrayMesh_2m604")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_hf66t")
@@ -377,6 +384,7 @@ transform = Transform3D(0.232429, 0, 0, 0, 0.232429, 0, 0, 0, 0.232429, 0, 0.253
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Rig" type="MeshInstance3D" parent="FrontWheels/FrontR"]
+layers = 3
 mesh = SubResource("ArrayMesh_hvvaa")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_e8xf1")
@@ -386,6 +394,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.9, -0.3, 0.2)
 
 [node name="Wheel" type="MeshInstance3D" parent="FrontWheels/FrontR/WheelControl"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9593, 0.3172, -0.257936)
+layers = 3
 mesh = SubResource("ArrayMesh_5rii7")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_hf66t")
@@ -394,6 +403,7 @@ surface_material_override/0 = SubResource("StandardMaterial3D_hf66t")
 transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0, 0)
 
 [node name="Rig" type="MeshInstance3D" parent="FrontWheels/FrontL"]
+layers = 3
 mesh = SubResource("ArrayMesh_5jl8m")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_e8xf1")
@@ -403,6 +413,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9, -0.3, 0.2)
 
 [node name="Wheel" type="MeshInstance3D" parent="FrontWheels/FrontL/WheelControl"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.9593, 0.3172, 1.69029)
+layers = 3
 mesh = SubResource("ArrayMesh_2m604")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_hf66t")

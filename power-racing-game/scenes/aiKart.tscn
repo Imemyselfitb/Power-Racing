@@ -73,21 +73,23 @@ target_position = Vector3(5, 0, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.670486, 0)
 stream = ExtResource("3_6cx5t")
 attenuation_model = 2
-volume_db = 20.0
+volume_db = 40.0
 unit_size = 1.0
 pitch_scale = 1.21
 autoplay = true
-max_distance = 100.0
+max_distance = 35.0
 doppler_tracking = 2
 
 [node name="Sprite3D" type="Sprite3D" parent="Body"]
 transform = Transform3D(0.303356, 0, 0, 0, 0.303356, 0, 0, 0, 0.303356, 0, 0.571953, 0.256647)
+layers = 3
 billboard = 2
 texture_filter = 0
 texture = ExtResource("4_caqky")
 
 [node name="Sprite3D2" type="Sprite3D" parent="Body"]
 transform = Transform3D(0.303356, 0, 0, 0, 0.303356, 0, 0, 0, 0.303356, 0, 0.571953, 0.254758)
+layers = 3
 billboard = 2
 texture_filter = 0
 texture = ExtResource("5_ffcg5")

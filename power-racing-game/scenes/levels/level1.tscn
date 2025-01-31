@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=3 uid="uid://dah780b2oxa5u"]
+[gd_scene load_steps=33 format=3 uid="uid://dah780b2oxa5u"]
 
 [ext_resource type="PackedScene" uid="uid://dk1hh2gdvpe7u" path="res://assets/models/testtrack.blend" id="1_bie2y"]
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_tkx47"]
@@ -7,11 +7,16 @@
 [ext_resource type="Texture2D" uid="uid://dp4r2eyb75dwb" path="res://assets/sprite/timerenclosure.png" id="3_qmt2k"]
 [ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="3_v3qel"]
 [ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="5_0j2n4"]
-[ext_resource type="PackedScene" uid="uid://dxaa2k2d5ieqw" path="res://scenes/minimap.tscn" id="7_584yv"]
+[ext_resource type="PackedScene" path="res://scenes/minimap.tscn" id="7_584yv"]
 [ext_resource type="PackedScene" uid="uid://olrqjglx2cq" path="res://scenes/race_start.tscn" id="8_yqg6k"]
 [ext_resource type="Script" path="res://scripts/forcetransitionout.gd" id="9_ebf88"]
 [ext_resource type="Shader" path="res://scripts/water.gdshader" id="10_7v7fx"]
-[ext_resource type="PackedScene" uid="uid://dldplw2o048gd" path="res://scenes/level_preview_spin.tscn" id="11_8irkd"]
+[ext_resource type="PackedScene" uid="uid://8jvs4jcdc25i" path="res://scenes/level_preview_spin.tscn" id="11_8irkd"]
+[ext_resource type="Shader" path="res://scripts/coolsquares.gdshader" id="13_qdurp"]
+[ext_resource type="Shader" path="res://scripts/spikebubble.gdshader" id="14_834d7"]
+[ext_resource type="Texture2D" uid="uid://d4fsgob3mq7cv" path="res://assets/sprite/speechBubble.png" id="14_txqxt"]
+[ext_resource type="Texture2D" uid="uid://bhf561ftsguqu" path="res://assets/sprite/bossman.png" id="15_vh8nr"]
+[ext_resource type="Texture2D" uid="uid://bguvq3ac1i2se" path="res://assets/sprite/moustache.png" id="16_fs8vp"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
 sky_top_color = Color(0.19, 0.811, 1, 1)
@@ -22,12 +27,12 @@ ground_horizon_color = Color(0.2542, 0.394423, 0.62, 1)
 ground_energy_multiplier = 1.79
 sun_curve = 48410.7
 
-[sub_resource type="Sky" id="Sky_elpwe"]
+[sub_resource type="Sky" id="Sky_euqx2"]
 sky_material = SubResource("ProceduralSkyMaterial_xy3eh")
 
 [sub_resource type="Environment" id="Environment_hhrjw"]
 background_mode = 2
-sky = SubResource("Sky_elpwe")
+sky = SubResource("Sky_euqx2")
 glow_enabled = true
 glow_intensity = 0.28
 glow_bloom = 0.08
@@ -62,17 +67,56 @@ shadow_offset = Vector2(5, 5)
 
 [sub_resource type="CylinderMesh" id="CylinderMesh_y3rjy"]
 top_radius = 300.0
-bottom_radius = 100.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3mlf5"]
 render_priority = 0
 shader = ExtResource("10_7v7fx")
 shader_parameter/cell_amount = 40
 shader_parameter/period = Vector2(5, 10)
-shader_parameter/albedo = Color(0, 0.116667, 1, 1)
+shader_parameter/albedo = Color(0, 0.733333, 1, 1)
 
-[node name="Game" type="Node3D"]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mjccq"]
+shader = ExtResource("13_qdurp")
+
+[sub_resource type="LabelSettings" id="LabelSettings_kjhoa"]
+font_size = 128
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o5fmy"]
+font_size = 64
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_alm87"]
+shader = ExtResource("14_834d7")
+
+[sub_resource type="LabelSettings" id="LabelSettings_7qbxk"]
+font_size = 50
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nmors"]
+font_size = 64
+font_color = Color(1, 0.8, 0, 1)
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[node name="Game" type="Node3D" node_paths=PackedStringArray("playerKart")]
 script = ExtResource("1_tkx47")
+playerKart = NodePath("PlayerKart")
 
 [node name="CSGBox3D" type="CSGBox3D" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36608, 0, 0)
@@ -108,34 +152,6 @@ path = NodePath("../Path3D")
 
 [node name="Kart4" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.3115, 5.70691, 56.3164)
-path = NodePath("../Path3D")
-
-[node name="Kart5" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.7197, 5.70691, 69.7726)
-path = NodePath("../Path3D")
-
-[node name="Kart6" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.3115, 9.85477, 56.3164)
-path = NodePath("../Path3D")
-
-[node name="Kart7" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.7197, 9.85477, 69.7726)
-path = NodePath("../Path3D")
-
-[node name="Kart8" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.3115, 13.1774, 56.3164)
-path = NodePath("../Path3D")
-
-[node name="Kart9" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.7197, 13.1774, 69.7726)
-path = NodePath("../Path3D")
-
-[node name="Kart10" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 88.3115, 16.403, 56.3164)
-path = NodePath("../Path3D")
-
-[node name="Kart11" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 81.7197, 16.403, 69.7726)
 path = NodePath("../Path3D")
 
 [node name="Path3D" type="Path3D" parent="."]
@@ -198,10 +214,238 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.39284, 0)
 mesh = SubResource("CylinderMesh_y3rjy")
 surface_material_override/0 = SubResource("ShaderMaterial_3mlf5")
 
-[node name="Camera3D" type="Camera3D" parent="."]
-
 [node name="LevelPreviewSpin" parent="." instance=ExtResource("11_8irkd")]
 
+[node name="WinLose" type="Control" parent="."]
+process_mode = 4
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("2_htakq")
+
+[node name="EverythingElse" type="SubViewportContainer" parent="WinLose"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="WinLose/EverythingElse"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="Cam" type="Camera3D" parent="WinLose/EverythingElse/SubViewport"]
+
+[node name="ColorRect" type="ColorRect" parent="WinLose"]
+material = SubResource("ShaderMaterial_mjccq")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Karts" type="SubViewportContainer" parent="WinLose"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="WinLose/Karts"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="Cam" type="Node3D" parent="WinLose/Karts/SubViewport"]
+
+[node name="ActualCamera" type="Camera3D" parent="WinLose/Karts/SubViewport/Cam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+cull_mask = 2
+
+[node name="Lose" type="Control" parent="WinLose"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lost" type="Label" parent="WinLose/Lose"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -440.0
+offset_top = 64.0
+offset_right = -63.0
+offset_bottom = 160.0
+grow_horizontal = 0
+text = "You lost..."
+label_settings = SubResource("LabelSettings_kjhoa")
+
+[node name="Lost2" type="Label" parent="WinLose/Lose"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -592.0
+offset_top = 184.0
+offset_right = -68.0
+offset_bottom = 436.0
+grow_horizontal = 0
+text = "Try harder next time.
+"
+label_settings = SubResource("LabelSettings_o5fmy")
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="WinLose/Lose"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -128.0
+offset_right = -67.0
+offset_bottom = -76.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Continue?"
+
+[node name="Win" type="Control" parent="WinLose"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="win" type="Label" parent="WinLose/Win"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -440.0
+offset_top = 64.0
+offset_right = -63.0
+offset_bottom = 160.0
+grow_horizontal = 0
+text = "We have a winner!"
+label_settings = SubResource("LabelSettings_kjhoa")
+
+[node name="info" type="Label" parent="WinLose/Win"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -728.0
+offset_top = 184.0
+offset_right = -68.0
+offset_bottom = 436.0
+grow_horizontal = 0
+text = "Neat."
+label_settings = SubResource("LabelSettings_o5fmy")
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="WinLose/Win"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -128.0
+offset_right = -67.0
+offset_bottom = -76.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Continue?"
+
+[node name="TollBoothCheck" type="Control" parent="WinLose"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bubble" type="TextureRect" parent="WinLose/TollBoothCheck"]
+material = SubResource("ShaderMaterial_alm87")
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -256.0
+offset_right = 256.0
+grow_vertical = 0
+texture = ExtResource("14_txqxt")
+
+[node name="Boss" type="TextureRect" parent="WinLose/TollBoothCheck/Bubble"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -56.0
+offset_right = 248.0
+offset_bottom = 200.0
+texture = ExtResource("15_vh8nr")
+
+[node name="Moustache" type="TextureRect" parent="WinLose/TollBoothCheck/Bubble/Boss"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 72.0
+offset_right = 208.0
+offset_bottom = 112.0
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("16_fs8vp")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="WinLose/TollBoothCheck"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 256.0
+offset_top = -200.0
+offset_right = 583.0
+offset_bottom = -119.0
+grow_vertical = 0
+text = "We need more money.
+Race again."
+label_settings = SubResource("LabelSettings_7qbxk")
+
+[node name="Money" type="Label" parent="WinLose"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.0
+offset_top = -24.0
+offset_right = 199.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Money Made: 000000"
+label_settings = SubResource("LabelSettings_nmors")
+
 [connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]
+[connection signal="pressed" from="WinLose/Lose/Button" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="WinLose/Win/Button" to="." method="_on_continue_pressed"]
 
 [editable path="testtrack"]

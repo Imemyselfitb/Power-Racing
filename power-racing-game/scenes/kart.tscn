@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://biuba22ol7yd5"]
+[gd_scene load_steps=11 format=3 uid="uid://biuba22ol7yd5"]
 
 [ext_resource type="Script" path="res://scripts/playerKart.gd" id="1_wolnf"]
 [ext_resource type="PackedScene" uid="uid://jgst4ctmbads" path="res://assets/models/gokart.tscn" id="2_p0d37"]
 [ext_resource type="Texture2D" uid="uid://cv62c21c8cf7r" path="res://assets/sprite/backThin.png" id="3_cc3cm"]
 [ext_resource type="Texture2D" uid="uid://c6oj3i2e01ouk" path="res://assets/sprite/frontThin.png" id="4_hg06h"]
 [ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="5_4deyf"]
+[ext_resource type="AudioStream" uid="uid://bpth12g2qy4kp" path="res://assets/sound/engine.wav" id="5_thojk"]
 [ext_resource type="Texture2D" uid="uid://c5sm3yrgaeieg" path="res://assets/sprite/speedometerBG.png" id="6_lykrd"]
 [ext_resource type="Texture2D" uid="uid://2i2w246bxytx" path="res://assets/sprite/dial.png" id="7_p7yf3"]
 
@@ -23,15 +24,20 @@ transform = Transform3D(1, -6.90192e-08, 1.60647e-07, 0, 0.918791, 0.394744, -1.
 
 [node name="Back2" type="Sprite3D" parent="Body"]
 transform = Transform3D(0.303356, 0, 0, 0, 0.303356, 0, 0, 0, 0.303356, 0, 0.571953, 0.256647)
+layers = 3
 billboard = 2
 texture_filter = 0
 texture = ExtResource("3_cc3cm")
 
 [node name="Front2" type="Sprite3D" parent="Body"]
 transform = Transform3D(0.303356, 0, 0, 0, 0.303356, 0, 0, 0, 0.303356, 0, 0.571953, 0.254266)
+layers = 3
 billboard = 2
 texture_filter = 0
 texture = ExtResource("4_hg06h")
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Body"]
+stream = ExtResource("5_thojk")
 
 [node name="Vehicle" type="CharacterBody3D" parent="."]
 
