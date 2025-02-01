@@ -157,7 +157,7 @@ shadow_normal_bias = 10.0
 shadow_blur = 0.0
 
 [node name="gokart" parent="Spinny" instance=ExtResource("2_x6vle")]
-transform = Transform3D(-0.488117, 1.8813, -1.20223, 1.99259, 0.922188, 0.634057, 1.00707, -0.912796, -1.83725, 0, 0, 0)
+transform = Transform3D(-0.849002, 2.09464, 0.338535, 2.10969, 0.872251, -0.106029, -0.226387, 0.273125, -2.25766, 0, 0, 0)
 script = ExtResource("3_hu7mv")
 x = 2.0
 y = -3.0
@@ -170,7 +170,7 @@ texture = ExtResource("4_ryc5x")
 script = ExtResource("5_6dkmf")
 
 [node name="modeltrack" parent="Spinny" instance=ExtResource("6_tw2oq")]
-transform = Transform3D(-1.46956, -0.218545, -0.60045, 0, 1.50582, -0.548079, 0.638983, -0.502617, -1.38094, 0, 0, 0)
+transform = Transform3D(-0.776257, -0.479477, -1.31736, 0, 1.50582, -0.54808, 1.4019, -0.265495, -0.729446, 0, 0, 0)
 script = ExtResource("7_ifsku")
 amount = 4.0
 
@@ -218,6 +218,7 @@ theme = SubResource("Theme_ypvro")
 layout_mode = 1
 
 [node name="LevelSelect" parent="UI" instance=ExtResource("9_rn0qo")]
+visible = false
 layout_mode = 1
 
 [node name="SlideInButtons" type="Control" parent="UI"]
@@ -233,10 +234,11 @@ layout_mode = 1
 anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
-offset_top = -216.0
+offset_top = -316.0
 offset_right = 208.0
-offset_bottom = -116.0
+offset_bottom = -216.0
 grow_vertical = 0
+focus_neighbor_top = NodePath("../LevelSelectButton")
 focus_neighbor_bottom = NodePath("../LevelSelectButton")
 text = "story"
 
@@ -246,12 +248,28 @@ anchors_preset = 2
 anchor_top = 1.0
 anchor_bottom = 1.0
 offset_left = 24.0
-offset_top = -96.0
+offset_top = -196.0
 offset_right = 184.0
-offset_bottom = -16.0
+offset_bottom = -116.0
 grow_vertical = 0
 focus_neighbor_top = NodePath("../StoryButton")
+focus_neighbor_bottom = NodePath("../TutorialButton")
 text = "select track"
+
+[node name="TutorialButton" type="Button" parent="UI/SlideInButtons"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 24.0
+offset_top = -93.0
+offset_right = 184.0
+offset_bottom = -13.0
+grow_vertical = 0
+focus_neighbor_top = NodePath("../LevelSelectButton")
+focus_neighbor_bottom = NodePath("../StoryButton")
+text = "tutorial"
 
 [connection signal="pressed" from="UI/SlideInButtons/StoryButton" to="." method="_on_story_button_pressed"]
 [connection signal="button_down" from="UI/SlideInButtons/LevelSelectButton" to="." method="_on_level_select_button_button_down"]
+[connection signal="button_down" from="UI/SlideInButtons/TutorialButton" to="." method="_on_tutorial_button_button_down"]

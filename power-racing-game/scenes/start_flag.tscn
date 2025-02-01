@@ -1,0 +1,24 @@
+[gd_scene load_steps=5 format=3 uid="uid://cx7b44ss401nh"]
+
+[ext_resource type="PackedScene" uid="uid://b2gdlsj0g7mjv" path="res://assets/models/startFlag.blend" id="1_03rbh"]
+[ext_resource type="Texture2D" uid="uid://54gjq2p1vv76" path="res://assets/sprite/checkerboard.png" id="2_3v0uc"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7x67y"]
+albedo_color = Color(0.3, 0.3, 0.3, 1)
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_w3y5k"]
+albedo_texture = ExtResource("2_3v0uc")
+metallic = 0.58
+metallic_specular = 1.0
+roughness = 0.0
+uv1_triplanar = true
+texture_filter = 0
+
+[node name="startFlag" instance=ExtResource("1_03rbh")]
+
+[node name="Plane" parent="." index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_7x67y")
+
+[node name="Plane_001" parent="." index="1"]
+surface_material_override/0 = SubResource("StandardMaterial3D_w3y5k")

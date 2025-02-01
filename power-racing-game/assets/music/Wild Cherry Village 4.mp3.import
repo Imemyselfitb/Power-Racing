@@ -1,0 +1,19 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+uid="uid://dmc2heal4q0ds"
+path="res://.godot/imported/Wild Cherry Village 4.mp3-73baf11c4f5908de4f3ab3053d586dac.mp3str"
+
+[deps]
+
+source_file="res://assets/music/Wild Cherry Village 4.mp3"
+dest_files=["res://.godot/imported/Wild Cherry Village 4.mp3-73baf11c4f5908de4f3ab3053d586dac.mp3str"]
+
+[params]
+
+loop=true
+loop_offset=0
+bpm=0
+beat_count=0
+bar_beats=4

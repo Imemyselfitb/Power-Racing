@@ -5,6 +5,9 @@ var currentNextLevel:PackedScene = load("res://scenes/levels/level1.tscn")
 var currentNextCutscene:PackedScene = null
 var isController:bool = false
 
+var currentTollBoothMinimum:int = 0
+var currentMoney:int = 0
+
 var callOnController:Callable
 
 func _ready():
@@ -20,19 +23,8 @@ func _check_joy(devince, connected):
 	else:
 		isController = false
 
-func click():
-	var a = InputEventMouseButton.new()
-	a.position = get_viewport().get_mouse_position()
-	a.button_index = MOUSE_BUTTON_LEFT
-	a.pressed = true
-	Input.parse_input_event(a)
-	await get_tree().process_frame
-	a.pressed = false
-	Input.parse_input_event(a)
-
 func _process(delta):
 	if isController:
 		if Input.is_action_just_pressed("ui_accept"):
 			if get_viewport().gui_get_focus_owner():
-				get_viewport().warp_mouse(get_viewport().gui_get_focus_owner().position)
-				click()
+				get_viewport().gui_get_focus_owner().button_down.emit()

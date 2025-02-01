@@ -49,7 +49,7 @@ func _physics_process(delta):
 	goaway.y = 0
 	var turn = $GroundRay/Look.global_transform.basis.z * turnspeed * delta
 	if vehicle.velocity.length() < 600:
-		vehicle.velocity += pathfollow.global_transform.basis.z * speed * delta
+		vehicle.velocity += pathfollow.global_transform.basis.z * speed * delta * Vector3(1, 0, 1)
 	vehicle.velocity -= turn
 	$Body/FrontWheels.rotation.y = (vehicle.velocity.x * vehicle.velocity.z) / speed / 2.3
 	vehicle.velocity += goaway

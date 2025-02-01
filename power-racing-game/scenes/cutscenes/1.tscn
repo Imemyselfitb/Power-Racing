@@ -1,4 +1,4 @@
-[gd_scene load_steps=27 format=4 uid="uid://dy668uxyl6ae8"]
+[gd_scene load_steps=30 format=4 uid="uid://dy668uxyl6ae8"]
 
 [ext_resource type="PackedScene" uid="uid://jgst4ctmbads" path="res://assets/models/gokart.tscn" id="1_27um3"]
 [ext_resource type="Script" path="res://scripts/cutscene.gd" id="1_iyjcg"]
@@ -14,25 +14,46 @@
 [sub_resource type="Resource" id="Resource_tt36v"]
 script = ExtResource("2_jniq6")
 focusNode = NodePath("gokart")
-text = "wait so why did you need this kart again?"
+text = "Wait why did you need this kart again?"
 textsound = ExtResource("3_bdgfw")
-speed = 100.0
+speed = 30.0
 forceSkipAtCharacters = 9999999
 
 [sub_resource type="Resource" id="Resource_6h3av"]
 script = ExtResource("2_jniq6")
 focusNode = NodePath("BossMan")
-text = "I got a great idea. To get out of this dump. We'll win a race and get some money and be millionares or somin"
+text = "Yknow how we live in this dump?"
 textsound = ExtResource("3_bdgfw")
-speed = 100.0
+speed = 30.0
 forceSkipAtCharacters = 9999999
 
 [sub_resource type="Resource" id="Resource_yvp5m"]
 script = ExtResource("2_jniq6")
-focusNode = NodePath("gokart")
-text = "ok boss i believe you"
+focusNode = NodePath("BossMan")
+text = "Yesterday I caught wind of some racing tournament thingy I got no clue about."
 textsound = ExtResource("3_3eskv")
-speed = 100.0
+speed = 30.0
+forceSkipAtCharacters = 9999999
+
+[sub_resource type="Resource" id="Resource_lebp8"]
+script = ExtResource("2_jniq6")
+focusNode = NodePath("BossMan")
+text = "Soooooo"
+speed = 10.0
+forceSkipAtCharacters = 9999999
+
+[sub_resource type="Resource" id="Resource_hq26w"]
+script = ExtResource("2_jniq6")
+focusNode = NodePath("BossMan")
+text = "I may have signed us up without your permission."
+speed = 300.0
+forceSkipAtCharacters = 9999999
+
+[sub_resource type="Resource" id="Resource_bo71o"]
+script = ExtResource("2_jniq6")
+focusNode = NodePath("gokart")
+text = "Alright. I get it. Lets go."
+speed = 30.0
 forceSkipAtCharacters = 9999999
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ww0n"]
@@ -141,7 +162,7 @@ adjustment_saturation = 1.17
 
 [node name="Cutscene" type="Node3D"]
 script = ExtResource("1_iyjcg")
-scenes = Array[ExtResource("2_jniq6")]([SubResource("Resource_tt36v"), SubResource("Resource_6h3av"), SubResource("Resource_yvp5m")])
+scenes = Array[ExtResource("2_jniq6")]([SubResource("Resource_tt36v"), SubResource("Resource_6h3av"), SubResource("Resource_yvp5m"), SubResource("Resource_lebp8"), SubResource("Resource_hq26w"), SubResource("Resource_bo71o")])
 nextLevel = ExtResource("5_rsuhh")
 
 [node name="UI" type="Control" parent="."]

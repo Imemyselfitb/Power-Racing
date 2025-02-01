@@ -44,7 +44,13 @@ func _process(delta):
 			
 			var scaledWinTime: float = 0.01 * winTime
 			var winTimeFactor: float = (2 * scaledWinTime + 1) / (scaledWinTime + 1)
-			moneytotal = distanceTraveled * winTimeFactor
+			moneytotal = clamp(distanceTraveled * winTimeFactor, 0, 1000000)
+			SettingsData.currentMoney += moneytotal
+			var moneyDiff = SettingsData.currentTollBoothMinimum - SettingsData.currentMoney
+			if moneyDiff >= 0:
+				$WinLose/TollBoothCheck/Label.text = "We need " + str(moneyDiff) + " more."
+			else:
+				$WinLose/TollBoothCheck.hide()
 		else:
 			$WinLose/Money.text = "Money Made: " + str(moneyvirtual)
 			var change: float =  0.03 * (moneytotal - moneyvirtual)
@@ -67,9 +73,6 @@ func _process(delta):
 	distanceTraveled += clamp(distanceoffset, -1, 1)
 
 func _on_static_body_3d_body_entered(body):
-	if body is Kart:
-		pass #play respawn visual idk
-	
 	var tween = get_tree().create_tween()
 	body.global_position.y += 2
 	body.velocity = Vector3.ZERO
@@ -82,4 +85,8 @@ func _on_continue_pressed():
 	if not SettingsData.inStoryMode:
 		get_tree().change_scene_to_file("res://scenes/game.tscn")
 	else:
-		get_tree().change_scene_to_packed(SettingsData.currentNextCutscene)
+		if moneytotal < SettingsData.currentTollBoothMinimum:
+			get_tree().reload_current_scene()
+		else:
+			SettingsData.currentMoney = 0
+			get_tree().change_scene_to_packed(SettingsData.currentNextCutscene)
