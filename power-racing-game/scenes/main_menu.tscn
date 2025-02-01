@@ -48,7 +48,7 @@ _data = {
 }
 point_count = 17
 
-[node name="MainMenu" type="Node"]
+[node name="MainMenu2" type="Node"]
 script = ExtResource("1_4ahg1")
 
 [node name="Spinny" type="Node3D" parent="."]

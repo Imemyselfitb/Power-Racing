@@ -3,9 +3,10 @@ extends Kart
 @onready var punchfx:PackedScene = preload("res://scenes/punch_fx.tscn")
 @export var explosion:PackedScene = preload("res://scenes/explosion.tscn")
 
-var power:int = 1
-var powerprogress:int = 0
-var powerincrementalgoal:int = 3
+var karts_exploded: int = 0
+var power: int = 1
+var powerprogress: int = 0
+var powerincrementalgoal: int = 3
 
 func _process(delta):
 	if Input.is_action_just_pressed("punch"):
@@ -33,6 +34,7 @@ func _process(delta):
 						$Body/Back2.texture = backsprite
 						$Body/Front2.texture = load("res://assets/sprite/powerFront" + str(power) + ".png")
 				break
+	
 	move_dir = Input.get_action_strength("MoveBackward")
 	move_dir -= Input.get_action_strength("MoveForward")
 	turn_dir = Input.get_action_strength("TurnLeft")

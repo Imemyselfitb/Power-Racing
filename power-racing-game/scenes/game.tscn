@@ -157,7 +157,7 @@ shadow_normal_bias = 10.0
 shadow_blur = 0.0
 
 [node name="gokart" parent="Spinny" instance=ExtResource("2_x6vle")]
-transform = Transform3D(0.476006, -0.670914, 2.13218, -1.63402, 1.38307, 0.799992, -1.52522, -1.69112, -0.191626, 0, 0, 0)
+transform = Transform3D(-0.488117, 1.8813, -1.20223, 1.99259, 0.922188, 0.634057, 1.00707, -0.912796, -1.83725, 0, 0, 0)
 script = ExtResource("3_hu7mv")
 x = 2.0
 y = -3.0
@@ -170,7 +170,7 @@ texture = ExtResource("4_ryc5x")
 script = ExtResource("5_6dkmf")
 
 [node name="modeltrack" parent="Spinny" instance=ExtResource("6_tw2oq")]
-transform = Transform3D(-0.44883, 0.526138, 1.44556, 0, 1.50582, -0.548078, -1.53833, -0.153509, -0.421762, 0, 0, 0)
+transform = Transform3D(-1.46956, -0.218545, -0.60045, 0, 1.50582, -0.548079, 0.638983, -0.502617, -1.38094, 0, 0, 0)
 script = ExtResource("7_ifsku")
 amount = 4.0
 
@@ -214,6 +214,12 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = SubResource("Theme_ypvro")
 
+[node name="Level Transition" parent="UI" instance=ExtResource("10_tmo1o")]
+layout_mode = 1
+
+[node name="LevelSelect" parent="UI" instance=ExtResource("9_rn0qo")]
+layout_mode = 1
+
 [node name="SlideInButtons" type="Control" parent="UI"]
 layout_mode = 1
 anchors_preset = 15
@@ -246,12 +252,6 @@ offset_bottom = -16.0
 grow_vertical = 0
 focus_neighbor_top = NodePath("../StoryButton")
 text = "select track"
-
-[node name="LevelSelect" parent="UI" instance=ExtResource("9_rn0qo")]
-layout_mode = 1
-
-[node name="Level Transition" parent="UI" instance=ExtResource("10_tmo1o")]
-layout_mode = 1
 
 [connection signal="pressed" from="UI/SlideInButtons/StoryButton" to="." method="_on_story_button_pressed"]
 [connection signal="button_down" from="UI/SlideInButtons/LevelSelectButton" to="." method="_on_level_select_button_button_down"]

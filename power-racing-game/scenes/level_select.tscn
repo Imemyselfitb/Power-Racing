@@ -85,9 +85,9 @@ anchor_top = 0.755
 anchor_right = 0.108
 anchor_bottom = 0.755
 offset_left = -80.416
-offset_top = -80.24
+offset_top = -114.24
 offset_right = 79.584
-offset_bottom = 79.76
+offset_bottom = 45.76
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
@@ -99,9 +99,9 @@ anchor_top = 0.755
 anchor_right = 0.368
 anchor_bottom = 0.755
 offset_left = -79.936
-offset_top = -80.24
+offset_top = -114.24
 offset_right = 80.064
-offset_bottom = 79.76
+offset_bottom = 45.76
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
@@ -113,9 +113,9 @@ anchor_top = 0.755
 anchor_right = 0.628
 anchor_bottom = 0.755
 offset_left = -79.4561
-offset_top = -80.24
+offset_top = -114.24
 offset_right = 80.5439
-offset_bottom = 79.76
+offset_bottom = 45.76
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
@@ -127,12 +127,25 @@ anchor_top = 0.755
 anchor_right = 0.889
 anchor_bottom = 0.755
 offset_left = -80.1281
-offset_top = -80.24
+offset_top = -114.24
 offset_right = 79.8719
-offset_bottom = 79.76
+offset_bottom = 45.76
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
+
+[node name="Back" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -84.0
+offset_right = 190.0
+grow_vertical = 0
+text = "<--- BACK"
 
 [node name="Level Transition" parent="." instance=ExtResource("3_dspth")]
 visible = false
 layout_mode = 1
+
+[connection signal="button_down" from="Back" to="." method="back_to_main_screen"]

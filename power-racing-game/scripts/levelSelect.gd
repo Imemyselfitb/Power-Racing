@@ -1,9 +1,11 @@
 extends Control
 
+signal closeLevelSelect
+
 var current_selected: Vector2 = Vector2(0, 0)
 
 var allowClicks = true
-func clicked(level_name: String):
+func clickedLevel(level_name: String):
 	if allowClicks:
 		allowClicks = false
 		$"Level Transition".visible = true
@@ -22,7 +24,7 @@ func hover_end(button: TextureButton):
 
 func _ready() -> void:
 	for LEVEL: TextureButton in $Levels.get_children():
-		LEVEL.button_down.connect(clicked.bind(LEVEL.name))
+		LEVEL.button_down.connect(clickedLevel.bind(LEVEL.name))
 		LEVEL.mouse_entered.connect(hover_start.bind(LEVEL))
 		LEVEL.mouse_exited.connect(hover_end.bind(LEVEL))
 		LEVEL.focus_entered.connect(hover_start.bind(LEVEL))
@@ -34,3 +36,6 @@ func toggleUI(advanceUI: Callable):
 	advanceUI.call()
 	var curIdx = 1 + current_selected.x + current_selected.y * 4
 	$Levels.get_node("Level" + str(curIdx)).mouse_entered.emit()
+
+func back_to_main_screen() -> void:
+	closeLevelSelect.emit()

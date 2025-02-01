@@ -2,12 +2,18 @@ extends Node3D
 
 @onready var time:float = 180 # 3 mins
 
-@export var playerKart:Kart
+@onready var rng: RandomNumberGenerator = RandomNumberGenerator.new()
+@export var playerKart: Kart
 
-var raceEnded:bool = false
+var raceEnded: bool = false
 
-var distanceTraveled:float = 0
-var lastDistance:float = 0
+var distanceTraveled: float = 0
+var lastDistance: float = 0
+
+var moneyvirtual: int = 0
+var moneytotal: int = 0
+
+var winTime: int = 0
 
 func _ready():
 	lastDistance = $Path3D.curve.get_closest_offset(playerKart.body.global_position)
@@ -16,6 +22,7 @@ func _process(delta):
 	time -= delta
 	if get_tree().get_nodes_in_group("ai_kart").size() == 0:
 		if time > 3:
+			winTime = max(winTime, time)
 			time = lerp(time, 3.0, delta * 4)
 	
 	$WinLose/TollBoothCheck/Bubble/Boss/Moustache.rotation = sin(time)
@@ -34,7 +41,17 @@ func _process(delta):
 				get_tree().create_tween().tween_property($WinLose/Lose, "modulate", Color(1, 1, 1, 1), 1).set_trans(Tween.TRANS_CIRC)
 			else:
 				get_tree().create_tween().tween_property($WinLose/Win, "modulate", Color(1, 1, 1, 1), 1).set_trans(Tween.TRANS_CIRC)
+			
+			var scaledWinTime: float = 0.01 * winTime
+			var winTimeFactor: float = (2 * scaledWinTime + 1) / (scaledWinTime + 1)
+			moneytotal = distanceTraveled * winTimeFactor
 		else:
+			$WinLose/Money.text = "Money Made: " + str(moneyvirtual)
+			var change: float =  0.03 * (moneytotal - moneyvirtual)
+			var unclamped: float = (change + 1.0) * 0.2 * sin(2.0 * moneyvirtual * (PI / 180))
+			$WinLose/Money.rotation_degrees = clamp(unclamped, -15, 15)
+			moneyvirtual += ceil(change)
+			
 			$WinLose/Karts/SubViewport/Cam.global_position = playerKart.vehicle.global_position + Vector3(2, 1, 2)
 			$WinLose/Karts/SubViewport/Cam.look_at(playerKart.vehicle.global_position)
 			$WinLose/EverythingElse/SubViewport/Cam.global_transform = $WinLose/Karts/SubViewport/Cam/ActualCamera.global_transform
@@ -47,8 +64,7 @@ func _process(delta):
 	var udistance = $Path3D.curve.get_closest_offset(playerKart.body.global_position)
 	var distanceoffset = udistance - lastDistance
 	lastDistance = udistance
-	distanceTraveled += distanceoffset
-	print(distanceTraveled)
+	distanceTraveled += clamp(distanceoffset, -1, 1)
 
 func _on_static_body_3d_body_entered(body):
 	if body is Kart:
@@ -61,9 +77,6 @@ func _on_static_body_3d_body_entered(body):
 	body.collision_layer = 0
 	tween.tween_property(body, "global_position", $Path3D.curve.get_closest_point($Path3D.to_local(body.global_position)) + Vector3(0, 12, 0), 1).set_trans(Tween.TRANS_EXPO)
 	tween.tween_property(body, "collision_layer", bodydefaultcollision, 0)
-
-var moneyvirtual
-var moneytotal
 
 func _on_continue_pressed():
 	if not SettingsData.inStoryMode:
