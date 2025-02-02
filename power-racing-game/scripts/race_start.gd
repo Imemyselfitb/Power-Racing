@@ -3,6 +3,7 @@ extends Control
 func _ready():
 	process_mode = ProcessMode.PROCESS_MODE_WHEN_PAUSED
 	get_tree().paused = true
+	BgMusic._play_another_song(load("res://assets/music/The seas.mp3"))
 	$origin/Rotate/Label.text = ""
 
 var checkInput = false

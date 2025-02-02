@@ -37,7 +37,12 @@ texture_filter = 0
 texture = ExtResource("4_hg06h")
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="Body"]
+process_mode = 3
 stream = ExtResource("5_thojk")
+volume_db = 20.0
+unit_size = 2.0
+pitch_scale = 1.19
+autoplay = true
 
 [node name="Vehicle" type="CharacterBody3D" parent="."]
 

@@ -10,10 +10,14 @@ func _ready():
 	$UI/TextPanel/Text.visible_characters = 0
 	$Look.look_at(get_node(scenes[currentSceneidx].focusNode).global_position)
 	$TextPlayer.position = get_node(scenes[currentSceneidx].focusNode).global_position
+	
+	SettingsData.currentNextCutscene = nextcutscene
 
 var progress = 0
 
 @export var nextLevel:PackedScene = null
+@export var nextcutscene:PackedScene = null
+@export var tollboothcharge:float = 0
 
 var finished = false
 

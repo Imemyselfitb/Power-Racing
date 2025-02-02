@@ -35,7 +35,7 @@ offset_bottom = 79.96
 texture_normal = ExtResource("1_sfuho")
 stretch_mode = 0
 
-[node name="Level2" type="TextureButton" parent="Levels"]
+[node name="mountain" type="TextureButton" parent="Levels"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.371

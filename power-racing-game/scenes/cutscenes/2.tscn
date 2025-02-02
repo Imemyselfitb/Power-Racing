@@ -1,0 +1,287 @@
+[gd_scene load_steps=30 format=4 uid="uid://yjaq3g2lcdbu"]
+
+[ext_resource type="Script" path="res://scripts/cutscene.gd" id="1_dx5wn"]
+[ext_resource type="Script" path="res://scripts/scene.gd" id="2_u86nm"]
+[ext_resource type="PackedScene" uid="uid://dah780b2oxa5u" path="res://scenes/levels/level1.tscn" id="5_iddrm"]
+[ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="6_u8qsj"]
+[ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="7_43lxd"]
+[ext_resource type="PackedScene" uid="uid://jgst4ctmbads" path="res://assets/models/gokart.tscn" id="8_lkvdu"]
+[ext_resource type="Shader" path="res://scripts/grass.gdshader" id="9_75681"]
+[ext_resource type="Texture2D" uid="uid://c6oj3i2e01ouk" path="res://assets/sprite/frontThin.png" id="9_gld4c"]
+[ext_resource type="Texture2D" uid="uid://bhf561ftsguqu" path="res://assets/sprite/bossman.png" id="10_7ns8u"]
+[ext_resource type="Shader" path="res://scripts/water.gdshader" id="10_yv285"]
+
+[sub_resource type="Resource" id="Resource_mwtco"]
+script = ExtResource("2_u86nm")
+focusNode = NodePath("gokart")
+text = "So we won huh."
+speed = 30.0
+forceSkipAtCharacters = 9999999
+
+[sub_resource type="Resource" id="Resource_is17g"]
+script = ExtResource("2_u86nm")
+focusNode = NodePath("BossMan")
+text = "Yeah, and we're rich!"
+speed = 30.0
+forceSkipAtCharacters = 9999999
+
+[sub_resource type="Resource" id="Resource_wbeq4"]
+script = ExtResource("2_u86nm")
+focusNode = NodePath("gokart")
+text = "So what now?"
+speed = 30.0
+forceSkipAtCharacters = 9999999
+
+[sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ww0n"]
+bg_color = Color(1, 1, 1, 1)
+border_width_left = 12
+border_width_top = 12
+border_width_right = 12
+border_width_bottom = 12
+border_color = Color(0, 0, 0, 1)
+corner_radius_top_left = 24
+corner_radius_top_right = 24
+corner_radius_bottom_right = 24
+corner_radius_bottom_left = 24
+shadow_color = Color(0, 0, 0, 0.780392)
+shadow_size = 1
+shadow_offset = Vector2(5, 5)
+anti_aliasing = false
+
+[sub_resource type="LabelSettings" id="LabelSettings_1bwt1"]
+font_size = 48
+font_color = Color(0, 0, 0, 1)
+outline_size = 12
+shadow_size = 5
+shadow_color = Color(0, 0, 0, 0.584314)
+shadow_offset = Vector2(0, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_jgqk6"]
+font_size = 32
+font_color = Color(0.99558, 0.99558, 0.99558, 1)
+outline_size = 5
+outline_color = Color(0, 0, 0, 1)
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_tgdg3"]
+sky_top_color = Color(0.19, 0.811, 1, 1)
+sky_horizon_color = Color(0.8, 0.876667, 1, 1)
+sky_curve = 0.0955921
+ground_bottom_color = Color(0.06, 0.06, 0.06, 1)
+ground_horizon_color = Color(0.2542, 0.394423, 0.62, 1)
+ground_energy_multiplier = 1.79
+sun_curve = 48410.7
+
+[sub_resource type="Sky" id="Sky_dc8tj"]
+sky_material = SubResource("ProceduralSkyMaterial_tgdg3")
+
+[sub_resource type="Environment" id="Environment_sr2bp"]
+background_mode = 2
+sky = SubResource("Sky_dc8tj")
+ambient_light_source = 2
+ambient_light_color = Color(0.15, 0.0875, 0, 1)
+glow_enabled = true
+glow_intensity = 0.28
+glow_bloom = 0.08
+glow_hdr_threshold = 0.24
+fog_light_color = Color(0.85, 0.98, 1, 1)
+fog_light_energy = 0.49
+fog_density = 0.0
+adjustment_enabled = true
+adjustment_brightness = 1.17
+adjustment_contrast = 1.17
+adjustment_saturation = 1.17
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l0p0k"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_sqkoh"]
+_surfaces = [{
+"aabb": AABB(-71.3292, 1, -75, 142.658, 1e-05, 135.676),
+"format": 34896613377,
+"index_count": 9,
+"index_data": PackedByteArray("AAACAAMAAgAAAAEAAAADAAQA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 5,
+"vertex_data": PackedByteArray("/38AAAAAAAD//wAAyGEAABrPAAD//wAA5DAAAP//AAAAAAAAyGEAAA==")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_cbcf7"]
+resource_name = "tutorial_Cylinder"
+_surfaces = [{
+"aabb": AABB(-71.3292, 1, -75, 142.658, 1e-05, 135.676),
+"attribute_data": PackedByteArray("/z+Ogm56Aq0cZLPx4huz8ZEFAq0="),
+"format": 34896613399,
+"index_count": 9,
+"index_data": PackedByteArray("AAACAAMAAgAAAAEAAAADAAQA"),
+"material": SubResource("StandardMaterial3D_l0p0k"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 5,
+"vertex_data": PackedByteArray("/38AAAAA/7///wAAyGH/vxrPAAD///+/5DAAAP///78AAAAAyGH/v////3/+//9/////f////3////9/")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_sqkoh")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3om4w"]
+render_priority = 0
+shader = ExtResource("9_75681")
+shader_parameter/albedo = Color(0.35, 1, 0, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_bp8u2"]
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_jfkua"]
+_surfaces = [{
+"aabb": AABB(-202.444, -38.0509, -212.862, 404.887, 39.0509, 385.071),
+"format": 34359742465,
+"index_count": 69,
+"index_data": PackedByteArray("AAALAAEAAAAKAAsAAgANAAMAAgAMAA0ABAAKAAAABAAOAAoABQAAAAEAAQACAAcABwACAAMACAADAAQACQAEAAAABQABAAYAAQAHAAYABwADAAgACAAEAAkACQAAAAUACwAOAA0ADgALAAoACwANAAwAAwAOAAQAAwANAA4AAQAMAAIAAQALAAwA"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 15,
+"vertex_data": PackedByteArray("AAAAAHu12sAwQAbDLVz/Qnu12sBq8SXCOtKdQnu12sDlONlCOtKdwnu12sDlONlCLVz/wnu12sBq8SXCAAAAAAAAgD8AAJbCkqiOQgAAgD8DabnB6FUwQgAAgD+BtHJC6FUwwgAAgD+BtHJCkqiOwgAAgD8DabnBqsdKtRs0GMKf3FTDj3FKQxs0GMJJjoPC6Tv6Qhs0GMJ0NSxD6Tv6whs0GMJ0NSxDj3FKwxs0GMJJjoPC")
+}]
+blend_shape_mode = 0
+
+[sub_resource type="ArrayMesh" id="ArrayMesh_moydf"]
+resource_name = "tutorial_Cylinder_002"
+_surfaces = [{
+"aabb": AABB(-202.444, -38.0509, -212.862, 404.887, 39.0509, 385.071),
+"attribute_data": PackedByteArray("AAAAMwAAAD8AAAAzAAAAPwAAADMAAAA/AACAPwAAAD8AAIA/AAAAP83MTD8AAAA/zcxMPwAAAD/NzEw/AAAAP83MTD8AAAA/zcxMPwAAAD/NzEw/AAAAP5qZGT8AAAA/mpkZPwAAAD+amRk/AAAAP5qZGT8AAAA/zszMPgAAAD/OzMw+AAAAP87MzD4AAAA/zszMPgAAAD/PzEw+AAAAP8/MTD4AAAA/z8xMPgAAAD/PzEw+AAAAP8/MTD4AAAA/AAAAMwAAAAAAAIA/AAAAAAAAgD8AAAAAzcxMPwAAAADNzEw/AAAAAJqZGT8AAAAAmpkZPwAAAACamRk/AAAAAM7MzD4AAAAAzszMPgAAAADOzMw+AAAAAM/MTD4AAAAAz8xMPgAAAADPzEw+AAAAAAAAADMAAAA/AABAP1yPAj8AAIA/AAAAP9Nuej+VAy0/zcxMPwAAAD/NzEw/AAAAPxAdZD+8tHE/mpkZPwAAAD+amRk/AAAAP87MzD4AAAA/8OIbP7y0cT/OzMw+AAAAP8/MTD4AAAA/z8xMPgAAAD8tkQU/lQMtPw=="),
+"format": 34359742487,
+"index_count": 69,
+"index_data": PackedByteArray("BAAqAAkABAAoACoACwAxABEACwAtADEAFAAmAAAAFAAzACYAGQADAAYACAANAB4AHQAMABIAIAAQABYAJAAXAAIAGgAFABsABwAfABwAHQASACIAIQAVACMAJQABABgAKQA0ADAANAApACcAKQAwACwADwAyABMADwAvADIACgAuAA4ACgArAC4A"),
+"material": SubResource("StandardMaterial3D_bp8u2"),
+"primitive": 3,
+"uv_scale": Vector4(0, 0, 0, 0),
+"vertex_count": 53,
+"vertex_data": PackedByteArray("AAAAAHu12sAwQAbDAAAAAHu12sAwQAbDAAAAAHu12sAwQAbDAAAAAHu12sAwQAbDAAAAAHu12sAwQAbDLVz/Qnu12sBq8SXCLVz/Qnu12sBq8SXCLVz/Qnu12sBq8SXCLVz/Qnu12sBq8SXCLVz/Qnu12sBq8SXCLVz/Qnu12sBq8SXCOtKdQnu12sDlONlCOtKdQnu12sDlONlCOtKdQnu12sDlONlCOtKdQnu12sDlONlCOtKdwnu12sDlONlCOtKdwnu12sDlONlCOtKdwnu12sDlONlCOtKdwnu12sDlONlCLVz/wnu12sBq8SXCLVz/wnu12sBq8SXCLVz/wnu12sBq8SXCLVz/wnu12sBq8SXCLVz/wnu12sBq8SXCAAAAAAAAgD8AAJbCAAAAAAAAgD8AAJbCAAAAAAAAgD8AAJbCkqiOQgAAgD8DabnBkqiOQgAAgD8DabnB6FUwQgAAgD+BtHJC6FUwQgAAgD+BtHJC6FUwQgAAgD+BtHJC6FUwwgAAgD+BtHJC6FUwwgAAgD+BtHJC6FUwwgAAgD+BtHJCkqiOwgAAgD8DabnBkqiOwgAAgD8DabnBkqiOwgAAgD8DabnBqsdKtRs0GMKf3FTDqsdKtRs0GMKf3FTDqsdKtRs0GMKf3FTDj3FKQxs0GMJJjoPCj3FKQxs0GMJJjoPCj3FKQxs0GMJJjoPC6Tv6Qhs0GMJ0NSxD6Tv6Qhs0GMJ0NSxD6Tv6Qhs0GMJ0NSxD6Tv6whs0GMJ0NSxD6Tv6whs0GMJ0NSxD6Tv6whs0GMJ0NSxDj3FKwxs0GMJJjoPCj3FKwxs0GMJJjoPCj3FKwxs0GMJJjoPC70sW6v///z81aPz13DX/vzVo/PXcNf+/yZf89QAA7doPtBbq////P8mX/PUAAO3ayZf89QAA7dp/kCTq//9N8H+QJOr//7GPD7QW6v///z/qpBTP////P/9/29X///8//38D7v///79/kCTq//+xj+qkFM////8/FFsUz////z9/byTqY5//v/9/29X///8//38D7v///78UWxTP////P+9LFur///8/f28k6mOf/79/byTqY5//vzVo/PXcNf+/NWj89dw1/7/Jl/z1AADt2smX/PUAAO3ayZf89QAA7dp/kCTq//9N8P9/A+7///+/f5Ak6v//sY9/kCTq//9N8H9vJOpjn/+/f28k6mOf/7//fwPu////v39vJOpjn/+/NWj89dw1/781aPz13DX/v+9LFur///8//38AAP///z8PtBbq////P/9/AAD///8/D7QW6v///z/qpBTP////P/9/AAD///8//3/b1f///z/qpBTP////PxRbFM////8//38AAP///z//f9vV////PxRbFM////8/70sW6v///z//fwAA////Pw==")
+}]
+blend_shape_mode = 0
+shadow_mesh = SubResource("ArrayMesh_jfkua")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_getrc"]
+render_priority = 0
+shader = ExtResource("9_75681")
+shader_parameter/albedo = Color(1, 0.959, 0.59, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_xnifx"]
+render_priority = 0
+shader = ExtResource("10_yv285")
+shader_parameter/cell_amount = 20
+shader_parameter/period = Vector2(5, 10)
+shader_parameter/albedo = Color(0, 0.483333, 1, 1)
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_xnqu5"]
+material = SubResource("ShaderMaterial_xnifx")
+size = Vector2(1000, 1000)
+
+[node name="Cutscene" type="Node3D"]
+script = ExtResource("1_dx5wn")
+scenes = Array[ExtResource("2_u86nm")]([SubResource("Resource_mwtco"), SubResource("Resource_is17g"), SubResource("Resource_wbeq4")])
+nextLevel = ExtResource("5_iddrm")
+tollboothcharge = 2000.0
+
+[node name="UI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_u8qsj")
+
+[node name="TextPanel" type="Panel" parent="UI"]
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 64.0
+offset_top = -160.0
+offset_right = -64.0
+grow_horizontal = 2
+grow_vertical = 0
+theme_override_styles/panel = SubResource("StyleBoxFlat_1ww0n")
+
+[node name="Text" type="Label" parent="UI/TextPanel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 16.0
+offset_top = 16.0
+offset_right = -16.0
+offset_bottom = -16.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Hi im some text lolololl look at how cool i am and awesome you aren't lol how dare you even talk to me!"
+label_settings = SubResource("LabelSettings_1bwt1")
+autowrap_mode = 2
+visible_characters = 0
+visible_ratio = 0.0
+
+[node name="ContinueLabrl" type="Label" parent="UI/TextPanel"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -40.0
+offset_top = -24.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "interact to continue"
+label_settings = SubResource("LabelSettings_jgqk6")
+
+[node name="Level Transition" parent="UI" instance=ExtResource("7_43lxd")]
+layout_mode = 1
+
+[node name="TextPlayer" type="AudioStreamPlayer3D" parent="."]
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(0.998761, 0.010471, -0.0486445, 0, 0.977608, 0.210436, 0.0497587, -0.210175, 0.976397, 0.0541004, 0.508296, 0.725505)
+
+[node name="Look" type="Node3D" parent="."]
+transform = Transform3D(0.998761, 0.010471, -0.0486445, 0, 0.977608, 0.210436, 0.0497587, -0.210175, 0.976397, 0.0541004, 0.508296, 0.725505)
+
+[node name="gokart" parent="." instance=ExtResource("8_lkvdu")]
+transform = Transform3D(-0.358403, 0, -0.206924, 0, 0.413848, 0, 0.206924, 0, -0.358403, -0.399636, 0, 0.505413)
+
+[node name="Sprite3D" type="Sprite3D" parent="gokart"]
+transform = Transform3D(1, 0, 5.96046e-08, 0, 1, 0, -5.96046e-08, 0, 1, 0, 0.590837, 0)
+pixel_size = 0.003
+billboard = 2
+texture_filter = 0
+texture = ExtResource("9_gld4c")
+
+[node name="BossMan" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.284563, 0.359123, 0.317032)
+pixel_size = 0.003
+billboard = 1
+texture_filter = 0
+texture = ExtResource("10_7ns8u")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_sr2bp")
+
+[node name="land" type="Node3D" parent="."]
+transform = Transform3D(0.0510233, 0, 0, 0, 0.0510233, 0, 0, 0, 0.0510233, 0, -0.0460312, 0)
+
+[node name="Cylinder" type="MeshInstance3D" parent="land"]
+mesh = SubResource("ArrayMesh_cbcf7")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_3om4w")
+
+[node name="sand" type="MeshInstance3D" parent="land"]
+mesh = SubResource("ArrayMesh_moydf")
+skeleton = NodePath("")
+surface_material_override/0 = SubResource("ShaderMaterial_getrc")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="land"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.70677, 0)
+mesh = SubResource("PlaneMesh_xnqu5")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.288888, -0.364007, -0.885462, 0.063644, -0.930153, 0.361615, -0.955245, 0.048112, 0.291877, 0, 0, 0)

@@ -29,6 +29,7 @@ func _process(delta):
 	
 	if time < 0:
 		if not raceEnded:
+			$WinLose/Whistle.play()
 			raceEnded = true
 			$WinLose/Karts/SubViewport/Cam/ActualCamera.current = true
 			$WinLose.process_mode = Node.PROCESS_MODE_INHERIT
@@ -47,6 +48,7 @@ func _process(delta):
 			moneytotal = clamp(distanceTraveled * winTimeFactor, 0, 1000000)
 			SettingsData.currentMoney += moneytotal
 			var moneyDiff = SettingsData.currentTollBoothMinimum - SettingsData.currentMoney
+			print(SettingsData.inStoryMode)
 			if moneyDiff >= 0:
 				$WinLose/TollBoothCheck/Label.text = "We need " + str(moneyDiff) + " more."
 			else:

@@ -1,4 +1,4 @@
-[gd_scene load_steps=30 format=4 uid="uid://dy668uxyl6ae8"]
+[gd_scene load_steps=35 format=4 uid="uid://dy668uxyl6ae8"]
 
 [ext_resource type="PackedScene" uid="uid://jgst4ctmbads" path="res://assets/models/gokart.tscn" id="1_27um3"]
 [ext_resource type="Script" path="res://scripts/cutscene.gd" id="1_iyjcg"]
@@ -9,6 +9,7 @@
 [ext_resource type="AudioStream" uid="uid://bpth12g2qy4kp" path="res://assets/sound/engine.wav" id="3_bdgfw"]
 [ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="3_rlpqk"]
 [ext_resource type="PackedScene" uid="uid://dah780b2oxa5u" path="res://scenes/levels/level1.tscn" id="5_rsuhh"]
+[ext_resource type="PackedScene" uid="uid://yjaq3g2lcdbu" path="res://scenes/cutscenes/2.tscn" id="6_y6d5u"]
 [ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="7_t0bq8"]
 
 [sub_resource type="Resource" id="Resource_tt36v"]
@@ -52,8 +53,40 @@ forceSkipAtCharacters = 9999999
 [sub_resource type="Resource" id="Resource_bo71o"]
 script = ExtResource("2_jniq6")
 focusNode = NodePath("gokart")
-text = "Alright. I get it. Lets go."
+text = "Alright. I get it.
+How did you afford this anyways?"
 speed = 30.0
+forceSkipAtCharacters = 9999999
+
+[sub_resource type="Resource" id="Resource_k3uvl"]
+script = ExtResource("2_jniq6")
+focusNode = NodePath("BossMan")
+text = "Thats the thing, I didn't.
+I found it lying around outside. I'm pretty sure its engine is messed up or unstable or something..."
+speed = 30.0
+forceSkipAtCharacters = 9999999
+
+[sub_resource type="Resource" id="Resource_jo8bb"]
+script = ExtResource("2_jniq6")
+focusNode = NodePath("BossMan")
+text = "so I modified the kart.
+If you run up to other racers you should be able to blow up their karts!"
+speed = 30.0
+forceSkipAtCharacters = 9999999
+
+[sub_resource type="Resource" id="Resource_46poa"]
+script = ExtResource("2_jniq6")
+focusNode = NodePath("gokart")
+text = "Isn't that like... illegal..."
+speed = 10.0
+forceSkipAtCharacters = 9999999
+
+[sub_resource type="Resource" id="Resource_sfoh3"]
+script = ExtResource("2_jniq6")
+focusNode = NodePath("BossMan")
+text = "Probably, but I think you have about 3 minutes before they'd notice anything.
+Just win with power instead of speed and you'll be fine."
+speed = 10.0
 forceSkipAtCharacters = 9999999
 
 [sub_resource type="StyleBoxFlat" id="StyleBoxFlat_1ww0n"]
@@ -162,8 +195,9 @@ adjustment_saturation = 1.17
 
 [node name="Cutscene" type="Node3D"]
 script = ExtResource("1_iyjcg")
-scenes = Array[ExtResource("2_jniq6")]([SubResource("Resource_tt36v"), SubResource("Resource_6h3av"), SubResource("Resource_yvp5m"), SubResource("Resource_lebp8"), SubResource("Resource_hq26w"), SubResource("Resource_bo71o")])
+scenes = Array[ExtResource("2_jniq6")]([SubResource("Resource_tt36v"), SubResource("Resource_6h3av"), SubResource("Resource_yvp5m"), SubResource("Resource_lebp8"), SubResource("Resource_hq26w"), SubResource("Resource_bo71o"), SubResource("Resource_k3uvl"), SubResource("Resource_jo8bb"), SubResource("Resource_46poa"), SubResource("Resource_sfoh3")])
 nextLevel = ExtResource("5_rsuhh")
+nextcutscene = ExtResource("6_y6d5u")
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

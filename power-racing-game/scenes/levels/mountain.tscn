@@ -1,0 +1,581 @@
+[gd_scene load_steps=38 format=3 uid="uid://c57ahqors8bbk"]
+
+[ext_resource type="Script" path="res://scripts/track.gd" id="1_y53bf"]
+[ext_resource type="PackedScene" uid="uid://bwsgksn5sba8h" path="res://scenes/aiKart.tscn" id="4_1qrq4"]
+[ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="5_2t344"]
+[ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="6_5cjsm"]
+[ext_resource type="Texture2D" uid="uid://dp4r2eyb75dwb" path="res://assets/sprite/timerenclosure.png" id="7_1uell"]
+[ext_resource type="PackedScene" path="res://scenes/minimap.tscn" id="8_xcl75"]
+[ext_resource type="PackedScene" uid="uid://olrqjglx2cq" path="res://scenes/race_start.tscn" id="9_r17be"]
+[ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="10_xpx42"]
+[ext_resource type="Script" path="res://scripts/forcetransitionout.gd" id="11_l7lwx"]
+[ext_resource type="Shader" path="res://scripts/water.gdshader" id="12_5vkk3"]
+[ext_resource type="PackedScene" uid="uid://dldplw2o048gd" path="res://scenes/level_preview_spin.tscn" id="13_24r78"]
+[ext_resource type="Shader" path="res://scripts/coolsquares.gdshader" id="14_4sru2"]
+[ext_resource type="Shader" path="res://scripts/spikebubble.gdshader" id="15_vqgr6"]
+[ext_resource type="AudioStream" uid="uid://ddseln375bshd" path="res://assets/sound/whistle.wav" id="16_ru8i8"]
+[ext_resource type="Texture2D" uid="uid://d4fsgob3mq7cv" path="res://assets/sprite/speechBubble.png" id="16_ttes7"]
+[ext_resource type="Texture2D" uid="uid://bhf561ftsguqu" path="res://assets/sprite/bossman.png" id="17_we8ci"]
+[ext_resource type="PackedScene" uid="uid://c4oeaq07uimli" path="res://assets/models/mountain.blend" id="18_b1gmh"]
+[ext_resource type="Texture2D" uid="uid://bguvq3ac1i2se" path="res://assets/sprite/moustache.png" id="18_ftbgy"]
+[ext_resource type="PackedScene" uid="uid://cx7b44ss401nh" path="res://scenes/start_flag.tscn" id="19_emw6x"]
+
+[sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
+sky_top_color = Color(0.19, 0.811, 1, 1)
+sky_horizon_color = Color(0.8, 0.876667, 1, 1)
+sky_curve = 0.0955921
+ground_bottom_color = Color(0.06, 0.06, 0.06, 1)
+ground_horizon_color = Color(0.2542, 0.394423, 0.62, 1)
+ground_energy_multiplier = 1.79
+sun_curve = 48410.7
+
+[sub_resource type="Sky" id="Sky_euqx2"]
+sky_material = SubResource("ProceduralSkyMaterial_xy3eh")
+
+[sub_resource type="Environment" id="Environment_hhrjw"]
+background_mode = 2
+sky = SubResource("Sky_euqx2")
+glow_enabled = true
+glow_intensity = 0.28
+glow_bloom = 0.08
+glow_hdr_threshold = 0.24
+fog_enabled = true
+fog_mode = 1
+fog_light_color = Color(0.82, 0.976, 1, 1)
+fog_light_energy = 0.66
+fog_density = 1.0
+fog_depth_begin = 0.0
+fog_depth_end = 178.5
+adjustment_enabled = true
+adjustment_brightness = 1.17
+adjustment_contrast = 1.17
+adjustment_saturation = 1.17
+
+[sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vyo1u"]
+
+[sub_resource type="Curve3D" id="Curve3D_88ayj"]
+_data = {
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -101.28, 0, 50.6398, 0, 0, 0, 0, 0, 0, -101.694, 0, 27.9072, 0, 0, 0, 0, 0, 0, -102.166, 0, 2.05878, 0, 0, 0, 0, 0, 0, -102.857, 0, -35.8182, 0, 0, 0, 0, 0, 0, -103.457, 0, -68.6698, 0, 0, 0, 0, 0, 0, -103.917, 0, -93.8946, 0, 0, 0, 0, 0, 0, -90.7297, 0, -119.742, 0, 0, 0, 0, 0, 0, -73.3222, 0, -129.237, 0, 0, 0, 0, 0, 0, -43.2549, 0, -135.567, 0, 0, 0, 0, 0, 0, -19.5174, 0, -130.292, 0, 0, 0, 0, 0, 0, -3.69247, 0, -122.907, 0, 0, 0, 0, 0, 0, 14.7699, 0, -104.445, 0, 0, 0, 0, 0, 0, 19.5174, 0, -92.8397, 0, 0, 0, 0, 0, 0, 17.9349, 0, -78.0697, 0, 0, 0, 0, 0, 0, 13.1874, 0, -63.2998, 0, 0, 0, 0, 0, 0, 7.91248, 0, -27.4299, 0, 0, 0, 0, 0, 0, 15.8249, 0, -11.605, 0, 0, 0, 0, 0, 0, 32.5042, 0, -8.80385, 0, 0, 0, 0, 0, 0, 84.9272, 0, -7.27596e-12, 0, 0, 0, 0, 0, 0, 117.632, 0, 9.49496, 0, 0, 0, 0, 0, 0, 123.435, 0, 27.4299, 0, 0, 0, 0, 0, 0, 129.764, 0, 44.8373, 0, 0, 0, 0, 0, 0, 128.182, 0, 60.1348, 0, 0, 0, 0, 0, 0, 122.38, 0, 72.2672, 0, 0, 0, 0, 0, 0, 116.05, 0, 79.6522, 0, 0, 0, 0, 0, 0, 97.0596, 0, 95.4771, 0, 0, 0, 0, 0, 0, 64.3548, 0, 105.5, 0, 0, 0, 0, 0, 0, 30.5228, 0, 106.829, 0, 0, 0, 0, 0, 0, -8.02871, 0, 108.343, 0, 0, 0, 0, 0, 0, -54.2943, 0, 110.161, 0, 0, 0, 0, 0, 0, -83.3447, 0, 111.302, 0, 0, 0, 0, 0, 0, -94.4221, 0, 102.862, 0, 0, 0, 0, 0, 0, -98.6421, 0, 95.4771, 0, 0, 0, 0, 0, 0, -99.6971, 0, 88.6197, 0, 0, 0, 0, 0, 0, -101.807, 0, 71.2122, 0, 0, 0, 0, 0, 0, -102.335, 0, 60.1348, 0, 0, 0, 0, 0, 0, -101.28, 0, 50.6398),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+}
+point_count = 37
+
+[sub_resource type="LabelSettings" id="LabelSettings_buy3n"]
+font_size = 128
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="TorusMesh" id="TorusMesh_ptplp"]
+inner_radius = 118.923
+outer_radius = 933.892
+
+[sub_resource type="Shader" id="Shader_56bgv"]
+code = "shader_type spatial;
+render_mode unshaded;
+uniform int cell_amount = 20;
+uniform vec2 period = vec2(5.0, 10.0);
+uniform vec4 albedo : source_color;
+
+vec2 modulo(vec2 divident, vec2 divisor){
+	vec2 positiveDivident = mod(divident, divisor) + divisor;
+	return mod(positiveDivident, divisor);
+}
+
+vec2 random(vec2 value){
+	value = vec2( dot(value, vec2(127.1,311.7) ),
+				  dot(value, vec2(269.5,183.3) ) );
+	return -1.0 + 2.0 * fract(sin(value) * 43758.5453123);
+}
+
+float seamless_noise(vec2 uv, vec2 _period) {
+	uv = uv * float(cell_amount);
+	vec2 cellsMinimum = floor(uv);
+	vec2 cellsMaximum = ceil(uv);
+	vec2 uv_fract = fract(uv);
+	
+	cellsMinimum = modulo(cellsMinimum, _period);
+	cellsMaximum = modulo(cellsMaximum, _period);
+	
+	vec2 blur = smoothstep(0.0, 1.0, uv_fract);
+	
+	vec2 lowerLeftDirection = random(vec2(cellsMinimum.x, cellsMinimum.y));
+	vec2 lowerRightDirection = random(vec2(cellsMaximum.x, cellsMinimum.y));
+	vec2 upperLeftDirection = random(vec2(cellsMinimum.x, cellsMaximum.y));
+	vec2 upperRightDirection = random(vec2(cellsMaximum.x, cellsMaximum.y));
+	
+	vec2 fraction = fract(uv);
+	
+	return mix( mix( dot( lowerLeftDirection, fraction - vec2(0, 0) ),
+                     dot( lowerRightDirection, fraction - vec2(1, 0) ), blur.x),
+                mix( dot( upperLeftDirection, fraction - vec2(0, 1) ),
+                     dot( upperRightDirection, fraction - vec2(1, 1) ), blur.x), blur.y) * 0.8 + 0.5;
+}
+
+void vertex(){
+	float noise = seamless_noise(UV + vec2(TIME * 0.001), period);
+	noise += seamless_noise(UV + vec2(1.0 + TIME * 0.004), period) - 0.5;
+	//VERTEX.y += (1.0 - sin(noise)) * 4000.0;
+}
+
+void fragment(){
+	float noise = seamless_noise(UV + vec2(TIME * 0.001), period);
+	noise += seamless_noise(UV + vec2(1.0 + TIME * 0.004), period) - 0.5;
+	ALBEDO = albedo.rgb;
+	if (sin(noise) < 0.4) {
+		ALBEDO = vec3(1);
+	} else {
+		ALPHA = 0.2;
+	}
+}"
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_3mlf5"]
+render_priority = 0
+shader = SubResource("Shader_56bgv")
+shader_parameter/cell_amount = 40
+shader_parameter/period = Vector2(10, 10)
+shader_parameter/albedo = Color(0.56, 0.56, 0.56, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_mjccq"]
+shader = ExtResource("14_4sru2")
+
+[sub_resource type="LabelSettings" id="LabelSettings_kjhoa"]
+font_size = 128
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_o5fmy"]
+font_size = 64
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_alm87"]
+shader = ExtResource("15_vqgr6")
+
+[sub_resource type="LabelSettings" id="LabelSettings_7qbxk"]
+font_size = 50
+outline_size = 15
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="LabelSettings" id="LabelSettings_nmors"]
+font_size = 64
+font_color = Color(1, 0.8, 0, 1)
+outline_size = 12
+outline_color = Color(0, 0, 0, 1)
+shadow_size = 12
+shadow_color = Color(0, 0, 0, 1)
+shadow_offset = Vector2(5, 5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_45a5g"]
+albedo_color = Color(0.1632, 0.228533, 0.32, 1)
+metallic = 0.51
+roughness = 0.0
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_rgwjq"]
+albedo_color = Color(0.18, 0.18, 0.18, 1)
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_lmyct"]
+render_priority = 0
+shader = ExtResource("12_5vkk3")
+shader_parameter/cell_amount = 20
+shader_parameter/period = Vector2(5, 10)
+shader_parameter/albedo = Color(0.0666666, 0, 1, 1)
+
+[node name="Game" type="Node3D" node_paths=PackedStringArray("playerKart")]
+script = ExtResource("1_y53bf")
+playerKart = NodePath("PlayerKart")
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_hhrjw")
+
+[node name="StaticBody3D" type="Area3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -2.79976, 0)
+collision_layer = 3
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("WorldBoundaryShape3D_vyo1u")
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.787086, 0.616844, -2.3457e-08, -0.494911, 0.631501, 0.596883, 0.368184, -0.469798, 0.802328, 0, 72.3031, 0)
+shadow_enabled = true
+shadow_normal_bias = 10.0
+shadow_blur = 0.0
+
+[node name="Kart" parent="." node_paths=PackedStringArray("path") instance=ExtResource("4_1qrq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.748, 1.21364, 47.806)
+path = NodePath("../Path3D")
+
+[node name="Kart2" parent="." node_paths=PackedStringArray("path") instance=ExtResource("4_1qrq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.491, 1.21364, 47.806)
+path = NodePath("../Path3D")
+
+[node name="Kart3" parent="." node_paths=PackedStringArray("path") instance=ExtResource("4_1qrq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.491, 1.21364, 47.806)
+path = NodePath("../Path3D")
+
+[node name="Kart4" parent="." node_paths=PackedStringArray("path") instance=ExtResource("4_1qrq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.748, 1.21364, 51.2686)
+path = NodePath("../Path3D")
+
+[node name="Kart5" parent="." node_paths=PackedStringArray("path") instance=ExtResource("4_1qrq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.491, 1.21364, 51.2686)
+path = NodePath("../Path3D")
+
+[node name="Kart6" parent="." node_paths=PackedStringArray("path") instance=ExtResource("4_1qrq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.491, 1.21364, 51.2686)
+path = NodePath("../Path3D")
+
+[node name="Kart7" parent="." node_paths=PackedStringArray("path") instance=ExtResource("4_1qrq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -104.748, 1.21364, 55.0218)
+path = NodePath("../Path3D")
+
+[node name="Kart8" parent="." node_paths=PackedStringArray("path") instance=ExtResource("4_1qrq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -100.491, 1.21364, 55.0218)
+path = NodePath("../Path3D")
+
+[node name="Kart9" parent="." node_paths=PackedStringArray("path") instance=ExtResource("4_1qrq4")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -96.491, 1.21364, 55.0218)
+path = NodePath("../Path3D")
+
+[node name="Path3D" type="Path3D" parent="."]
+curve = SubResource("Curve3D_88ayj")
+
+[node name="PlayerKart" parent="." instance=ExtResource("5_2t344")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -101.044, 1.24984, 58.2712)
+
+[node name="TrackUI" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_5cjsm")
+
+[node name="TimerContainer" type="TextureRect" parent="TrackUI"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -256.0
+offset_top = -128.0
+offset_right = 256.0
+grow_horizontal = 2
+grow_vertical = 0
+texture = ExtResource("7_1uell")
+
+[node name="Timer" type="Label" parent="TrackUI/TimerContainer"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = 17.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "3:00"
+label_settings = SubResource("LabelSettings_buy3n")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Minimap" parent="TrackUI" node_paths=PackedStringArray("path3d", "Level") instance=ExtResource("8_xcl75")]
+layout_mode = 1
+zoomOut = 0.45
+path3d = NodePath("../../Path3D")
+Level = NodePath("../..")
+offset = Vector2(-30, 0)
+
+[node name="RaceStart" parent="." instance=ExtResource("9_r17be")]
+process_mode = 3
+
+[node name="Level Transition" parent="RaceStart" instance=ExtResource("10_xpx42")]
+layout_mode = 1
+script = ExtResource("11_l7lwx")
+
+[node name="clouds" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.00570327, 0, 0, 0, 1, -41.4878, -1.31874, 4.43746)
+mesh = SubResource("TorusMesh_ptplp")
+surface_material_override/0 = SubResource("ShaderMaterial_3mlf5")
+
+[node name="clouds2" type="MeshInstance3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.00570327, 0, 0, 0, 1, -41.4878, -41.7894, 4.43746)
+mesh = SubResource("TorusMesh_ptplp")
+surface_material_override/0 = SubResource("ShaderMaterial_3mlf5")
+
+[node name="LevelPreviewSpin" parent="." instance=ExtResource("13_24r78")]
+
+[node name="Camera3D" parent="LevelPreviewSpin" index="0"]
+transform = Transform3D(0.82804, 0.134668, -0.544256, 0, 0.970725, 0.240192, 0.560669, -0.198889, 0.803799, -87.378, 38.562, 129.047)
+
+[node name="WinLose" type="Control" parent="."]
+process_mode = 4
+visible = false
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme = ExtResource("6_5cjsm")
+
+[node name="EverythingElse" type="SubViewportContainer" parent="WinLose"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="WinLose/EverythingElse"]
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="Cam" type="Camera3D" parent="WinLose/EverythingElse/SubViewport"]
+
+[node name="ColorRect" type="ColorRect" parent="WinLose"]
+material = SubResource("ShaderMaterial_mjccq")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Karts" type="SubViewportContainer" parent="WinLose"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+stretch = true
+
+[node name="SubViewport" type="SubViewport" parent="WinLose/Karts"]
+transparent_bg = true
+handle_input_locally = false
+size = Vector2i(1152, 648)
+render_target_update_mode = 0
+
+[node name="Cam" type="Node3D" parent="WinLose/Karts/SubViewport"]
+
+[node name="ActualCamera" type="Camera3D" parent="WinLose/Karts/SubViewport/Cam"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
+cull_mask = 2
+
+[node name="Lose" type="Control" parent="WinLose"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Lost" type="Label" parent="WinLose/Lose"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -440.0
+offset_top = 64.0
+offset_right = -63.0
+offset_bottom = 160.0
+grow_horizontal = 0
+text = "You lost..."
+label_settings = SubResource("LabelSettings_kjhoa")
+
+[node name="Lost2" type="Label" parent="WinLose/Lose"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -592.0
+offset_top = 184.0
+offset_right = -68.0
+offset_bottom = 436.0
+grow_horizontal = 0
+text = "Try harder next time.
+"
+label_settings = SubResource("LabelSettings_o5fmy")
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="Button" type="Button" parent="WinLose/Lose"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -128.0
+offset_right = -67.0
+offset_bottom = -76.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Continue?"
+
+[node name="Win" type="Control" parent="WinLose"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="win" type="Label" parent="WinLose/Win"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -440.0
+offset_top = 64.0
+offset_right = -63.0
+offset_bottom = 160.0
+grow_horizontal = 0
+text = "We have a winner!"
+label_settings = SubResource("LabelSettings_kjhoa")
+
+[node name="info" type="Label" parent="WinLose/Win"]
+layout_mode = 1
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -728.0
+offset_top = 184.0
+offset_right = -68.0
+offset_bottom = 436.0
+grow_horizontal = 0
+text = "Neat."
+label_settings = SubResource("LabelSettings_o5fmy")
+horizontal_alignment = 2
+autowrap_mode = 2
+
+[node name="TollBoothCheck" type="Control" parent="WinLose"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Bubble" type="TextureRect" parent="WinLose/TollBoothCheck"]
+material = SubResource("ShaderMaterial_alm87")
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_top = -256.0
+offset_right = 256.0
+grow_vertical = 0
+texture = ExtResource("16_ttes7")
+
+[node name="Boss" type="TextureRect" parent="WinLose/TollBoothCheck/Bubble"]
+layout_mode = 0
+offset_left = -8.0
+offset_top = -56.0
+offset_right = 248.0
+offset_bottom = 200.0
+texture = ExtResource("17_we8ci")
+
+[node name="Moustache" type="TextureRect" parent="WinLose/TollBoothCheck/Bubble/Boss"]
+layout_mode = 0
+offset_left = 168.0
+offset_top = 72.0
+offset_right = 208.0
+offset_bottom = 112.0
+pivot_offset = Vector2(20, 20)
+texture = ExtResource("18_ftbgy")
+expand_mode = 1
+stretch_mode = 4
+
+[node name="Label" type="Label" parent="WinLose/TollBoothCheck"]
+layout_mode = 1
+anchors_preset = 2
+anchor_top = 1.0
+anchor_bottom = 1.0
+offset_left = 256.0
+offset_top = -200.0
+offset_right = 583.0
+offset_bottom = -119.0
+grow_vertical = 0
+text = "We need more money.
+Race again."
+label_settings = SubResource("LabelSettings_7qbxk")
+
+[node name="Money" type="Label" parent="WinLose"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -199.0
+offset_top = -24.0
+offset_right = 199.0
+offset_bottom = 24.0
+grow_horizontal = 2
+grow_vertical = 2
+pivot_offset = Vector2(200, 27)
+text = "Money Made: 000000"
+label_settings = SubResource("LabelSettings_nmors")
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Button" type="Button" parent="WinLose"]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -176.0
+offset_top = -128.0
+offset_right = -67.0
+offset_bottom = -76.0
+grow_horizontal = 0
+grow_vertical = 0
+text = "Continue?"
+
+[node name="Whistle" type="AudioStreamPlayer" parent="WinLose"]
+stream = ExtResource("16_ru8i8")
+
+[node name="startFlag" parent="." instance=ExtResource("19_emw6x")]
+transform = Transform3D(0, 0, 6.56982, 0, 2.26474, 0, -1, 0, 0, -100.919, 0.95754, 42.6588)
+
+[node name="mountain" parent="." instance=ExtResource("18_b1gmh")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.4931, 0)
+
+[node name="road" parent="mountain" index="0"]
+surface_material_override/0 = SubResource("StandardMaterial3D_45a5g")
+
+[node name="BezierCircle_001" parent="mountain" index="1"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.284681, 0)
+surface_material_override/0 = SubResource("StandardMaterial3D_rgwjq")
+
+[node name="StaticBody3D" parent="mountain/BezierCircle_001" index="0"]
+collision_layer = 3
+
+[node name="Plane" parent="mountain" index="2"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -39.6843, 1.25765, 48.7428)
+surface_material_override/0 = SubResource("ShaderMaterial_lmyct")
+
+[connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]
+[connection signal="pressed" from="WinLose/Lose/Button" to="." method="_on_continue_pressed"]
+[connection signal="pressed" from="WinLose/Button" to="." method="_on_continue_pressed"]
+
+[editable path="LevelPreviewSpin"]
+[editable path="mountain"]

@@ -1,25 +1,26 @@
-[gd_scene load_steps=37 format=3 uid="uid://dah780b2oxa5u"]
+[gd_scene load_steps=37 format=3 uid="uid://cwkadcs7e6d68"]
 
-[ext_resource type="PackedScene" uid="uid://dk1hh2gdvpe7u" path="res://assets/models/testtrack.blend" id="1_bie2y"]
-[ext_resource type="Script" path="res://scripts/track.gd" id="1_tkx47"]
-[ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="2_htakq"]
-[ext_resource type="PackedScene" uid="uid://bwsgksn5sba8h" path="res://scenes/aiKart.tscn" id="2_ncjig"]
-[ext_resource type="Shader" path="res://scripts/grass.gdshader" id="3_25x22"]
-[ext_resource type="Texture2D" uid="uid://dp4r2eyb75dwb" path="res://assets/sprite/timerenclosure.png" id="3_qmt2k"]
-[ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="3_v3qel"]
-[ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="5_0j2n4"]
-[ext_resource type="PackedScene" path="res://scenes/minimap.tscn" id="7_584yv"]
-[ext_resource type="PackedScene" uid="uid://olrqjglx2cq" path="res://scenes/race_start.tscn" id="8_yqg6k"]
-[ext_resource type="Script" path="res://scripts/forcetransitionout.gd" id="9_ebf88"]
-[ext_resource type="Shader" path="res://scripts/water.gdshader" id="10_7v7fx"]
-[ext_resource type="PackedScene" uid="uid://dldplw2o048gd" path="res://scenes/level_preview_spin.tscn" id="11_8irkd"]
-[ext_resource type="Shader" path="res://scripts/coolsquares.gdshader" id="13_qdurp"]
-[ext_resource type="Shader" path="res://scripts/spikebubble.gdshader" id="14_834d7"]
-[ext_resource type="Texture2D" uid="uid://d4fsgob3mq7cv" path="res://assets/sprite/speechBubble.png" id="14_txqxt"]
-[ext_resource type="Texture2D" uid="uid://bhf561ftsguqu" path="res://assets/sprite/bossman.png" id="15_vh8nr"]
-[ext_resource type="Texture2D" uid="uid://bguvq3ac1i2se" path="res://assets/sprite/moustache.png" id="16_fs8vp"]
-[ext_resource type="AudioStream" uid="uid://ddseln375bshd" path="res://assets/sound/whistle.wav" id="19_igkgt"]
-[ext_resource type="PackedScene" uid="uid://cx7b44ss401nh" path="res://scenes/start_flag.tscn" id="19_na7fg"]
+[ext_resource type="Script" path="res://scripts/track.gd" id="1_a6v5l"]
+[ext_resource type="PackedScene" uid="uid://bwsgksn5sba8h" path="res://scenes/aiKart.tscn" id="2_vloi5"]
+[ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="3_0x7oe"]
+[ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="4_atx7u"]
+[ext_resource type="Texture2D" uid="uid://dp4r2eyb75dwb" path="res://assets/sprite/timerenclosure.png" id="5_7jf0o"]
+[ext_resource type="PackedScene" path="res://scenes/minimap.tscn" id="6_6pkde"]
+[ext_resource type="PackedScene" uid="uid://olrqjglx2cq" path="res://scenes/race_start.tscn" id="7_dvc8p"]
+[ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="8_m70xo"]
+[ext_resource type="Script" path="res://scripts/forcetransitionout.gd" id="9_0d38h"]
+[ext_resource type="Shader" path="res://scripts/water.gdshader" id="10_3gy70"]
+[ext_resource type="PackedScene" uid="uid://dldplw2o048gd" path="res://scenes/level_preview_spin.tscn" id="11_h0do8"]
+[ext_resource type="Shader" path="res://scripts/coolsquares.gdshader" id="12_1f28x"]
+[ext_resource type="Shader" path="res://scripts/spikebubble.gdshader" id="13_rg3i7"]
+[ext_resource type="Texture2D" uid="uid://d4fsgob3mq7cv" path="res://assets/sprite/speechBubble.png" id="14_c4my0"]
+[ext_resource type="Texture2D" uid="uid://bhf561ftsguqu" path="res://assets/sprite/bossman.png" id="15_j2q5w"]
+[ext_resource type="Texture2D" uid="uid://bguvq3ac1i2se" path="res://assets/sprite/moustache.png" id="16_i2cal"]
+[ext_resource type="AudioStream" uid="uid://ddseln375bshd" path="res://assets/sound/whistle.wav" id="17_h4p4n"]
+[ext_resource type="PackedScene" uid="uid://cx7b44ss401nh" path="res://scenes/start_flag.tscn" id="18_sfpby"]
+[ext_resource type="PackedScene" uid="uid://cfn55ntt4f022" path="res://assets/models/tunnel.blend" id="19_rkkg8"]
+[ext_resource type="Material" uid="uid://bfyonuchfxqh3" path="res://assets/road.tres" id="20_e28tv"]
+[ext_resource type="Shader" path="res://scripts/grass.gdshader" id="21_53lqd"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
 sky_top_color = Color(0.19, 0.811, 1, 1)
@@ -50,20 +51,12 @@ adjustment_saturation = 1.17
 
 [sub_resource type="WorldBoundaryShape3D" id="WorldBoundaryShape3D_vyo1u"]
 
-[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_yljbs"]
-albedo_color = Color(0, 0, 0.13, 1)
-
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_2kebw"]
-render_priority = 0
-shader = ExtResource("3_25x22")
-shader_parameter/albedo = Color(0.59, 0.447515, 0.1829, 1)
-
-[sub_resource type="Curve3D" id="Curve3D_qyvkg"]
+[sub_resource type="Curve3D" id="Curve3D_b7dgs"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, 21.5345, 0, -111.98, 0, 0, 0, 0, 0, 0, 31.9942, 0, -94.1367, 0, 0, 0, 0, 0, 0, 68.2953, 0, -77.5244, 0, 0, 0, 0, 0, 0, 95.3672, 0, -53.5287, 0, 0, 0, 0, 0, 0, 114.441, 15.9936, -23.3804, 0, 0, 0, 0, 0, 0, 118.132, 21.9672, 4.92218, 0, 0, 0, 0, 0, 0, 119.978, 24.5649, 30.1483, 0, 0, 0, 0, 0, 0, 116.286, 24.5649, 53.5287, 0, 0, 0, 0, 0, 0, 105.212, 24.5649, 75.0633, 0, 0, 0, 0, 0, 0, 91.0604, 24.5649, 94.1367, 0, 0, 0, 0, 0, 0, 65.8342, 17.2644, 115.056, 0, 0, 0, 0, 0, 0, 51.6829, 16.0918, 121.824, 0, 0, 0, 0, 0, 0, 31.3789, 12.8342, 127.977, 0, 0, 0, 0, 0, 0, 5.53745, 0, 129.823, 0, 0, 0, 0, 0, 0, -17.8429, 0, 123.055, 0, 0, 0, 0, 0, 0, -31.3789, 0, 111.98, 0, 0, 0, 0, 0, 0, -46.1454, 0, 90.4451, 0, 0, 0, 0, 0, 0, -54.7593, 0, 67.0647, 0, 0, 0, 0, 0, 0, -63.3731, 0, 38.1469, 0, 0, 0, 0, 0, 0, -67.0647, 0, 20.304, 0, 0, 0, 0, 0, 0, -76.2938, 0, -14.1513, 0, 0, 0, 0, 0, 0, -91.6756, 0, -35.6858, 0, 0, 0, 0, 0, 0, -99.6742, 0, -55.3745, 0, 0, 0, 0, 0, 0, -105.212, 0, -79.9854, 0, 0, 0, 0, 0, 0, -103.981, 0, -99.6742, 0, 0, 0, 0, 0, 0, -93.5215, 0, -116.287, 0, 0, 0, 0, 0, 0, -79.9854, 0, -128.592, 0, 0, 0, 0, 0, 0, -64.6036, 0, -140.282, 0, 0, 0, 0, 0, 0, -35.0706, 0, -143.974, 0, 0, 0, 0, 0, 0, -14.7665, 0, -141.513, 0, 0, 0, 0, 0, 0, 3.69162, 0, -129.207, 0, 0, 0, 0, 0, 0, 21.5345, 0, -111.98),
-"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -58.9816, 3.90588, -71.781, 0, 0, 0, 0, 0, 0, -53.4567, 6.56561, -99.4054, 0, 0, 0, 0, 0, 0, -31.3572, 5.42431, -120.277, 0, 0, 0, 0, 0, 0, -8.64382, 6.98529, -133.782, 0, 0, 0, 0, 0, 0, 11.0002, 5.01096, -135.624, 0, 0, 0, 0, 0, 0, 33.0997, 5.54593, -139.307, 0, 0, 0, 0, 0, 0, 53.3576, 8.87686, -139.307, 0, 0, 0, 0, 0, 0, 70.5461, 12.4156, -127.03, 0, 0, 0, 0, 0, 0, 85.2791, 19.7583, -104.316, 0, 0, 0, 0, 0, 0, 91.4178, 27.9132, -74.8504, 0, 0, 0, 0, 0, 0, 80.3681, 33.2881, -44.1567, 0, 0, 0, 0, 0, 0, 68.0906, 37.74, -20.8294, 0, 0, 0, 0, 0, 0, 27.5748, 37.74, 4.95335, 0, 0, 0, 0, 0, 0, -25.8323, 19.3684, 11.706, 0, 0, 0, 0, 0, 0, -65.1204, 4.44251, 38.7165, 0, 0, 0, 0, 0, 0, -70.0313, 0, 64.4992, 0, 0, 0, 0, 0, 0, -60.8232, 0, 82.9155, 0, 0, 0, 0, 0, 0, -28.9017, 0, 98.2624, 0, 0, 0, 0, 0, 0, 11.6141, 0, 98.8763, 0, 0, 0, 0, 0, 0, 24.5054, 0, 87.8265, 0, 0, 0, 0, 0, 0, 28.8026, 0, 60.2021, 0, 0, 0, 0, 0, 0, -52.8429, 0, -44.7705, 0, 0, 0, 0, 0, 0, -58.9816, 4.0813, -71.781),
+"tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
-point_count = 32
+point_count = 23
 
 [sub_resource type="LabelSettings" id="LabelSettings_buy3n"]
 font_size = 128
@@ -78,13 +71,13 @@ top_radius = 1000.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_3mlf5"]
 render_priority = 0
-shader = ExtResource("10_7v7fx")
+shader = ExtResource("10_3gy70")
 shader_parameter/cell_amount = 160
 shader_parameter/period = Vector2(100, 10)
 shader_parameter/albedo = Color(0, 0.733333, 1, 1)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_mjccq"]
-shader = ExtResource("13_qdurp")
+shader = ExtResource("12_1f28x")
 
 [sub_resource type="LabelSettings" id="LabelSettings_kjhoa"]
 font_size = 128
@@ -103,7 +96,7 @@ shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(5, 5)
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_alm87"]
-shader = ExtResource("14_834d7")
+shader = ExtResource("13_rg3i7")
 
 [sub_resource type="LabelSettings" id="LabelSettings_7qbxk"]
 font_size = 50
@@ -122,37 +115,24 @@ shadow_size = 12
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(5, 5)
 
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_t82to"]
+render_priority = 0
+shader = ExtResource("21_53lqd")
+shader_parameter/albedo = Color(0.19, 1, 0.19, 1)
+
 [node name="Game" type="Node3D" node_paths=PackedStringArray("playerKart")]
-script = ExtResource("1_tkx47")
+script = ExtResource("1_a6v5l")
 playerKart = NodePath("PlayerKart")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hhrjw")
 
 [node name="StaticBody3D" type="Area3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.17173, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -5, 0)
 collision_layer = 3
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 shape = SubResource("WorldBoundaryShape3D_vyo1u")
-
-[node name="testtrack" parent="." instance=ExtResource("1_bie2y")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 4.30562, 0)
-
-[node name="BezierCircle" parent="testtrack" index="0"]
-surface_material_override/0 = SubResource("StandardMaterial3D_yljbs")
-
-[node name="BezierCircle_001" parent="testtrack" index="1"]
-surface_material_override/0 = SubResource("ShaderMaterial_2kebw")
-
-[node name="StaticBody3D" parent="testtrack/BezierCircle_001" index="0"]
-collision_layer = 3
-
-[node name="BezierCircle_002" parent="testtrack" index="2"]
-surface_material_override/0 = SubResource("ShaderMaterial_2kebw")
-
-[node name="StaticBody3D" parent="testtrack/BezierCircle_002" index="0"]
-collision_layer = 3
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
 transform = Transform3D(0.787086, 0.616844, -2.3457e-08, -0.494911, 0.631501, 0.596883, 0.368184, -0.469798, 0.802328, 0, 72.3031, 0)
@@ -160,47 +140,47 @@ shadow_enabled = true
 shadow_normal_bias = 10.0
 shadow_blur = 0.0
 
-[node name="Kart" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.6584, 5.01963, 5.14719)
+[node name="Kart" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_vloi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.2552, 6.39874, -68.0158)
 path = NodePath("../Path3D")
 
-[node name="Kart2" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.4013, 5.01963, 5.14719)
+[node name="Kart2" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_vloi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.9981, 5.14349, -68.0158)
 path = NodePath("../Path3D")
 
-[node name="Kart3" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.4013, 5.01963, 5.14719)
+[node name="Kart3" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_vloi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.9981, 4.03511, -68.0158)
 path = NodePath("../Path3D")
 
-[node name="Kart4" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.6584, 5.01963, 8.60975)
+[node name="Kart4" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_vloi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.2552, 6.39874, -64.5532)
 path = NodePath("../Path3D")
 
-[node name="Kart5" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.4013, 5.01963, 8.60975)
+[node name="Kart5" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_vloi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.9981, 5.14349, -64.5532)
 path = NodePath("../Path3D")
 
-[node name="Kart6" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.4013, 5.01963, 8.60975)
+[node name="Kart6" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_vloi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.9981, 4.03511, -64.5532)
 path = NodePath("../Path3D")
 
-[node name="Kart7" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -73.6584, 5.01963, 12.363)
+[node name="Kart7" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_vloi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -61.2552, 6.39874, -60.8)
 path = NodePath("../Path3D")
 
-[node name="Kart8" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.4013, 5.01963, 12.363)
+[node name="Kart8" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_vloi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -56.9981, 5.14349, -60.8)
 path = NodePath("../Path3D")
 
-[node name="Kart9" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_ncjig")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -65.4013, 5.01963, 12.363)
+[node name="Kart9" parent="." node_paths=PackedStringArray("path") instance=ExtResource("2_vloi5")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -52.9981, 4.03511, -60.8)
 path = NodePath("../Path3D")
 
 [node name="Path3D" type="Path3D" parent="."]
-curve = SubResource("Curve3D_qyvkg")
+curve = SubResource("Curve3D_b7dgs")
 
-[node name="PlayerKart" parent="." instance=ExtResource("3_v3qel")]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -69.9544, 5.05585, 15.6124)
+[node name="PlayerKart" parent="." instance=ExtResource("3_0x7oe")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -57.5512, 5.55145, -57.5506)
 
 [node name="TrackUI" type="Control" parent="."]
 layout_mode = 3
@@ -209,7 +189,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_htakq")
+theme = ExtResource("4_atx7u")
 
 [node name="TimerContainer" type="TextureRect" parent="TrackUI"]
 layout_mode = 1
@@ -223,7 +203,7 @@ offset_top = -128.0
 offset_right = 256.0
 grow_horizontal = 2
 grow_vertical = 0
-texture = ExtResource("3_qmt2k")
+texture = ExtResource("5_7jf0o")
 
 [node name="Timer" type="Label" parent="TrackUI/TimerContainer"]
 layout_mode = 1
@@ -238,26 +218,26 @@ label_settings = SubResource("LabelSettings_buy3n")
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="Minimap" parent="TrackUI" node_paths=PackedStringArray("path3d", "Level") instance=ExtResource("7_584yv")]
+[node name="Minimap" parent="TrackUI" node_paths=PackedStringArray("path3d", "Level") instance=ExtResource("6_6pkde")]
 layout_mode = 1
-zoomOut = 0.45
+zoomOut = 0.6
 path3d = NodePath("../../Path3D")
 Level = NodePath("../..")
 offset = Vector2(-30, 0)
 
-[node name="RaceStart" parent="." instance=ExtResource("8_yqg6k")]
+[node name="RaceStart" parent="." instance=ExtResource("7_dvc8p")]
 process_mode = 3
 
-[node name="Level Transition" parent="RaceStart" instance=ExtResource("5_0j2n4")]
+[node name="Level Transition" parent="RaceStart" instance=ExtResource("8_m70xo")]
 layout_mode = 1
-script = ExtResource("9_ebf88")
+script = ExtResource("9_0d38h")
 
 [node name="ocean" type="MeshInstance3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.39284, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -8.01003, 0)
 mesh = SubResource("CylinderMesh_y3rjy")
 surface_material_override/0 = SubResource("ShaderMaterial_3mlf5")
 
-[node name="LevelPreviewSpin" parent="." instance=ExtResource("11_8irkd")]
+[node name="LevelPreviewSpin" parent="." instance=ExtResource("11_h0do8")]
 
 [node name="WinLose" type="Control" parent="."]
 process_mode = 4
@@ -268,7 +248,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-theme = ExtResource("2_htakq")
+theme = ExtResource("4_atx7u")
 
 [node name="EverythingElse" type="SubViewportContainer" parent="WinLose"]
 layout_mode = 1
@@ -317,6 +297,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 cull_mask = 2
 
 [node name="Lose" type="Control" parent="WinLose"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -369,6 +350,7 @@ grow_vertical = 0
 text = "Continue?"
 
 [node name="Win" type="Control" parent="WinLose"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -421,7 +403,7 @@ anchor_bottom = 1.0
 offset_top = -256.0
 offset_right = 256.0
 grow_vertical = 0
-texture = ExtResource("14_txqxt")
+texture = ExtResource("14_c4my0")
 
 [node name="Boss" type="TextureRect" parent="WinLose/TollBoothCheck/Bubble"]
 layout_mode = 0
@@ -429,7 +411,7 @@ offset_left = -8.0
 offset_top = -56.0
 offset_right = 248.0
 offset_bottom = 200.0
-texture = ExtResource("15_vh8nr")
+texture = ExtResource("15_j2q5w")
 
 [node name="Moustache" type="TextureRect" parent="WinLose/TollBoothCheck/Bubble/Boss"]
 layout_mode = 0
@@ -438,7 +420,7 @@ offset_top = 72.0
 offset_right = 208.0
 offset_bottom = 112.0
 pivot_offset = Vector2(20, 20)
-texture = ExtResource("16_fs8vp")
+texture = ExtResource("16_i2cal")
 expand_mode = 1
 stretch_mode = 4
 
@@ -491,13 +473,25 @@ grow_vertical = 0
 text = "Continue?"
 
 [node name="Whistle" type="AudioStreamPlayer" parent="WinLose"]
-stream = ExtResource("19_igkgt")
+stream = ExtResource("17_h4p4n")
 
-[node name="startFlag" parent="." instance=ExtResource("19_na7fg")]
-transform = Transform3D(0, 0, 8.6085, 0, 2.26474, 0, -1, 0, 0, -69.6067, 4.7729, 0)
+[node name="startFlag" parent="." instance=ExtResource("18_sfpby")]
+transform = Transform3D(-4.37113e-08, 0.713932, 5.26993, 6.56097e-11, 2.14954, -1.75032, -1, -3.10659e-08, -2.30471e-07, -59.7558, 5.91363, -73.163)
+
+[node name="tunnel" parent="." instance=ExtResource("19_rkkg8")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35527, 0)
+
+[node name="Track" parent="tunnel" index="0"]
+surface_material_override/0 = ExtResource("20_e28tv")
+
+[node name="Ground" parent="tunnel" index="1"]
+surface_material_override/0 = SubResource("ShaderMaterial_t82to")
+
+[node name="StaticBody3D" parent="tunnel/Ground" index="0"]
+collision_layer = 3
 
 [connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]
 [connection signal="pressed" from="WinLose/Lose/Button" to="." method="_on_continue_pressed"]
 [connection signal="pressed" from="WinLose/Button" to="." method="_on_continue_pressed"]
 
-[editable path="testtrack"]
+[editable path="tunnel"]

@@ -41,11 +41,12 @@ func _on_level_select_button_button_down() -> void:
 		member.disabled = true
 		tween.tween_property(member, "position:x", -500, 0.5).set_trans(Tween.TRANS_EXPO)
 	tween.tween_property(levelSelect, "position:x", 0, 1.5).set_trans(Tween.TRANS_ELASTIC)
-	await tween.tween_interval(0.1)
+	
+	tween.tween_property($UI/LevelSelect/Back, "disabled", false, 1)
 	
 	if SettingsData.isController:
 		$UI/LevelSelect/Back.grab_focus()
-	print("forwarfd")
+		$UI/LevelSelect/Back.disabled = true
 
 func _on_level_select_closed() -> void:
 	BgMusic._play_another_song(load("res://assets/music/Wild Cherry Village 4.mp3"))
@@ -64,7 +65,7 @@ func _on_level_select_closed() -> void:
 		tween.tween_property(member, "position:x", newX, 0.5 + (i * 0.1)).set_trans(Tween.TRANS_EXPO)
 	await tween.tween_interval(5)
 	if SettingsData.isController:
-		pass#$UI/SlideInButtons/StoryButton.grab_focus()
+		$UI/SlideInButtons/StoryButton.grab_focus()
 
 func _on_story_button_pressed():
 	$"UI/Level Transition/ColorRect/AnimationPlayer".play("transition in")
