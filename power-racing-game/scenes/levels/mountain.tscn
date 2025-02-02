@@ -5,7 +5,7 @@
 [ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="5_2t344"]
 [ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="6_5cjsm"]
 [ext_resource type="Texture2D" uid="uid://dp4r2eyb75dwb" path="res://assets/sprite/timerenclosure.png" id="7_1uell"]
-[ext_resource type="PackedScene" path="res://scenes/minimap.tscn" id="8_xcl75"]
+[ext_resource type="PackedScene" uid="uid://dxaa2k2d5ieqw" path="res://scenes/minimap.tscn" id="8_xcl75"]
 [ext_resource type="PackedScene" uid="uid://olrqjglx2cq" path="res://scenes/race_start.tscn" id="9_r17be"]
 [ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="10_xpx42"]
 [ext_resource type="Script" path="res://scripts/forcetransitionout.gd" id="11_l7lwx"]
@@ -18,7 +18,7 @@
 [ext_resource type="Texture2D" uid="uid://bhf561ftsguqu" path="res://assets/sprite/bossman.png" id="17_we8ci"]
 [ext_resource type="PackedScene" uid="uid://c4oeaq07uimli" path="res://assets/models/mountain.blend" id="18_b1gmh"]
 [ext_resource type="Texture2D" uid="uid://bguvq3ac1i2se" path="res://assets/sprite/moustache.png" id="18_ftbgy"]
-[ext_resource type="PackedScene" uid="uid://cx7b44ss401nh" path="res://scenes/start_flag.tscn" id="19_emw6x"]
+[ext_resource type="PackedScene" path="res://scenes/start_flag.tscn" id="19_emw6x"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
 sky_top_color = Color(0.19, 0.811, 1, 1)
