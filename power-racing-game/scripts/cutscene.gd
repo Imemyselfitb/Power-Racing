@@ -12,6 +12,8 @@ func _ready():
 	$TextPlayer.position = get_node(scenes[currentSceneidx].focusNode).global_position
 	
 	SettingsData.currentNextCutscene = nextcutscene
+	SettingsData.currentTollBoothMinimum = tollboothcharge
+	SettingsData.currentMoney = 0
 
 var progress = 0
 

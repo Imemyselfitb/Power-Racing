@@ -207,13 +207,11 @@ skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_2nkoy")
 
 [node name="Cube_001" type="MeshInstance3D" parent="FrontWheels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_8tq1v")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_jbcwx")
 
 [node name="Cube_002" type="MeshInstance3D" parent="FrontWheels"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0)
 mesh = SubResource("ArrayMesh_f3tbi")
 skeleton = NodePath("")
 surface_material_override/0 = SubResource("StandardMaterial3D_jbcwx")

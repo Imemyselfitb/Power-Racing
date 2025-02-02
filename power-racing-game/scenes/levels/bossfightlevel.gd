@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var time:float = 1 # 3 mins
+@onready var time:float = 180 # 3 mins
 
 @onready var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 @export var playerKart: Kart
@@ -14,6 +14,7 @@ var moneyvirtual: int = 0
 var moneytotal: int = 0
 
 var winTime: int = 0
+var won = false
 
 func _ready():
 	lastDistance = $Path3D.curve.get_closest_offset(playerKart.body.global_position)
@@ -41,24 +42,9 @@ func _process(delta):
 			if get_tree().get_nodes_in_group("ai_kart").size() > 0:
 				get_tree().create_tween().tween_property($WinLose/Lose, "modulate", Color(1, 1, 1, 1), 1).set_trans(Tween.TRANS_CIRC)
 			else:
+				won = true
 				get_tree().create_tween().tween_property($WinLose/Win, "modulate", Color(1, 1, 1, 1), 1).set_trans(Tween.TRANS_CIRC)
-			
-			var scaledWinTime: float = 0.01 * winTime
-			var winTimeFactor: float = (2 * scaledWinTime + 1) / (scaledWinTime + 1)
-			moneytotal = clamp(distanceTraveled * winTimeFactor, 0, 1000000)
-			SettingsData.currentMoney += moneytotal
-			var moneyDiff = SettingsData.currentTollBoothMinimum - SettingsData.currentMoney
-			if moneyDiff <= 0 and SettingsData.inStoryMode:
-				$WinLose/TollBoothCheck/Label.text = "We need " + str(moneyDiff) + " more."
-			else:
-				$WinLose/TollBoothCheck.hide()
 		else:
-			$WinLose/Money.text = "Money Made: " + str(moneyvirtual)
-			var change: float =  0.03 * (moneytotal - moneyvirtual)
-			var unclamped: float = (change + 1.0) * 0.2 * sin(2.0 * moneyvirtual * (PI / 180))
-			$WinLose/Money.rotation_degrees = clamp(unclamped, -15, 15)
-			moneyvirtual += ceil(change)
-			
 			$WinLose/Karts/SubViewport/Cam.global_position = playerKart.vehicle.global_position + Vector3(2, 1, 2)
 			$WinLose/Karts/SubViewport/Cam.look_at(playerKart.vehicle.global_position)
 			$WinLose/EverythingElse/SubViewport/Cam.global_transform = $WinLose/Karts/SubViewport/Cam/ActualCamera.global_transform
@@ -86,7 +72,7 @@ func _on_continue_pressed():
 	if not SettingsData.inStoryMode:
 		get_tree().change_scene_to_file("res://scenes/game.tscn")
 	else:
-		if SettingsData.currentMoney < SettingsData.currentTollBoothMinimum:
+		if not won:
 			get_tree().reload_current_scene()
 		else:
 			SettingsData.currentMoney = 0

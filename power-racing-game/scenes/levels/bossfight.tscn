@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dem3j1v54cj2a"]
+[gd_scene load_steps=38 format=3 uid="uid://bnhojmsghyvui"]
 
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_hpym4"]
 [ext_resource type="PackedScene" uid="uid://dk1hh2gdvpe7u" path="res://assets/models/testtrack.blend" id="2_8euda"]
@@ -7,8 +7,8 @@
 [ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="5_ynkd4"]
 [ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="6_wy82e"]
 [ext_resource type="Texture2D" uid="uid://dp4r2eyb75dwb" path="res://assets/sprite/timerenclosure.png" id="7_yf6fw"]
-[ext_resource type="PackedScene" uid="uid://dxaa2k2d5ieqw" path="res://scenes/minimap.tscn" id="8_slpm3"]
-[ext_resource type="PackedScene" uid="uid://dypu33a6udanp" path="res://scenes/leaderboard.tscn" id="9_sy5i8"]
+[ext_resource type="PackedScene" path="res://scenes/minimap.tscn" id="8_slpm3"]
+[ext_resource type="PackedScene" uid="uid://81cp5wwmdkqj" path="res://scenes/leaderboard.tscn" id="9_sy5i8"]
 [ext_resource type="PackedScene" uid="uid://olrqjglx2cq" path="res://scenes/race_start.tscn" id="10_q3wtw"]
 [ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="11_ufkvu"]
 [ext_resource type="Script" path="res://scripts/forcetransitionout.gd" id="12_oqhq2"]
@@ -20,7 +20,7 @@
 [ext_resource type="Texture2D" uid="uid://bhf561ftsguqu" path="res://assets/sprite/bossman.png" id="18_fg0kl"]
 [ext_resource type="Texture2D" uid="uid://bguvq3ac1i2se" path="res://assets/sprite/moustache.png" id="19_wi8qq"]
 [ext_resource type="AudioStream" uid="uid://ddseln375bshd" path="res://assets/sound/whistle.wav" id="20_1jb6c"]
-[ext_resource type="PackedScene" path="res://scenes/start_flag.tscn" id="21_ogr5g"]
+[ext_resource type="PackedScene" uid="uid://cx7b44ss401nh" path="res://scenes/start_flag.tscn" id="21_ogr5g"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
 sky_top_color = Color(0.19, 0.811, 1, 1)
