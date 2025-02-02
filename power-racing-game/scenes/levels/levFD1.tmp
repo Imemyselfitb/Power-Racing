@@ -1,4 +1,4 @@
-[gd_scene load_steps=38 format=3 uid="uid://dah780b2oxa5u"]
+[gd_scene load_steps=37 format=3 uid="uid://dah780b2oxa5u"]
 
 [ext_resource type="PackedScene" uid="uid://dk1hh2gdvpe7u" path="res://assets/models/testtrack.blend" id="1_bie2y"]
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_tkx47"]
@@ -9,9 +9,9 @@
 [ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="3_v3qel"]
 [ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="5_0j2n4"]
 [ext_resource type="PackedScene" uid="uid://dxaa2k2d5ieqw" path="res://scenes/minimap.tscn" id="7_584yv"]
+[ext_resource type="PackedScene" uid="uid://dypu33a6udanp" path="res://scenes/leaderboard.tscn" id="7_jje3f"]
 [ext_resource type="PackedScene" uid="uid://olrqjglx2cq" path="res://scenes/race_start.tscn" id="8_yqg6k"]
 [ext_resource type="Script" path="res://scripts/forcetransitionout.gd" id="9_ebf88"]
-[ext_resource type="PackedScene" uid="uid://dypu33a6udanp" path="res://scenes/leaderboard.tscn" id="9_wdl35"]
 [ext_resource type="Shader" path="res://scripts/water.gdshader" id="10_7v7fx"]
 [ext_resource type="PackedScene" uid="uid://dldplw2o048gd" path="res://scenes/level_preview_spin.tscn" id="11_8irkd"]
 [ext_resource type="Shader" path="res://scripts/coolsquares.gdshader" id="13_qdurp"]
@@ -19,7 +19,6 @@
 [ext_resource type="Texture2D" uid="uid://d4fsgob3mq7cv" path="res://assets/sprite/speechBubble.png" id="14_txqxt"]
 [ext_resource type="Texture2D" uid="uid://bhf561ftsguqu" path="res://assets/sprite/bossman.png" id="15_vh8nr"]
 [ext_resource type="Texture2D" uid="uid://bguvq3ac1i2se" path="res://assets/sprite/moustache.png" id="16_fs8vp"]
-[ext_resource type="AudioStream" uid="uid://ddseln375bshd" path="res://assets/sound/whistle.wav" id="19_igkgt"]
 [ext_resource type="PackedScene" path="res://scenes/start_flag.tscn" id="19_na7fg"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
@@ -127,6 +126,9 @@ shadow_offset = Vector2(5, 5)
 script = ExtResource("1_tkx47")
 playerKart = NodePath("PlayerKart")
 
+[node name="CSGBox3D" type="CSGBox3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.36608, 0, 0)
+
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hhrjw")
 
@@ -212,6 +214,10 @@ grow_horizontal = 2
 grow_vertical = 2
 theme = ExtResource("2_htakq")
 
+[node name="Leaderboard" parent="TrackUI" node_paths=PackedStringArray("levelScene") instance=ExtResource("7_jje3f")]
+layout_mode = 1
+levelScene = NodePath("../..")
+
 [node name="TimerContainer" type="TextureRect" parent="TrackUI"]
 layout_mode = 1
 anchors_preset = 7
@@ -246,12 +252,7 @@ path3d = NodePath("../../Path3D")
 Level = NodePath("../..")
 offset = Vector2(-30, 0)
 
-[node name="Leaderboard" parent="TrackUI" node_paths=PackedStringArray("levelScene") instance=ExtResource("9_wdl35")]
-layout_mode = 1
-levelScene = NodePath("../..")
-
 [node name="RaceStart" parent="." instance=ExtResource("8_yqg6k")]
-process_mode = 3
 
 [node name="Level Transition" parent="RaceStart" instance=ExtResource("5_0j2n4")]
 layout_mode = 1
@@ -322,6 +323,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2, 0, 0)
 cull_mask = 2
 
 [node name="Lose" type="Control" parent="WinLose"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -374,6 +376,7 @@ grow_vertical = 0
 text = "Continue?"
 
 [node name="Win" type="Control" parent="WinLose"]
+visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -494,9 +497,6 @@ offset_bottom = -76.0
 grow_horizontal = 0
 grow_vertical = 0
 text = "Continue?"
-
-[node name="Whistle" type="AudioStreamPlayer" parent="WinLose"]
-stream = ExtResource("19_igkgt")
 
 [node name="startFlag" parent="." instance=ExtResource("19_na7fg")]
 transform = Transform3D(0, 0, 8.6085, 0, 2.26474, 0, -1, 0, 0, -69.6067, 4.7729, 0)

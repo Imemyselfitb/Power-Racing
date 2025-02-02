@@ -11,6 +11,9 @@ var pathfollow:PathFollow3D = PathFollow3D.new()
 @export var speed:float = 172
 @export var turnspeed:float = 30
 
+var distanceTraveled: float = 0
+var lastDistance: float = 0
+
 var gravity = 9
 
 var health:int = 3
@@ -24,6 +27,8 @@ func _ready():
 	
 	path.add_child(pathfollow)
 	pathfollow.use_model_front = true
+	
+	lastDistance = path.curve.get_closest_offset(body.global_position)
 
 func align_with_y(xform, new_y):
 	xform.basis.y = new_y
@@ -87,3 +92,8 @@ func _physics_process(delta):
 		vehicle.velocity.y -= gravity * delta
 	
 	vehicle.move_and_slide()
+	
+	var udistance = path.curve.get_closest_offset(body.global_position)
+	var distanceoffset = udistance - lastDistance
+	lastDistance = udistance
+	distanceTraveled += clamp(distanceoffset, -1, 1)
