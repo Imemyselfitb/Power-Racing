@@ -17,6 +17,7 @@ var winTime: int = 0
 var won = false
 
 func _ready():
+	BgMusic._play_another_song(load("res://assets/music/Boss.mp3"))
 	lastDistance = $Path3D.curve.get_closest_offset(playerKart.body.global_position)
 
 func _process(delta):
@@ -39,7 +40,7 @@ func _process(delta):
 			$WinLose/Lose.modulate = Color.TRANSPARENT
 			$WinLose/Win.modulate = Color.TRANSPARENT
 			get_tree().create_tween().tween_property($WinLose/ColorRect, "modulate", Color(1, 1, 1, 0.8), 3)
-			if get_tree().get_nodes_in_group("ai_kart").size() > 0:
+			if get_tree().get_nodes_in_group("squid").size() > 0:
 				get_tree().create_tween().tween_property($WinLose/Lose, "modulate", Color(1, 1, 1, 1), 1).set_trans(Tween.TRANS_CIRC)
 			else:
 				won = true

@@ -14,6 +14,7 @@ func _ready():
 	SettingsData.currentNextCutscene = nextcutscene
 	SettingsData.currentTollBoothMinimum = tollboothcharge
 	SettingsData.currentMoney = 0
+	BgMusic._play_another_song(load("res://assets/music/Wild Cherry Village 4.mp3"))
 
 var progress = 0
 

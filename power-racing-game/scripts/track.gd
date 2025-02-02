@@ -1,6 +1,6 @@
 extends Node3D
 
-@onready var time:float = 1 # 3 mins
+@onready var time:float = 180 # 3 mins
 
 @onready var rng: RandomNumberGenerator = RandomNumberGenerator.new()
 @export var playerKart: Kart
@@ -48,7 +48,7 @@ func _process(delta):
 			moneytotal = clamp(distanceTraveled * winTimeFactor, 0, 1000000)
 			SettingsData.currentMoney += moneytotal
 			var moneyDiff = SettingsData.currentTollBoothMinimum - SettingsData.currentMoney
-			if moneyDiff <= 0 and SettingsData.inStoryMode:
+			if moneyDiff > 0 and SettingsData.inStoryMode:
 				$WinLose/TollBoothCheck/Label.text = "We need " + str(moneyDiff) + " more."
 			else:
 				$WinLose/TollBoothCheck.hide()

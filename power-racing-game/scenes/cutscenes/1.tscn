@@ -193,7 +193,6 @@ script = ExtResource("1_iyjcg")
 scenes = Array[ExtResource("2_jniq6")]([SubResource("Resource_tt36v"), SubResource("Resource_6h3av"), SubResource("Resource_yvp5m"), SubResource("Resource_lebp8"), SubResource("Resource_hq26w"), SubResource("Resource_bo71o"), SubResource("Resource_k3uvl"), SubResource("Resource_jo8bb"), SubResource("Resource_46poa"), SubResource("Resource_sfoh3")])
 nextLevel = ExtResource("5_rsuhh")
 nextcutscene = ExtResource("6_y6d5u")
-tollboothcharge = 50000.0
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3
