@@ -1,12 +1,11 @@
-[gd_scene load_steps=37 format=3 uid="uid://bx0x2p0adxf4j"]
+[gd_scene load_steps=36 format=3 uid="uid://c05pl1c4luxkc"]
 
 [ext_resource type="Script" path="res://scripts/track.gd" id="1_jssei"]
-[ext_resource type="Shader" path="res://scripts/grass.gdshader" id="3_m38ca"]
 [ext_resource type="PackedScene" uid="uid://bwsgksn5sba8h" path="res://scenes/aiKart.tscn" id="4_uqs1o"]
 [ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="5_ogv5a"]
 [ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="6_k0jov"]
 [ext_resource type="Texture2D" uid="uid://dp4r2eyb75dwb" path="res://assets/sprite/timerenclosure.png" id="7_ep4md"]
-[ext_resource type="PackedScene" path="res://scenes/minimap.tscn" id="8_54vvp"]
+[ext_resource type="PackedScene" uid="uid://dxaa2k2d5ieqw" path="res://scenes/minimap.tscn" id="8_54vvp"]
 [ext_resource type="PackedScene" uid="uid://olrqjglx2cq" path="res://scenes/race_start.tscn" id="9_28mwj"]
 [ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="10_fanhu"]
 [ext_resource type="Script" path="res://scripts/forcetransitionout.gd" id="11_usccu"]
@@ -20,7 +19,7 @@
 [ext_resource type="Texture2D" uid="uid://bguvq3ac1i2se" path="res://assets/sprite/moustache.png" id="18_8yynm"]
 [ext_resource type="PackedScene" uid="uid://cfn55ntt4f022" path="res://assets/models/tunnel.blend" id="18_sk5op"]
 [ext_resource type="Material" uid="uid://bfyonuchfxqh3" path="res://assets/road.tres" id="19_2nbyb"]
-[ext_resource type="PackedScene" uid="uid://cx7b44ss401nh" path="res://scenes/start_flag.tscn" id="19_uralr"]
+[ext_resource type="PackedScene" path="res://scenes/start_flag.tscn" id="19_uralr"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
 sky_top_color = Color(0.19, 0.811, 1, 1)
@@ -115,12 +114,9 @@ shadow_size = 12
 shadow_color = Color(0, 0, 0, 1)
 shadow_offset = Vector2(5, 5)
 
-[sub_resource type="ShaderMaterial" id="ShaderMaterial_t82to"]
-render_priority = 0
-shader = ExtResource("3_m38ca")
-shader_parameter/albedo = Color(0.19, 1, 0.19, 1)
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_6cxp4"]
 
-[node name="Game" type="Node3D" node_paths=PackedStringArray("playerKart")]
+[node name="Game2" type="Node3D" node_paths=PackedStringArray("playerKart")]
 script = ExtResource("1_jssei")
 playerKart = NodePath("PlayerKart")
 
@@ -483,7 +479,7 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.35527, 0)
 surface_material_override/0 = ExtResource("19_2nbyb")
 
 [node name="Ground" parent="tunnel" index="1"]
-surface_material_override/0 = SubResource("ShaderMaterial_t82to")
+surface_material_override/0 = SubResource("StandardMaterial3D_6cxp4")
 
 [node name="StaticBody3D" parent="tunnel/Ground" index="0"]
 collision_layer = 3

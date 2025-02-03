@@ -1,10 +1,10 @@
-[gd_scene load_steps=43 format=3 uid="uid://ofyn1k2nsuy2"]
+[gd_scene load_steps=43 format=3 uid="uid://cwkadcs7e6d68"]
 
 [ext_resource type="Script" path="res://scenes/levels/bossfightlevel.gd" id="1_cv603"]
 [ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="3_0x7oe"]
 [ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="4_atx7u"]
 [ext_resource type="Texture2D" uid="uid://dp4r2eyb75dwb" path="res://assets/sprite/timerenclosure.png" id="5_7jf0o"]
-[ext_resource type="PackedScene" path="res://scenes/minimap.tscn" id="6_6pkde"]
+[ext_resource type="PackedScene" uid="uid://dxaa2k2d5ieqw" path="res://scenes/minimap.tscn" id="6_6pkde"]
 [ext_resource type="PackedScene" uid="uid://olrqjglx2cq" path="res://scenes/race_start.tscn" id="7_dvc8p"]
 [ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="8_m70xo"]
 [ext_resource type="Script" path="res://scripts/forcetransitionout.gd" id="9_0d38h"]
@@ -17,14 +17,13 @@
 [ext_resource type="Texture2D" uid="uid://bguvq3ac1i2se" path="res://assets/sprite/moustache.png" id="16_i2cal"]
 [ext_resource type="AudioStream" uid="uid://ddseln375bshd" path="res://assets/sound/whistle.wav" id="17_h4p4n"]
 [ext_resource type="PackedScene" uid="uid://ge8u6ql3jl3x" path="res://assets/models/river.blend" id="18_mjldo"]
-[ext_resource type="PackedScene" uid="uid://cx7b44ss401nh" path="res://scenes/start_flag.tscn" id="18_sfpby"]
+[ext_resource type="PackedScene" path="res://scenes/start_flag.tscn" id="18_sfpby"]
 [ext_resource type="Material" uid="uid://bfyonuchfxqh3" path="res://assets/road.tres" id="20_e28tv"]
-[ext_resource type="PackedScene" uid="uid://beor08ql5gi4" path="res://assets/models/semi.tscn" id="21_amvd7"]
 [ext_resource type="Script" path="res://scripts/ai_kart.gd" id="21_e5cy7"]
 [ext_resource type="PackedScene" uid="uid://m0imb0r6dcka" path="res://assets/models/aiGoKart.tscn" id="22_u8tem"]
 [ext_resource type="AudioStream" uid="uid://bpth12g2qy4kp" path="res://assets/sound/engine.wav" id="23_8mltx"]
-[ext_resource type="Texture2D" uid="uid://c6oj3i2e01ouk" path="res://assets/sprite/frontThin.png" id="23_wdy1l"]
 [ext_resource type="Texture2D" uid="uid://cnri62dx4tl1s" path="res://assets/sprite/octoRacerFront.png" id="24_xp24o"]
+[ext_resource type="Shader" path="res://assets/shaders/Nebula.gdshader" id="26_usbgn"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_xy3eh"]
 sky_top_color = Color(0.19, 0.811, 1, 1)
@@ -57,7 +56,7 @@ adjustment_saturation = 1.17
 
 [sub_resource type="Curve3D" id="Curve3D_s1j5e"]
 _data = {
-"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -118.088, 0, -58.8783, 0, 0, 0, 0, 0, 0, -89.393, 0, -82.3558, 0, 0, 0, 0, 0, 0, -48.1767, 0, -94.3555, 0, 0, 0, 0, 0, 0, -1.74333, 0, -96.9641, 0, 0, 0, 0, 0, 0, 44.6901, 0, -92.7903, 0, 0, 0, 0, 0, 0, 87.9932, 0, -75.0517, 0, 0, 0, 0, 0, 0, 107.297, 14.7474, -44.27, 0, 0, 0, 0, 0, 0, 110.427, 15.5744, -16.0969, 0, 0, 0, 0, 0, 0, 108.862, 14.663, 13.1196, 0, 0, 0, 0, 0, 0, 98.9494, 14.663, 42.8579, 0, 0, 0, 0, 0, 0, 70.2546, 0, 75.2048, 0, 0, 0, 0, 0, 0, 44.6901, 0, 97.6389, 0, 0, 0, 0, 0, 0, 3.47393, 0, 108.595, 0, 0, 0, 0, 0, 0, -45.5681, 0, 124.247, 0, 0, 0, 0, 0, 0, -85.7409, 0, 120.073, 0, 0, 0, 0, 0, 0, -105.566, 0, 102.334, 0, 0, 0, 0, 0, 0, -113.392, 0, 76.2483, 0, 0, 0, 0, 0, 0, -113.392, 0, 44.4231, 0, 0, 0, 0, 0, 0, -111.305, 0, 13.1196, 0, 0, 0, 0, 0, 0, -119.653, 0, -8.27104, 0, 0, 0, 0, 0, 0, -124.348, 0, -40.6179, 0, 0, 0, 0, 0, 0, -118.088, 0, -58.8783),
+"points": PackedVector3Array(0, 0, 0, 0, 0, 0, -118.088, 0, -58.8783, 0, 0, 0, 0, 0, 0, -89.393, 0, -82.3558, 0, 0, 0, 0, 0, 0, -48.1767, 0, -94.3555, 0, 0, 0, 0, 0, 0, -1.74333, 0, -96.9641, 0, 0, 0, 0, 0, 0, 44.6901, 0, -92.7903, 0, 0, 0, 0, 0, 0, 87.9932, 0, -75.0517, 0, 0, 0, 0, 0, 0, 107.297, -2.7205, -44.27, 0, 0, 0, 0, 0, 0, 110.427, -2.7667, -16.0969, 0, 0, 0, 0, 0, 0, 108.862, -1.27142, 13.1196, 0, 0, 0, 0, 0, 0, 98.9494, -1.83124, 42.8579, 0, 0, 0, 0, 0, 0, 73.9024, -5.02657, 72.2361, 0, 0, 0, 0, 0, 0, 44.6901, 0, 77.8488, 0, 0, 0, 0, 0, 0, 3.47393, 0, 108.595, 0, 0, 0, 0, 0, 0, -45.5681, 0, 124.247, 0, 0, 0, 0, 0, 0, -85.7409, 0, 120.073, 0, 0, 0, 0, 0, 0, -105.566, 0, 102.334, 0, 0, 0, 0, 0, 0, -113.392, 0, 76.2483, 0, 0, 0, 0, 0, 0, -113.392, 0, 44.4231, 0, 0, 0, 0, 0, 0, -111.305, 0, 13.1196, 0, 0, 0, 0, 0, 0, -119.653, 0, -8.27104, 0, 0, 0, 0, 0, 0, -124.348, 0, -40.6179, 0, 0, 0, 0, 0, 0, -118.088, 0, -58.8783),
 "tilts": PackedFloat32Array(0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0)
 }
 point_count = 22
@@ -124,14 +123,23 @@ albedo_color = Color(0.2842, 0.286037, 0.29, 1)
 metallic = 1.0
 roughness = 0.0
 
-[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_2ywqp"]
-radius = 0.247298
-height = 2.07166
-
 [sub_resource type="SphereShape3D" id="SphereShape3D_p12rf"]
 
-[node name="Game" type="Node3D"]
+[sub_resource type="SphereMesh" id="SphereMesh_ex3m4"]
+flip_faces = true
+radius = 300.0
+height = 300.0
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_5bdi1"]
+render_priority = 0
+shader = ExtResource("26_usbgn")
+shader_parameter/cell_amount = 160
+shader_parameter/period = Vector2(100, 10)
+shader_parameter/albedo = Color(0, 0.788235, 1, 1)
+
+[node name="Game" type="Node3D" node_paths=PackedStringArray("playerKart")]
 script = ExtResource("1_cv603")
+playerKart = NodePath("PlayerKart")
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_hhrjw")
@@ -150,6 +158,7 @@ shadow_normal_bias = 10.0
 shadow_blur = 0.0
 
 [node name="Path3D" type="Path3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -5.67994, 0.00102615, 0.924591)
 curve = SubResource("Curve3D_s1j5e")
 
 [node name="PlayerKart" parent="." instance=ExtResource("3_0x7oe")]
@@ -322,7 +331,6 @@ grow_vertical = 0
 text = "Continue?"
 
 [node name="Win" type="Control" parent="WinLose"]
-visible = false
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -460,215 +468,15 @@ surface_material_override/0 = ExtResource("20_e28tv")
 [node name="Cylinder" parent="river" index="1"]
 surface_material_override/0 = SubResource("StandardMaterial3D_12b4c")
 
-[node name="Kart" type="Node3D" parent="." node_paths=PackedStringArray("path") groups=["ai_kart"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -119.708, -8.4897, -45.4966)
-script = ExtResource("21_e5cy7")
-path = NodePath("../Path3D")
-
-[node name="Body" parent="Kart" instance=ExtResource("21_amvd7")]
-
-[node name="Rays" type="Node3D" parent="Kart/Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66538, -3.25512)
-
-[node name="RayCast3D" type="RayCast3D" parent="Kart/Body/Rays"]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-hit_back_faces = false
-
-[node name="RayCast3D2" type="RayCast3D" parent="Kart/Body/Rays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D3" type="RayCast3D" parent="Kart/Body/Rays"]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D4" type="RayCast3D" parent="Kart/Body/Rays"]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D5" type="RayCast3D" parent="Kart/Body/Rays"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D6" type="RayCast3D" parent="Kart/Body/Rays"]
-transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D7" type="RayCast3D" parent="Kart/Body/Rays"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D8" type="RayCast3D" parent="Kart/Body/Rays"]
-transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D9" type="RayCast3D" parent="Kart/Body/Rays"]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D10" type="RayCast3D" parent="Kart/Body/Rays"]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D11" type="RayCast3D" parent="Kart/Body/Rays"]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D15" type="RayCast3D" parent="Kart/Body/Rays"]
-transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D16" type="RayCast3D" parent="Kart/Body/Rays"]
-transform = Transform3D(-0.422618, 0, 0.906308, 0, 1, 0, -0.906308, 0, -0.422618, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Kart/Body"]
-process_mode = 3
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.670486, 0)
-stream = ExtResource("23_8mltx")
-attenuation_model = 2
-volume_db = 40.0
-unit_size = 1.0
-pitch_scale = 1.21
-autoplay = true
-max_distance = 35.0
-doppler_tracking = 2
-
-[node name="Sprite3D2" type="Sprite3D" parent="Kart/Body"]
-transform = Transform3D(1.04612, 0, 0, 0, 1.04612, 0, 0, 0, 1.04612, 0, 1.91884, -7.67758)
-layers = 3
-billboard = 2
-texture_filter = 0
-texture = ExtResource("23_wdy1l")
-
-[node name="Vehicle" type="CharacterBody3D" parent="Kart"]
-collision_layer = 5
-
-[node name="Collision" type="CollisionShape3D" parent="Kart/Vehicle"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0732345, 0)
-shape = SubResource("CapsuleShape3D_2ywqp")
-
-[node name="GroundRay" type="RayCast3D" parent="Kart"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.383039, 0)
-target_position = Vector3(0, -2, 0)
-
-[node name="Look" type="Node3D" parent="Kart/GroundRay"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383039, 0)
-
-[node name="TerrainRay" type="RayCast3D" parent="Kart"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.383039, 0.848834)
-target_position = Vector3(0, -1.7, 0)
-collision_mask = 2
-
-[node name="Kart2" type="Node3D" parent="." node_paths=PackedStringArray("path") groups=["ai_kart"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108.629, -8.4897, -45.4966)
-script = ExtResource("21_e5cy7")
-path = NodePath("../Path3D")
-
-[node name="Body" parent="Kart2" instance=ExtResource("21_amvd7")]
-
-[node name="Rays" type="Node3D" parent="Kart2/Body"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.66538, -3.25512)
-
-[node name="RayCast3D" type="RayCast3D" parent="Kart2/Body/Rays"]
-transform = Transform3D(0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, 0.965926, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-hit_back_faces = false
-
-[node name="RayCast3D2" type="RayCast3D" parent="Kart2/Body/Rays"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D3" type="RayCast3D" parent="Kart2/Body/Rays"]
-transform = Transform3D(0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, 0.965926, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D4" type="RayCast3D" parent="Kart2/Body/Rays"]
-transform = Transform3D(0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, 0.707107, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D5" type="RayCast3D" parent="Kart2/Body/Rays"]
-transform = Transform3D(0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, 0.707107, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D6" type="RayCast3D" parent="Kart2/Body/Rays"]
-transform = Transform3D(-0.965926, 0, -0.258819, 0, 1, 0, 0.258819, 0, -0.965926, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D7" type="RayCast3D" parent="Kart2/Body/Rays"]
-transform = Transform3D(-1, 0, 8.74228e-08, 0, 1, 0, -8.74228e-08, 0, -1, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D8" type="RayCast3D" parent="Kart2/Body/Rays"]
-transform = Transform3D(-0.965926, 0, 0.258819, 0, 1, 0, -0.258819, 0, -0.965926, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D9" type="RayCast3D" parent="Kart2/Body/Rays"]
-transform = Transform3D(-0.707107, 0, 0.707107, 0, 1, 0, -0.707107, 0, -0.707107, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D10" type="RayCast3D" parent="Kart2/Body/Rays"]
-transform = Transform3D(-0.707107, 0, -0.707107, 0, 1, 0, 0.707107, 0, -0.707107, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D11" type="RayCast3D" parent="Kart2/Body/Rays"]
-transform = Transform3D(0, 0, 1, 0, 1, 0, -1, 0, 0, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D15" type="RayCast3D" parent="Kart2/Body/Rays"]
-transform = Transform3D(0.34202, 0, 0.939693, 0, 1, 0, -0.939693, 0, 0.34202, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="RayCast3D16" type="RayCast3D" parent="Kart2/Body/Rays"]
-transform = Transform3D(-0.422618, 0, 0.906308, 0, 1, 0, -0.906308, 0, -0.422618, 0, 0.0655943, 0)
-target_position = Vector3(10, 0, 0)
-
-[node name="AudioStreamPlayer3D2" type="AudioStreamPlayer3D" parent="Kart2/Body"]
-process_mode = 3
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.670486, 0)
-stream = ExtResource("23_8mltx")
-attenuation_model = 2
-volume_db = 40.0
-unit_size = 1.0
-pitch_scale = 1.21
-autoplay = true
-max_distance = 35.0
-doppler_tracking = 2
-
-[node name="Sprite3D2" type="Sprite3D" parent="Kart2/Body"]
-transform = Transform3D(1.04612, 0, 0, 0, 1.04612, 0, 0, 0, 1.04612, 0, 1.91884, -7.67758)
-layers = 3
-billboard = 2
-texture_filter = 0
-texture = ExtResource("23_wdy1l")
-
-[node name="Vehicle" type="CharacterBody3D" parent="Kart2"]
-collision_layer = 5
-
-[node name="Collision" type="CollisionShape3D" parent="Kart2/Vehicle"]
-transform = Transform3D(1, 0, 0, 0, -4.37114e-08, 1, 0, -1, -4.37114e-08, 0, 0.0732345, 0)
-shape = SubResource("CapsuleShape3D_2ywqp")
-
-[node name="GroundRay" type="RayCast3D" parent="Kart2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.383039, 0)
-target_position = Vector3(0, -2, 0)
-
-[node name="Look" type="Node3D" parent="Kart2/GroundRay"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383039, 0)
-
-[node name="TerrainRay" type="RayCast3D" parent="Kart2"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.383039, 0.848834)
-target_position = Vector3(0, -1.7, 0)
-collision_mask = 2
-
 [node name="Kart3" type="Node3D" parent="." node_paths=PackedStringArray("path") groups=["ai_kart", "squid"]]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -108.592, -8.96364, -68.6246)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -109.206, -8.96364, -52.823)
 script = ExtResource("21_e5cy7")
 path = NodePath("../Path3D")
-speed = 200.0
+speed = 210.0
+health = 13
 
 [node name="Body" parent="Kart3" instance=ExtResource("22_u8tem")]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 script = null
 
 [node name="Rays" type="Node3D" parent="Kart3/Body"]
@@ -732,7 +540,7 @@ process_mode = 3
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.670486, 0)
 stream = ExtResource("23_8mltx")
 attenuation_model = 2
-volume_db = 0.5
+volume_db = -75.0
 unit_size = 1.0
 pitch_scale = 1.21
 autoplay = true
@@ -750,6 +558,7 @@ texture = ExtResource("24_xp24o")
 collision_layer = 5
 
 [node name="Collision" type="CollisionShape3D" parent="Kart3/Vehicle"]
+transform = Transform3D(2, 0, 0, 0, 2, 0, 0, 0, 2, 0, 0, 0)
 shape = SubResource("SphereShape3D_p12rf")
 
 [node name="GroundRay" type="RayCast3D" parent="Kart3"]
@@ -763,6 +572,10 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.383039, 0)
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.383039, 0)
 target_position = Vector3(0, -0.7, 0)
 collision_mask = 2
+
+[node name="sky" type="MeshInstance3D" parent="."]
+mesh = SubResource("SphereMesh_ex3m4")
+surface_material_override/0 = SubResource("ShaderMaterial_5bdi1")
 
 [connection signal="body_entered" from="StaticBody3D" to="." method="_on_static_body_3d_body_entered"]
 [connection signal="pressed" from="WinLose/Lose/Button" to="." method="_on_continue_pressed"]

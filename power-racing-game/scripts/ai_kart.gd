@@ -16,7 +16,7 @@ var lastDistance: float = 0
 
 var gravity = 9
 
-var health:int = 3
+@export var health:int = 3
 
 func _ready():
 	for ray in $Body/Rays.get_children():

@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://scripts/cutscene.gd" id="1_dx5wn"]
 [ext_resource type="Script" path="res://scripts/scene.gd" id="2_u86nm"]
 [ext_resource type="PackedScene" uid="uid://c57ahqors8bbk" path="res://scenes/levels/mountain.tscn" id="3_xwwwl"]
-[ext_resource type="PackedScene" uid="uid://bn8dm80ar7613" path="res://scenes/cutscenes/3.tscn" id="4_44d52"]
+[ext_resource type="PackedScene" uid="uid://ceqdossimo47b" path="res://scenes/cutscenes/3.tscn" id="4_44d52"]
 [ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="6_u8qsj"]
 [ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="7_43lxd"]
 [ext_resource type="PackedScene" uid="uid://jgst4ctmbads" path="res://assets/models/gokart.tscn" id="8_lkvdu"]
@@ -214,7 +214,7 @@ script = ExtResource("1_dx5wn")
 scenes = Array[ExtResource("2_u86nm")]([SubResource("Resource_mwtco"), SubResource("Resource_is17g"), SubResource("Resource_wbeq4"), SubResource("Resource_xrugf"), SubResource("Resource_36vve"), SubResource("Resource_7gkfb"), SubResource("Resource_ppb3n")])
 nextLevel = ExtResource("3_xwwwl")
 nextcutscene = ExtResource("4_44d52")
-tollboothcharge = 5000.0
+tollboothcharge = 2000.0
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

@@ -1,8 +1,8 @@
-[gd_scene load_steps=19 format=3 uid="uid://bn8dm80ar7613"]
+[gd_scene load_steps=19 format=3 uid="uid://ceqdossimo47b"]
 
 [ext_resource type="Script" path="res://scripts/cutscene.gd" id="1_3on63"]
 [ext_resource type="Script" path="res://scripts/scene.gd" id="2_bbol4"]
-[ext_resource type="PackedScene" uid="uid://bx0x2p0adxf4j" path="res://scenes/levels/loop.tscn" id="3_vj6tt"]
+[ext_resource type="PackedScene" uid="uid://c05pl1c4luxkc" path="res://scenes/levels/loop.tscn" id="3_vj6tt"]
 [ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="4_tuw42"]
 [ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="5_abu4y"]
 [ext_resource type="PackedScene" uid="uid://jgst4ctmbads" path="res://assets/models/gokart.tscn" id="6_s5ta5"]
@@ -88,7 +88,7 @@ adjustment_saturation = 1.17
 script = ExtResource("1_3on63")
 scenes = Array[ExtResource("2_bbol4")]([SubResource("Resource_mwtco"), SubResource("Resource_qvuvj")])
 nextLevel = ExtResource("3_vj6tt")
-tollboothcharge = 5000.0
+tollboothcharge = 2000.0
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

@@ -1,8 +1,9 @@
-[gd_scene load_steps=14 format=3 uid="uid://dub2ph0xfqg1b"]
+[gd_scene load_steps=15 format=3 uid="uid://dub2ph0xfqg1b"]
 
 [ext_resource type="Texture2D" uid="uid://d4msilqdcxqyq" path="res://assets/sprite/explosion.png" id="1_od38c"]
 [ext_resource type="Script" path="res://scripts/explosion.gd" id="2_61vsc"]
 [ext_resource type="Texture2D" uid="uid://2rutpkeb0vq4" path="res://assets/sprite/shock.png" id="3_j6elp"]
+[ext_resource type="AudioStream" uid="uid://dohr4dln1lhds" path="res://assets/sound/Explosion.mp3" id="4_v1nan"]
 
 [sub_resource type="AtlasTexture" id="AtlasTexture_12ucg"]
 atlas = ExtResource("1_od38c")
@@ -93,5 +94,9 @@ texture = ExtResource("3_j6elp")
 [node name="Timer" type="Timer" parent="."]
 wait_time = 2.0
 autostart = true
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("4_v1nan")
+autoplay = true
 
 [connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]

@@ -1,7 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://ddbfgiwhcay1v"]
+[gd_scene load_steps=3 format=3 uid="uid://ddbfgiwhcay1v"]
 
 [ext_resource type="Script" path="res://scripts/levelSelect.gd" id="1_aswdw"]
-[ext_resource type="Texture2D" uid="uid://cpp08ukg1hptk" path="res://icon.svg" id="1_sfuho"]
 [ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="3_dspth"]
 
 [node name="LevelSelect" type="Control"]
@@ -21,117 +20,57 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Level1" type="TextureButton" parent="Levels"]
+[node name="grass" type="Button" parent="Levels"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.108
 anchor_top = 0.355
 anchor_right = 0.108
 anchor_bottom = 0.355
-offset_left = -80.416
+offset_left = -100.416
 offset_top = -80.04
-offset_right = 79.584
-offset_bottom = 79.96
-texture_normal = ExtResource("1_sfuho")
-stretch_mode = 0
+offset_right = 99.584
+offset_bottom = 119.96
+text = "Grassland"
 
-[node name="mountain" type="TextureButton" parent="Levels"]
+[node name="mountain" type="Button" parent="Levels"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.371
 anchor_top = 0.355
 anchor_right = 0.371
 anchor_bottom = 0.355
-offset_left = -80.392
+offset_left = -100.392
 offset_top = -80.04
-offset_right = 79.608
-offset_bottom = 79.96
-texture_normal = ExtResource("1_sfuho")
-stretch_mode = 0
+offset_right = 99.608
+offset_bottom = 119.96
+text = "Mountain"
 
-[node name="Level3" type="TextureButton" parent="Levels"]
+[node name="Level3" type="Button" parent="Levels"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.631
 anchor_top = 0.355
 anchor_right = 0.631
 anchor_bottom = 0.355
-offset_left = -79.912
+offset_left = -99.912
 offset_top = -80.04
-offset_right = 80.088
-offset_bottom = 79.96
-texture_normal = ExtResource("1_sfuho")
-stretch_mode = 0
+offset_right = 100.088
+offset_bottom = 119.96
+text = "Loop"
 
-[node name="Level4" type="TextureButton" parent="Levels"]
+[node name="Level4" type="Button" parent="Levels"]
 layout_mode = 1
 anchors_preset = -1
 anchor_left = 0.891
 anchor_top = 0.355
 anchor_right = 0.891
 anchor_bottom = 0.355
-offset_left = -79.432
+offset_left = -99.432
 offset_top = -80.04
-offset_right = 80.568
-offset_bottom = 79.96
-texture_normal = ExtResource("1_sfuho")
-stretch_mode = 0
-
-[node name="Level5" type="TextureButton" parent="Levels"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.108
-anchor_top = 0.755
-anchor_right = 0.108
-anchor_bottom = 0.755
-offset_left = -80.416
-offset_top = -114.24
-offset_right = 79.584
-offset_bottom = 45.76
-texture_normal = ExtResource("1_sfuho")
-stretch_mode = 0
-
-[node name="Level6" type="TextureButton" parent="Levels"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.368
-anchor_top = 0.755
-anchor_right = 0.368
-anchor_bottom = 0.755
-offset_left = -79.936
-offset_top = -114.24
-offset_right = 80.064
-offset_bottom = 45.76
-texture_normal = ExtResource("1_sfuho")
-stretch_mode = 0
-
-[node name="Level7" type="TextureButton" parent="Levels"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.628
-anchor_top = 0.755
-anchor_right = 0.628
-anchor_bottom = 0.755
-offset_left = -79.4561
-offset_top = -114.24
-offset_right = 80.5439
-offset_bottom = 45.76
-texture_normal = ExtResource("1_sfuho")
-stretch_mode = 0
-
-[node name="Level8" type="TextureButton" parent="Levels"]
-layout_mode = 1
-anchors_preset = -1
-anchor_left = 0.889
-anchor_top = 0.755
-anchor_right = 0.889
-anchor_bottom = 0.755
-offset_left = -80.1281
-offset_top = -114.24
-offset_right = 79.8719
-offset_bottom = 45.76
-texture_normal = ExtResource("1_sfuho")
-stretch_mode = 0
+offset_right = 100.568
+offset_bottom = 119.96
+text = "Octoboss Fight"
 
 [node name="Back" type="Button" parent="."]
 layout_mode = 1

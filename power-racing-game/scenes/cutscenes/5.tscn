@@ -29,7 +29,7 @@ forceSkipAtCharacters = 9999999
 script = ExtResource("2_1ke35")
 focusNode = NodePath("BossMan")
 text = "Made by Gunno and TheUnknown
-Music by HC1"
+Music by H1C"
 speed = 30.0
 forceSkipAtCharacters = 9999999
 

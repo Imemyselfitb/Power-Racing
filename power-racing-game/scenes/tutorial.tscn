@@ -8,7 +8,7 @@
 [ext_resource type="PackedScene" uid="uid://biuba22ol7yd5" path="res://scenes/kart.tscn" id="5_4i52m"]
 [ext_resource type="PackedScene" uid="uid://bwsgksn5sba8h" path="res://scenes/aiKart.tscn" id="6_3wjir"]
 [ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="7_6521h"]
-[ext_resource type="PackedScene" uid="uid://ds76o4dsb0uyb" path="res://scenes/dummyKart.tscn" id="8_vf0a0"]
+[ext_resource type="PackedScene" uid="uid://dn7lrgxwnux6q" path="res://scenes/dummyKart.tscn" id="8_vf0a0"]
 [ext_resource type="Texture2D" uid="uid://b1buc1ead6rsb" path="res://assets/sprite/lowerButton.png" id="9_ej2f3"]
 [ext_resource type="Texture2D" uid="uid://cqeq2jcoq8eno" path="res://assets/sprite/leftMouse.png" id="10_6qasc"]
 

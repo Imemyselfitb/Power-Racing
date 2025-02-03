@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://scripts/cutscene.gd" id="1_qqiqi"]
 [ext_resource type="Script" path="res://scripts/scene.gd" id="2_f03gs"]
-[ext_resource type="PackedScene" uid="uid://ofyn1k2nsuy2" path="res://scenes/levels/river.tscn" id="3_n6wkw"]
+[ext_resource type="PackedScene" uid="uid://cwkadcs7e6d68" path="res://scenes/levels/river.tscn" id="3_n6wkw"]
 [ext_resource type="Theme" uid="uid://dx6m21m2e8ni0" path="res://assets/normal.tres" id="4_i1pdd"]
 [ext_resource type="PackedScene" uid="uid://ct5nj1nu51fbf" path="res://scenes/cutscenes/5.tscn" id="4_myufj"]
 [ext_resource type="PackedScene" uid="uid://rji30exvqmg5" path="res://scenes/levelTransition.tscn" id="5_e40ei"]
@@ -97,7 +97,7 @@ script = ExtResource("1_qqiqi")
 scenes = Array[ExtResource("2_f03gs")]([SubResource("Resource_mwtco"), SubResource("Resource_qvuvj"), SubResource("Resource_g238b")])
 nextLevel = ExtResource("3_n6wkw")
 nextcutscene = ExtResource("4_myufj")
-tollboothcharge = 5000.0
+tollboothcharge = 2000.0
 
 [node name="UI" type="Control" parent="."]
 layout_mode = 3

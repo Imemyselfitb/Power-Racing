@@ -42,7 +42,9 @@ func _process(delta):
 			get_tree().create_tween().tween_property($WinLose/ColorRect, "modulate", Color(1, 1, 1, 0.8), 3)
 			if get_tree().get_nodes_in_group("squid").size() > 0:
 				get_tree().create_tween().tween_property($WinLose/Lose, "modulate", Color(1, 1, 1, 1), 1).set_trans(Tween.TRANS_CIRC)
+				$WinLose/Money.visible = false
 			else:
+				$WinLose/Money.text = "You did it! Well Done!"
 				won = true
 				get_tree().create_tween().tween_property($WinLose/Win, "modulate", Color(1, 1, 1, 1), 1).set_trans(Tween.TRANS_CIRC)
 		else:
